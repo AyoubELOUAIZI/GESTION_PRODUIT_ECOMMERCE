@@ -25,7 +25,7 @@ namespace GESTION_PRODUIT_ECOMMERCE.pisnessLayer
             DAL.open();
             DataTable dt=new DataTable();
             dt = DAL.SelectData("SP_LOGIN",param);
-
+            DAL.close();    
             return dt;
         }
     } 
