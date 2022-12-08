@@ -54,8 +54,6 @@ namespace GESTION_PRODUIT_ECOMMERCE.dataAccessLayer
             DataTable dt= new DataTable();
             da.Fill(dt);
             return dt;
-
-
         }
 
         //Methode to Insert Update delete data from data base

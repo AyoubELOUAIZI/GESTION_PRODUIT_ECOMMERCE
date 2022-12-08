@@ -49,5 +49,10 @@ namespace GESTION_PRODUIT_ECOMMERCE.presentationLayer
                 MessageBox.Show("log in failled");
             }
         }
+
+        private void FormLogin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

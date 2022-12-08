@@ -138,6 +138,7 @@
             this.MinimizeBox = false;
             this.Name = "FormLogin";
             this.Text = "log in";
+            this.Load += new System.EventHandler(this.FormLogin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
