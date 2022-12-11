@@ -22,10 +22,10 @@ namespace GESTION_PRODUIT_ECOMMERCE.pisnessLayer
             param[1] = new SqlParameter("@PASS",SqlDbType.VarChar,10);
             param[1].Value= password;
 
-            DAL.open();
+            //DAL.open();
             DataTable dt=new DataTable();
             dt = DAL.SelectData("SP_LOGIN",param);
-            DAL.close();    
+           // DAL.close();    
             return dt;
         }
     } 

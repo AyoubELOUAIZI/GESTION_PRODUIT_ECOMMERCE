@@ -130,6 +130,7 @@
             this.addProductToolStripMenuItem.Name = "addProductToolStripMenuItem";
             this.addProductToolStripMenuItem.Size = new System.Drawing.Size(338, 42);
             this.addProductToolStripMenuItem.Text = "add product";
+            this.addProductToolStripMenuItem.Click += new System.EventHandler(this.addProductToolStripMenuItem_Click);
             // 
             // manageProductToolStripMenuItem
             // 
@@ -137,6 +138,7 @@
             this.manageProductToolStripMenuItem.Name = "manageProductToolStripMenuItem";
             this.manageProductToolStripMenuItem.Size = new System.Drawing.Size(338, 42);
             this.manageProductToolStripMenuItem.Text = "manage product";
+            this.manageProductToolStripMenuItem.Click += new System.EventHandler(this.manageProductToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
