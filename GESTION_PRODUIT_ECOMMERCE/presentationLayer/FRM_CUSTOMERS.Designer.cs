@@ -28,14 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FRM_CUSTOMERS));
             System.Windows.Forms.Button btnNext;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FRM_CUSTOMERS));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnClear = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnNew = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.priviostbtn = new System.Windows.Forms.Button();
+            this.nextbtn = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.position = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
@@ -50,21 +53,31 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.DGListCustomers = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.nextbtn = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.boxSearch = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             btnNext = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.DGListCustomers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // btnNext
+            // 
+            btnNext.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnNext.BackgroundImage")));
+            btnNext.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            btnNext.Location = new System.Drawing.Point(319, 330);
+            btnNext.Name = "btnNext";
+            btnNext.Size = new System.Drawing.Size(88, 49);
+            btnNext.TabIndex = 10;
+            btnNext.UseVisualStyleBackColor = true;
+            btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnClear);
             this.groupBox1.Controls.Add(this.btnExit);
             this.groupBox1.Controls.Add(this.btnDelete);
             this.groupBox1.Controls.Add(this.btnUpdate);
@@ -87,17 +100,28 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(583, 12);
+            this.groupBox1.Location = new System.Drawing.Point(871, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(611, 509);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Customer information";
             // 
+            // btnClear
+            // 
+            this.btnClear.BackColor = System.Drawing.Color.Black;
+            this.btnClear.Location = new System.Drawing.Point(396, 425);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(90, 60);
+            this.btnClear.TabIndex = 26;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
             // btnExit
             // 
             this.btnExit.BackColor = System.Drawing.Color.Black;
-            this.btnExit.Location = new System.Drawing.Point(430, 425);
+            this.btnExit.Location = new System.Drawing.Point(492, 425);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(98, 60);
             this.btnExit.TabIndex = 14;
@@ -108,33 +132,48 @@
             // btnDelete
             // 
             this.btnDelete.BackColor = System.Drawing.Color.Black;
-            this.btnDelete.Location = new System.Drawing.Point(319, 425);
+            this.btnDelete.Location = new System.Drawing.Point(278, 425);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(105, 60);
             this.btnDelete.TabIndex = 13;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnUpdate
             // 
             this.btnUpdate.BackColor = System.Drawing.Color.Black;
-            this.btnUpdate.Location = new System.Drawing.Point(211, 425);
+            this.btnUpdate.Location = new System.Drawing.Point(170, 425);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(102, 60);
             this.btnUpdate.TabIndex = 12;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnNew
             // 
             this.btnNew.BackColor = System.Drawing.Color.Green;
-            this.btnNew.Location = new System.Drawing.Point(62, 425);
+            this.btnNew.Location = new System.Drawing.Point(21, 425);
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(143, 60);
             this.btnNew.TabIndex = 11;
             this.btnNew.Text = "Add New";
             this.btnNew.UseVisualStyleBackColor = false;
             this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Black;
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = global::GESTION_PRODUIT_ECOMMERCE.Properties.Resources.Avatar;
+            this.pictureBox1.Location = new System.Drawing.Point(417, 85);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(188, 212);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 25;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // priviostbtn
             // 
@@ -146,6 +185,17 @@
             this.priviostbtn.TabIndex = 9;
             this.priviostbtn.UseVisualStyleBackColor = true;
             this.priviostbtn.Click += new System.EventHandler(this.priviostbtn_Click);
+            // 
+            // nextbtn
+            // 
+            this.nextbtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("nextbtn.BackgroundImage")));
+            this.nextbtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.nextbtn.Location = new System.Drawing.Point(139, 330);
+            this.nextbtn.Name = "nextbtn";
+            this.nextbtn.Size = new System.Drawing.Size(84, 49);
+            this.nextbtn.TabIndex = 8;
+            this.nextbtn.UseVisualStyleBackColor = true;
+            this.nextbtn.Click += new System.EventHandler(this.nextbtn_Click);
             // 
             // label6
             // 
@@ -260,91 +310,71 @@
             // 
             // DGListCustomers
             // 
-            this.DGListCustomers.Controls.Add(this.button1);
-            this.DGListCustomers.Controls.Add(this.textBox1);
-            this.DGListCustomers.Controls.Add(this.label1);
             this.DGListCustomers.Controls.Add(this.dataGridView1);
-            this.DGListCustomers.ForeColor = System.Drawing.Color.White;
+            this.DGListCustomers.Controls.Add(this.button1);
+            this.DGListCustomers.Controls.Add(this.boxSearch);
+            this.DGListCustomers.Controls.Add(this.label1);
+            this.DGListCustomers.ForeColor = System.Drawing.Color.Black;
             this.DGListCustomers.Location = new System.Drawing.Point(12, 12);
             this.DGListCustomers.Name = "DGListCustomers";
-            this.DGListCustomers.Size = new System.Drawing.Size(565, 509);
+            this.DGListCustomers.Size = new System.Drawing.Size(840, 509);
             this.DGListCustomers.TabIndex = 0;
             this.DGListCustomers.TabStop = false;
             this.DGListCustomers.Text = "List of Customers";
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dataGridView1.Location = new System.Drawing.Point(20, 68);
+            this.dataGridView1.MultiSelect = false;
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(799, 435);
+            this.dataGridView1.TabIndex = 4;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
+            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(354, 31);
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(364, 31);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(83, 31);
             this.button1.TabIndex = 3;
             this.button1.Text = "find";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBox1
+            // boxSearch
             // 
-            this.textBox1.Location = new System.Drawing.Point(92, 31);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(256, 29);
-            this.textBox1.TabIndex = 0;
+            this.boxSearch.Location = new System.Drawing.Point(102, 31);
+            this.boxSearch.Name = "boxSearch";
+            this.boxSearch.Size = new System.Drawing.Size(256, 29);
+            this.boxSearch.TabIndex = 0;
+            this.boxSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.boxSearch_KeyDown);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(16, 34);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 24);
+            this.label1.Size = new System.Drawing.Size(80, 24);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Search";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 71);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(553, 432);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Black;
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = global::GESTION_PRODUIT_ECOMMERCE.Properties.Resources.Avatar;
-            this.pictureBox1.Location = new System.Drawing.Point(417, 85);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(188, 212);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 25;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
-            // nextbtn
-            // 
-            this.nextbtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("nextbtn.BackgroundImage")));
-            this.nextbtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.nextbtn.Location = new System.Drawing.Point(139, 330);
-            this.nextbtn.Name = "nextbtn";
-            this.nextbtn.Size = new System.Drawing.Size(84, 49);
-            this.nextbtn.TabIndex = 8;
-            this.nextbtn.UseVisualStyleBackColor = true;
-            // 
-            // btnNext
-            // 
-            btnNext.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnNext.BackgroundImage")));
-            btnNext.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            btnNext.Location = new System.Drawing.Point(319, 330);
-            btnNext.Name = "btnNext";
-            btnNext.Size = new System.Drawing.Size(88, 49);
-            btnNext.TabIndex = 10;
-            btnNext.UseVisualStyleBackColor = true;
+            this.label1.Text = "Search :";
             // 
             // FRM_CUSTOMERS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(1206, 553);
+            this.ClientSize = new System.Drawing.Size(1494, 553);
             this.Controls.Add(this.DGListCustomers);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
@@ -353,13 +383,15 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FRM_CUSTOMERS";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FRM_CUSTOMERS";
+            this.Load += new System.EventHandler(this.FRM_CUSTOMERS_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.DGListCustomers.ResumeLayout(false);
             this.DGListCustomers.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -368,9 +400,8 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox DGListCustomers;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox boxSearch;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxFirstName;
         private System.Windows.Forms.TextBox textBoxlastName;
@@ -392,5 +423,7 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnNew;
+        private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

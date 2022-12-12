@@ -104,9 +104,42 @@ INSERT INTO [dbo].[CUSTOMERS]
            ( @FirstName ,@LastName ,@phone ,@email ,	@city ,@img)		   
  end
 *************************************************************************
+create proc GetAllCustomers 
+as
+
+SELECT [IdCustomer]
+      ,[FirstName]
+      ,[LastName]
+      ,[phone]
+      ,[email]
+      ,[city]
+       ,[img]
+  FROM [dbo].[CUSTOMERS]
+
 *************************************************************************
+CREATE PROC UPDATE_CUSTOMER @FirstName varchar(20),@LastName varchar(20),@phone varchar(20),
+		@email varchar(20),	@city varchar(20),@img image,@idcus int
+as 
+begin
+
+UPDATE [dbo].[CUSTOMERS]
+   SET [FirstName] = @FirstName
+      ,[LastName] = @LastName
+      ,[phone] = @phone
+      ,[email] =@email
+      ,[city] = @city
+      ,[img] = @img
+ WHERE IdCustomer=@idcus
+
+ end
 *************************************************************************
+CREATE PROC DELETE_CUSTOMER @idcus int as
+delete from [CUSTOMERS] where IdCustomer=@idcus
 *************************************************************************
+create proc SEARCH_CUSTOMER @text varchar(20) as
+select * from CUSTOMERS 
+where FirstName+LastName+phone+email+city like '%'+@text+'%'
+
 *************************************************************************
 *************************************************************************
 *************************************************************************

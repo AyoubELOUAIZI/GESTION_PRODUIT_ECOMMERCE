@@ -177,6 +177,7 @@
     <Content Include="public\products-imges\8.jpg" />
     <Content Include="public\products-imges\9.jpg" />
     <Content Include="public\products-imges\dog.jpg" />
+    <None Include="Resources\Avatar.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
