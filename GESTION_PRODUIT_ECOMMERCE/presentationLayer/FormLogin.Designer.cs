@@ -108,9 +108,9 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureBox1.BackgroundImage = global::GESTION_PRODUIT_ECOMMERCE.Properties.Resources.login;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox1.Image = global::GESTION_PRODUIT_ECOMMERCE.Properties.Resources.login;
             this.pictureBox1.Location = new System.Drawing.Point(469, 54);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(182, 204);

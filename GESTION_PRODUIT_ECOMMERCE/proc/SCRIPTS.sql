@@ -89,6 +89,20 @@ UPDATE [PRODUCTS]
       ,[img3] =  @img3 WHERE IdProduct = @id
 end
 *************************************************************************
+CREATE PROC ADD_CUSTOMER @FirstName varchar(20),@LastName varchar(20),@phone varchar(20),
+		@email varchar(20),	@city varchar(20),@img image
+as 
+begin
+INSERT INTO [dbo].[CUSTOMERS]
+           ([FirstName]
+           ,[LastName]
+           ,[phone]
+           ,[email]
+           ,[city]
+           ,[img])
+     VALUES
+           ( @FirstName ,@LastName ,@phone ,@email ,	@city ,@img)		   
+ end
 *************************************************************************
 *************************************************************************
 *************************************************************************

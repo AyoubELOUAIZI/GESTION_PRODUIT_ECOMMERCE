@@ -172,5 +172,10 @@ namespace GESTION_PRODUIT_ECOMMERCE.presentationLayer
             this.pictureBox3.Image = Image.FromStream(ms3);
 
         }
+
+        private void FORM_PRODUCTS_Load_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

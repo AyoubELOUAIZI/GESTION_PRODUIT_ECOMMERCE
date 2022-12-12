@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="bisnessLayer\CLS_CUSTOMERS.cs" />
     <Compile Include="bisnessLayer\CLS_LOGIN.cs" />
     <Compile Include="bisnessLayer\CLS_PRODUCTS.cs" />
     <Compile Include="dataAccessLayer\DataAccessLayer.cs" />
@@ -74,6 +75,18 @@
     <Compile Include="presentationLayer\FRM_ADD_PRODUCT.Designer.cs">
       <DependentUpon>FRM_ADD_PRODUCT.cs</DependentUpon>
     </Compile>
+    <Compile Include="presentationLayer\FRM_CATEGORIES.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentationLayer\FRM_CATEGORIES.Designer.cs">
+      <DependentUpon>FRM_CATEGORIES.cs</DependentUpon>
+    </Compile>
+    <Compile Include="presentationLayer\FRM_CUSTOMERS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentationLayer\FRM_CUSTOMERS.Designer.cs">
+      <DependentUpon>FRM_CUSTOMERS.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="presentationLayer\FormLogin.resx">
@@ -88,20 +101,26 @@
     <EmbeddedResource Include="presentationLayer\FRM_ADD_PRODUCT.resx">
       <DependentUpon>FRM_ADD_PRODUCT.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="presentationLayer\FRM_CATEGORIES.resx">
+      <DependentUpon>FRM_CATEGORIES.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentationLayer\FRM_CUSTOMERS.resx">
+      <DependentUpon>FRM_CUSTOMERS.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -112,15 +131,52 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="imges\products-imges\" />
+    <Folder Include="public\Customers-imges\" />
     <Folder Include="report\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="imges\login.jpg" />
-    <Content Include="imges\select-img.jpg" />
-    <Content Include="imges\select.png" />
+    <Content Include="assets\Avatar.jpg" />
+    <Content Include="assets\back.jpg" />
+    <Content Include="assets\Button Next.png" />
+    <Content Include="assets\login.jpg" />
+    <Content Include="assets\select-img.jpg" />
+    <Content Include="assets\select.png" />
     <Content Include="proc\CREATEDATA.sql" />
     <Content Include="proc\SCRIPTS.sql" />
+    <Content Include="public\products-imges\1.jpg" />
+    <Content Include="public\products-imges\10.jpg" />
+    <Content Include="public\products-imges\11.jpg" />
+    <Content Include="public\products-imges\12.jpg" />
+    <Content Include="public\products-imges\13.jpg" />
+    <Content Include="public\products-imges\14.jpg" />
+    <Content Include="public\products-imges\15.jpg" />
+    <Content Include="public\products-imges\16.jpg" />
+    <Content Include="public\products-imges\17.jpg" />
+    <Content Include="public\products-imges\18.jpg" />
+    <Content Include="public\products-imges\19.jpg" />
+    <Content Include="public\products-imges\2.jpg" />
+    <Content Include="public\products-imges\20.jpg" />
+    <Content Include="public\products-imges\21.jpg" />
+    <Content Include="public\products-imges\22.jpg" />
+    <Content Include="public\products-imges\23.jpg" />
+    <Content Include="public\products-imges\24.jpg" />
+    <Content Include="public\products-imges\25.jpg" />
+    <Content Include="public\products-imges\26.jpg" />
+    <Content Include="public\products-imges\27.jpg" />
+    <Content Include="public\products-imges\28.jpg" />
+    <Content Include="public\products-imges\29.jpg" />
+    <Content Include="public\products-imges\3.jpg" />
+    <Content Include="public\products-imges\30.jpg" />
+    <Content Include="public\products-imges\31.jpg" />
+    <Content Include="public\products-imges\32.jpg" />
+    <Content Include="public\products-imges\33.jpg" />
+    <Content Include="public\products-imges\4.jpg" />
+    <Content Include="public\products-imges\5.jpg" />
+    <Content Include="public\products-imges\6.jpg" />
+    <Content Include="public\products-imges\7.jpg" />
+    <Content Include="public\products-imges\8.jpg" />
+    <Content Include="public\products-imges\9.jpg" />
+    <Content Include="public\products-imges\dog.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

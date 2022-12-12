@@ -39,7 +39,6 @@
             this.addProductToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manageProductToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.addGategoriesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manageCiesategorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.customersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addCustomerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -117,7 +116,6 @@
             this.addProductToolStripMenuItem,
             this.manageProductToolStripMenuItem,
             this.toolStripSeparator1,
-            this.addGategoriesToolStripMenuItem,
             this.manageCiesategorToolStripMenuItem});
             this.productToolStripMenuItem.ForeColor = System.Drawing.Color.Navy;
             this.productToolStripMenuItem.Name = "productToolStripMenuItem";
@@ -145,19 +143,13 @@
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(335, 6);
             // 
-            // addGategoriesToolStripMenuItem
-            // 
-            this.addGategoriesToolStripMenuItem.ForeColor = System.Drawing.Color.Navy;
-            this.addGategoriesToolStripMenuItem.Name = "addGategoriesToolStripMenuItem";
-            this.addGategoriesToolStripMenuItem.Size = new System.Drawing.Size(338, 42);
-            this.addGategoriesToolStripMenuItem.Text = "add categories";
-            // 
             // manageCiesategorToolStripMenuItem
             // 
             this.manageCiesategorToolStripMenuItem.ForeColor = System.Drawing.Color.Navy;
             this.manageCiesategorToolStripMenuItem.Name = "manageCiesategorToolStripMenuItem";
             this.manageCiesategorToolStripMenuItem.Size = new System.Drawing.Size(338, 42);
             this.manageCiesategorToolStripMenuItem.Text = "manage categories";
+            this.manageCiesategorToolStripMenuItem.Click += new System.EventHandler(this.manageCiesategorToolStripMenuItem_Click);
             // 
             // customersToolStripMenuItem
             // 
@@ -185,6 +177,7 @@
             this.manageCustomerToolStripMenuItem.Name = "manageCustomerToolStripMenuItem";
             this.manageCustomerToolStripMenuItem.Size = new System.Drawing.Size(324, 42);
             this.manageCustomerToolStripMenuItem.Text = "manage customer";
+            this.manageCustomerToolStripMenuItem.Click += new System.EventHandler(this.manageCustomerToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
@@ -259,7 +252,6 @@
         private System.Windows.Forms.ToolStripMenuItem addProductToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem manageProductToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripMenuItem addGategoriesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem manageCiesategorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addCustomerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem manageCustomerToolStripMenuItem;

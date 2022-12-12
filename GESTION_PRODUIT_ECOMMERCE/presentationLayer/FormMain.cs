@@ -67,5 +67,17 @@ namespace GESTION_PRODUIT_ECOMMERCE.presentationLayer
             FORM_PRODUCTS fpd= new FORM_PRODUCTS();
             fpd.ShowDialog();
         }
+
+        private void manageCustomerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FRM_CUSTOMERS fcus= new FRM_CUSTOMERS();    
+            fcus.ShowDialog();
+        }
+
+        private void manageCiesategorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FRM_CATEGORIES fcategorie=new FRM_CATEGORIES();
+            fcategorie.ShowDialog();
+        }
     }
 }

@@ -186,7 +186,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackgroundImage = global::GESTION_PRODUIT_ECOMMERCE.Properties.Resources.select_img;
+           // this.pictureBox1.BackgroundImage = global::GESTION_PRODUIT_ECOMMERCE.Properties.Resources.select_img;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(1287, 78);
             this.pictureBox1.Name = "pictureBox1";
@@ -197,7 +197,7 @@
             // 
             // pictureBox3
             // 
-            this.pictureBox3.BackgroundImage = global::GESTION_PRODUIT_ECOMMERCE.Properties.Resources.select_img;
+          //  this.pictureBox3.BackgroundImage = global::GESTION_PRODUIT_ECOMMERCE.Properties.Resources.select_img;
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox3.Location = new System.Drawing.Point(970, 78);
             this.pictureBox3.Name = "pictureBox3";
@@ -208,7 +208,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.BackgroundImage = global::GESTION_PRODUIT_ECOMMERCE.Properties.Resources.select_img;
+           // this.pictureBox2.BackgroundImage = global::GESTION_PRODUIT_ECOMMERCE.Properties.Resources.select_img;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox2.Location = new System.Drawing.Point(970, 333);
             this.pictureBox2.Name = "pictureBox2";
