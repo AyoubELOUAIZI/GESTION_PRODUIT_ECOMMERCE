@@ -28,20 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.Button btnNext;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FRM_CUSTOMERS));
+            System.Windows.Forms.Button btnNext;
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnNew = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.priviostbtn = new System.Windows.Forms.Button();
-            this.nextbtn = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.position = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
             this.textBoxFirstName = new System.Windows.Forms.TextBox();
             this.textBoxlastName = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -57,23 +53,16 @@
             this.button1 = new System.Windows.Forms.Button();
             this.boxSearch = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.priviostbtn = new System.Windows.Forms.Button();
+            this.nextbtn = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             btnNext = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.DGListCustomers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnNext
-            // 
-            btnNext.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnNext.BackgroundImage")));
-            btnNext.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            btnNext.Location = new System.Drawing.Point(319, 330);
-            btnNext.Name = "btnNext";
-            btnNext.Size = new System.Drawing.Size(88, 49);
-            btnNext.TabIndex = 10;
-            btnNext.UseVisualStyleBackColor = true;
-            btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // groupBox1
             // 
@@ -100,9 +89,9 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(871, 12);
+            this.groupBox1.Location = new System.Drawing.Point(881, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(611, 509);
+            this.groupBox1.Size = new System.Drawing.Size(636, 509);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Customer information";
@@ -162,41 +151,6 @@
             this.btnNew.UseVisualStyleBackColor = false;
             this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Black;
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = global::GESTION_PRODUIT_ECOMMERCE.Properties.Resources.Avatar;
-            this.pictureBox1.Location = new System.Drawing.Point(417, 85);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(188, 212);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 25;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
-            // priviostbtn
-            // 
-            this.priviostbtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("priviostbtn.BackgroundImage")));
-            this.priviostbtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.priviostbtn.Location = new System.Drawing.Point(229, 330);
-            this.priviostbtn.Name = "priviostbtn";
-            this.priviostbtn.Size = new System.Drawing.Size(84, 49);
-            this.priviostbtn.TabIndex = 9;
-            this.priviostbtn.UseVisualStyleBackColor = true;
-            this.priviostbtn.Click += new System.EventHandler(this.priviostbtn_Click);
-            // 
-            // nextbtn
-            // 
-            this.nextbtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("nextbtn.BackgroundImage")));
-            this.nextbtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.nextbtn.Location = new System.Drawing.Point(139, 330);
-            this.nextbtn.Name = "nextbtn";
-            this.nextbtn.Size = new System.Drawing.Size(84, 49);
-            this.nextbtn.TabIndex = 8;
-            this.nextbtn.UseVisualStyleBackColor = true;
-            this.nextbtn.Click += new System.EventHandler(this.nextbtn_Click);
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -217,23 +171,13 @@
             this.position.TabIndex = 22;
             this.position.Text = "0/0";
             // 
-            // button2
-            // 
-            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.Location = new System.Drawing.Point(42, 330);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(91, 49);
-            this.button2.TabIndex = 7;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // textBoxFirstName
             // 
             this.textBoxFirstName.Location = new System.Drawing.Point(161, 85);
             this.textBoxFirstName.Name = "textBoxFirstName";
             this.textBoxFirstName.Size = new System.Drawing.Size(230, 29);
             this.textBoxFirstName.TabIndex = 1;
+            this.textBoxFirstName.TextChanged += new System.EventHandler(this.textBoxFirstName_TextChanged);
             // 
             // textBoxlastName
             // 
@@ -241,6 +185,7 @@
             this.textBoxlastName.Name = "textBoxlastName";
             this.textBoxlastName.Size = new System.Drawing.Size(230, 29);
             this.textBoxlastName.TabIndex = 2;
+            this.textBoxlastName.TextChanged += new System.EventHandler(this.textBoxlastName_TextChanged);
             // 
             // label4
             // 
@@ -250,6 +195,7 @@
             this.label4.Size = new System.Drawing.Size(99, 24);
             this.label4.TabIndex = 2;
             this.label4.Text = "Last Name";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // textBoxCity
             // 
@@ -289,6 +235,7 @@
             this.textBoxPhone.Name = "textBoxPhone";
             this.textBoxPhone.Size = new System.Drawing.Size(230, 29);
             this.textBoxPhone.TabIndex = 3;
+            this.textBoxPhone.TextChanged += new System.EventHandler(this.textBoxPhone_TextChanged);
             // 
             // label3
             // 
@@ -307,6 +254,7 @@
             this.label2.Size = new System.Drawing.Size(101, 24);
             this.label2.TabIndex = 2;
             this.label2.Text = "First Name";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // DGListCustomers
             // 
@@ -369,12 +317,70 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Search :";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Black;
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = global::GESTION_PRODUIT_ECOMMERCE.Properties.Resources.Avatar;
+            this.pictureBox1.Location = new System.Drawing.Point(417, 85);
+            this.pictureBox1.MinimumSize = new System.Drawing.Size(188, 212);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(188, 212);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 25;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // priviostbtn
+            // 
+            this.priviostbtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("priviostbtn.BackgroundImage")));
+            this.priviostbtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.priviostbtn.Location = new System.Drawing.Point(229, 330);
+            this.priviostbtn.Name = "priviostbtn";
+            this.priviostbtn.Size = new System.Drawing.Size(84, 49);
+            this.priviostbtn.TabIndex = 9;
+            this.priviostbtn.UseVisualStyleBackColor = true;
+            this.priviostbtn.Click += new System.EventHandler(this.priviostbtn_Click);
+            // 
+            // nextbtn
+            // 
+            this.nextbtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("nextbtn.BackgroundImage")));
+            this.nextbtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.nextbtn.Location = new System.Drawing.Point(139, 330);
+            this.nextbtn.Name = "nextbtn";
+            this.nextbtn.Size = new System.Drawing.Size(84, 49);
+            this.nextbtn.TabIndex = 8;
+            this.nextbtn.UseVisualStyleBackColor = true;
+            this.nextbtn.Click += new System.EventHandler(this.nextbtn_Click);
+            // 
+            // btnNext
+            // 
+            btnNext.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnNext.BackgroundImage")));
+            btnNext.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            btnNext.Location = new System.Drawing.Point(319, 330);
+            btnNext.Name = "btnNext";
+            btnNext.Size = new System.Drawing.Size(88, 49);
+            btnNext.TabIndex = 10;
+            btnNext.UseVisualStyleBackColor = true;
+            btnNext.Click += new System.EventHandler(this.btnNext_Click);
+            // 
+            // button2
+            // 
+            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button2.Location = new System.Drawing.Point(42, 330);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(91, 49);
+            this.button2.TabIndex = 7;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // FRM_CUSTOMERS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(1494, 553);
+            this.ClientSize = new System.Drawing.Size(1529, 553);
             this.Controls.Add(this.DGListCustomers);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
@@ -388,10 +394,10 @@
             this.Load += new System.EventHandler(this.FRM_CUSTOMERS_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.DGListCustomers.ResumeLayout(false);
             this.DGListCustomers.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

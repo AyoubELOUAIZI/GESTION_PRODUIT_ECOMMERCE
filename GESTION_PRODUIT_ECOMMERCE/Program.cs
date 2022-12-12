@@ -17,7 +17,7 @@ namespace GESTION_PRODUIT_ECOMMERCE
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormMain());
+            Application.Run(new FRM_ORDERS());
         }
     }
 }

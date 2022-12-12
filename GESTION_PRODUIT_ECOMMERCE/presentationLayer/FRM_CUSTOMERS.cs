@@ -234,5 +234,30 @@ namespace GESTION_PRODUIT_ECOMMERCE.presentationLayer
         {
             fillAlltextBoxesAndImg();
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxPhone_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxlastName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxFirstName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
