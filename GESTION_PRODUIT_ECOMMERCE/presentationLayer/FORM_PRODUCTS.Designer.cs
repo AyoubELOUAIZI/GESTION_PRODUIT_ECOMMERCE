@@ -29,8 +29,10 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnRefrech = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.btnEditProduct = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.btnSaveExel = new System.Windows.Forms.Button();
             this.btnPrintList = new System.Windows.Forms.Button();
             this.btnPrintProduct = new System.Windows.Forms.Button();
@@ -39,20 +41,18 @@
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.searchbox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.btnRefrech = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -75,6 +75,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Operations";
             // 
+            // btnRefrech
+            // 
+            this.btnRefrech.Location = new System.Drawing.Point(15, 537);
+            this.btnRefrech.Name = "btnRefrech";
+            this.btnRefrech.Size = new System.Drawing.Size(164, 62);
+            this.btnRefrech.TabIndex = 6;
+            this.btnRefrech.Text = "Refrech";
+            this.btnRefrech.UseVisualStyleBackColor = true;
+            this.btnRefrech.Click += new System.EventHandler(this.btnRefrech_Click);
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -94,6 +104,17 @@
             this.btnEditProduct.Text = "edit product";
             this.btnEditProduct.UseVisualStyleBackColor = false;
             this.btnEditProduct.Click += new System.EventHandler(this.btnEditProduct_Click);
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Red;
+            this.button2.Location = new System.Drawing.Point(15, 605);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(164, 65);
+            this.button2.TabIndex = 0;
+            this.button2.Text = "exit";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnSaveExel
             // 
@@ -175,7 +196,9 @@
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGridView1.GridColor = System.Drawing.Color.Red;
             this.dataGridView1.Location = new System.Drawing.Point(3, 25);
             this.dataGridView1.Name = "dataGridView1";
@@ -183,40 +206,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(737, 717);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // pictureBox1
-            // 
-           // this.pictureBox1.BackgroundImage = global::GESTION_PRODUIT_ECOMMERCE.Properties.Resources.select_img;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(1287, 78);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(266, 249);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-          //  this.pictureBox3.BackgroundImage = global::GESTION_PRODUIT_ECOMMERCE.Properties.Resources.select_img;
-            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox3.Location = new System.Drawing.Point(970, 78);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(299, 249);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 2;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-           // this.pictureBox2.BackgroundImage = global::GESTION_PRODUIT_ECOMMERCE.Properties.Resources.select_img;
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(970, 333);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(583, 465);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 2;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
             // label1
             // 
@@ -244,26 +233,36 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "Selected product images";
             // 
-            // button2
+            // pictureBox2
             // 
-            this.button2.BackColor = System.Drawing.Color.Red;
-            this.button2.Location = new System.Drawing.Point(15, 605);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(164, 65);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "exit";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.btnExit_Click);
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.Location = new System.Drawing.Point(970, 333);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(583, 465);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 2;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
-            // btnRefrech
+            // pictureBox3
             // 
-            this.btnRefrech.Location = new System.Drawing.Point(15, 537);
-            this.btnRefrech.Name = "btnRefrech";
-            this.btnRefrech.Size = new System.Drawing.Size(164, 62);
-            this.btnRefrech.TabIndex = 6;
-            this.btnRefrech.Text = "Refrech";
-            this.btnRefrech.UseVisualStyleBackColor = true;
-            this.btnRefrech.Click += new System.EventHandler(this.btnRefrech_Click);
+            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox3.Location = new System.Drawing.Point(970, 78);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(299, 249);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 2;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(1287, 78);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(266, 249);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
             // 
             // FORM_PRODUCTS
             // 
@@ -290,9 +289,9 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
