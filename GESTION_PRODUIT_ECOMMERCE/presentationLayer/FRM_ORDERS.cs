@@ -16,14 +16,39 @@ namespace GESTION_PRODUIT_ECOMMERCE.presentationLayer
     public partial class FRM_ORDERS : Form
     {
         CLS_ORDERS order=new CLS_ORDERS();
+        DataTable Dt=new DataTable();
         public FRM_ORDERS()
         {
             InitializeComponent();
+            creatDataTable();
+           
+        }
+
+        void creatDataTable()
+        {
+            Dt.Columns.Add("Product");
+            Dt.Columns.Add("Price");
+            Dt.Columns.Add("Quantite");
+            Dt.Columns.Add("Amount");
+            Dt.Columns.Add("Descount");
+            Dt.Columns.Add("Total Amount");
+            dataGridV.DataSource = Dt;
+        }
+
+        void ResizedataGridV()
+        {
+            this.dataGridV.RowHeadersWidth = 87;
+            this.dataGridV.Columns[0].Width = 150;
+            this.dataGridV.Columns[1].Width = 124;
+            this.dataGridV.Columns[2].Width = 132;
+            this.dataGridV.Columns[3].Width = 162;
+            this.dataGridV.Columns[4].Width = 158;
+            this.dataGridV.Columns[5].Width = 152;
         }
 
         private void FRM_ORDERS_Load(object sender, EventArgs e)
         {
-
+            ResizedataGridV();
         }
 
         private void btnNewOrder_Click(object sender, EventArgs e)
@@ -52,6 +77,11 @@ namespace GESTION_PRODUIT_ECOMMERCE.presentationLayer
             byte[] picture = (byte[])FAC.dtgvCustomers.CurrentRow.Cells[6].Value;
             MemoryStream ms = new MemoryStream(picture);
             pictureBox1.Image = Image.FromStream(ms);
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
 
         }
     }
