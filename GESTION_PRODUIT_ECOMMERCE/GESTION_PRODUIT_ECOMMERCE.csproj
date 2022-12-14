@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="bisnessLayer\CLS_CUSTOMERS.cs" />
     <Compile Include="bisnessLayer\CLS_LOGIN.cs" />
+    <Compile Include="bisnessLayer\CLS_ORDERS.cs" />
     <Compile Include="bisnessLayer\CLS_PRODUCTS.cs" />
     <Compile Include="dataAccessLayer\DataAccessLayer.cs" />
     <Compile Include="presentationLayer\FormLogin.cs">
@@ -74,6 +75,12 @@
     </Compile>
     <Compile Include="presentationLayer\FRM_ADD_PRODUCT.Designer.cs">
       <DependentUpon>FRM_ADD_PRODUCT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="presentationLayer\FRM_All_CUSTOMERS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentationLayer\FRM_All_CUSTOMERS.Designer.cs">
+      <DependentUpon>FRM_All_CUSTOMERS.cs</DependentUpon>
     </Compile>
     <Compile Include="presentationLayer\FRM_CATEGORIES.cs">
       <SubType>Form</SubType>
@@ -106,6 +113,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentationLayer\FRM_ADD_PRODUCT.resx">
       <DependentUpon>FRM_ADD_PRODUCT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentationLayer\FRM_All_CUSTOMERS.resx">
+      <DependentUpon>FRM_All_CUSTOMERS.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentationLayer\FRM_CATEGORIES.resx">
       <DependentUpon>FRM_CATEGORIES.cs</DependentUpon>
