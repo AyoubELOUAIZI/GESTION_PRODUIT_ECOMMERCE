@@ -49,6 +49,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.ADD = new System.Windows.Forms.Button();
             this.btnbrows = new System.Windows.Forms.Button();
             this.Pricebox = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -75,7 +76,6 @@
             this.ppictur2 = new System.Windows.Forms.PictureBox();
             this.ppictur1 = new System.Windows.Forms.PictureBox();
             this.btnClear = new System.Windows.Forms.Button();
-            this.btnAddToList = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -288,7 +288,7 @@
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.Color.MediumSpringGreen;
-            this.groupBox3.Controls.Add(this.btnAddToList);
+            this.groupBox3.Controls.Add(this.ADD);
             this.groupBox3.Controls.Add(this.btnbrows);
             this.groupBox3.Controls.Add(this.Pricebox);
             this.groupBox3.Controls.Add(this.label13);
@@ -305,7 +305,7 @@
             this.groupBox3.Controls.Add(this.boxproduct);
             this.groupBox3.Controls.Add(this.dataGridV);
             this.groupBox3.Controls.Add(this.textBox7);
-            this.groupBox3.ForeColor = System.Drawing.Color.White;
+            this.groupBox3.ForeColor = System.Drawing.Color.Black;
             this.groupBox3.Location = new System.Drawing.Point(12, 291);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(967, 428);
@@ -313,9 +313,22 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Products";
             // 
+            // ADD
+            // 
+            this.ADD.BackColor = System.Drawing.Color.Black;
+            this.ADD.ForeColor = System.Drawing.Color.White;
+            this.ADD.Location = new System.Drawing.Point(744, 16);
+            this.ADD.Name = "ADD";
+            this.ADD.Size = new System.Drawing.Size(215, 35);
+            this.ADD.TabIndex = 103;
+            this.ADD.Text = "Add product to list";
+            this.ADD.UseVisualStyleBackColor = false;
+            this.ADD.Click += new System.EventHandler(this.ADD_Click);
+            // 
             // btnbrows
             // 
             this.btnbrows.BackColor = System.Drawing.Color.Black;
+            this.btnbrows.ForeColor = System.Drawing.Color.White;
             this.btnbrows.Location = new System.Drawing.Point(6, 93);
             this.btnbrows.Name = "btnbrows";
             this.btnbrows.Size = new System.Drawing.Size(75, 32);
@@ -436,6 +449,7 @@
             this.boxDescount.TabIndex = 1;
             this.boxDescount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.boxDescount.TextChanged += new System.EventHandler(this.boxDescount_TextChanged);
+            this.boxDescount.KeyDown += new System.Windows.Forms.KeyEventHandler(this.boxDescount_KeyDown);
             this.boxDescount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.boxDescount_KeyPress);
             // 
             // boxTotalAmount
@@ -489,7 +503,6 @@
             // dataGridV
             // 
             this.dataGridV.AllowUserToAddRows = false;
-            this.dataGridV.AllowUserToDeleteRows = false;
             this.dataGridV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridV.ColumnHeadersVisible = false;
@@ -501,6 +514,8 @@
             this.dataGridV.Size = new System.Drawing.Size(953, 291);
             this.dataGridV.TabIndex = 100;
             this.dataGridV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridV_CellContentClick);
+            this.dataGridV.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridV_CellDoubleClick);
+            this.dataGridV.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dataGridV_RowsRemoved);
             this.dataGridV.SelectionChanged += new System.EventHandler(this.dataGridV_SelectionChanged);
             // 
             // textBox7
@@ -606,17 +621,6 @@
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
-            // btnAddToList
-            // 
-            this.btnAddToList.BackColor = System.Drawing.Color.Black;
-            this.btnAddToList.Location = new System.Drawing.Point(753, 17);
-            this.btnAddToList.Name = "btnAddToList";
-            this.btnAddToList.Size = new System.Drawing.Size(206, 34);
-            this.btnAddToList.TabIndex = 102;
-            this.btnAddToList.Text = "Add to list products";
-            this.btnAddToList.UseVisualStyleBackColor = false;
-            this.btnAddToList.Click += new System.EventHandler(this.btnAddToList_Click);
-            // 
             // FRM_ORDERS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
@@ -708,6 +712,6 @@
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.Button btnbrows;
         private System.Windows.Forms.Button btnClear;
-        private System.Windows.Forms.Button btnAddToList;
+        private System.Windows.Forms.Button ADD;
     }
 }
