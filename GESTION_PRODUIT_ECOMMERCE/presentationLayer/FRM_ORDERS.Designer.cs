@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.Button button1;
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.boxOrderNum = new System.Windows.Forms.TextBox();
@@ -50,39 +49,41 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnbrows = new System.Windows.Forms.Button();
             this.Pricebox = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.boxprice = new System.Windows.Forms.TextBox();
+            this.Brows = new System.Windows.Forms.Label();
+            this.boxproductyy = new System.Windows.Forms.Label();
+            this.boxDescount = new System.Windows.Forms.TextBox();
+            this.boxTotalAmount = new System.Windows.Forms.TextBox();
+            this.boxAmount = new System.Windows.Forms.TextBox();
+            this.boxquantete = new System.Windows.Forms.TextBox();
+            this.boxproduct = new System.Windows.Forms.TextBox();
             this.dataGridV = new System.Windows.Forms.DataGridView();
+            this.textBox7 = new System.Windows.Forms.TextBox();
             this.boxSomme = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.btnNewOrder = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.Brows = new System.Windows.Forms.Label();
-            button1 = new System.Windows.Forms.Button();
+            this.ppictur3 = new System.Windows.Forms.PictureBox();
+            this.ppictur2 = new System.Windows.Forms.PictureBox();
+            this.ppictur1 = new System.Windows.Forms.PictureBox();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.btnAddToList = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridV)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ppictur3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ppictur2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ppictur1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -287,21 +288,22 @@
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.Color.MediumSpringGreen;
+            this.groupBox3.Controls.Add(this.btnAddToList);
+            this.groupBox3.Controls.Add(this.btnbrows);
             this.groupBox3.Controls.Add(this.Pricebox);
             this.groupBox3.Controls.Add(this.label13);
             this.groupBox3.Controls.Add(this.label16);
             this.groupBox3.Controls.Add(this.label14);
             this.groupBox3.Controls.Add(this.label12);
-            this.groupBox3.Controls.Add(this.textBox5);
+            this.groupBox3.Controls.Add(this.boxprice);
             this.groupBox3.Controls.Add(this.Brows);
-            this.groupBox3.Controls.Add(this.label11);
-            this.groupBox3.Controls.Add(this.textBox3);
-            this.groupBox3.Controls.Add(this.textBox6);
-            this.groupBox3.Controls.Add(this.textBox4);
-            this.groupBox3.Controls.Add(this.textBox2);
-            this.groupBox3.Controls.Add(this.textBox1);
+            this.groupBox3.Controls.Add(this.boxproductyy);
+            this.groupBox3.Controls.Add(this.boxDescount);
+            this.groupBox3.Controls.Add(this.boxTotalAmount);
+            this.groupBox3.Controls.Add(this.boxAmount);
+            this.groupBox3.Controls.Add(this.boxquantete);
+            this.groupBox3.Controls.Add(this.boxproduct);
             this.groupBox3.Controls.Add(this.dataGridV);
-            this.groupBox3.Controls.Add(button1);
             this.groupBox3.Controls.Add(this.textBox7);
             this.groupBox3.ForeColor = System.Drawing.Color.White;
             this.groupBox3.Location = new System.Drawing.Point(12, 291);
@@ -310,6 +312,17 @@
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Products";
+            // 
+            // btnbrows
+            // 
+            this.btnbrows.BackColor = System.Drawing.Color.Black;
+            this.btnbrows.Location = new System.Drawing.Point(6, 93);
+            this.btnbrows.Name = "btnbrows";
+            this.btnbrows.Size = new System.Drawing.Size(75, 32);
+            this.btnbrows.TabIndex = 101;
+            this.btnbrows.Text = "...";
+            this.btnbrows.UseVisualStyleBackColor = false;
+            this.btnbrows.Click += new System.EventHandler(this.btnbrows_Click);
             // 
             // Pricebox
             // 
@@ -321,7 +334,7 @@
             this.Pricebox.Name = "Pricebox";
             this.Pricebox.Size = new System.Drawing.Size(124, 36);
             this.Pricebox.TabIndex = 2;
-            this.Pricebox.Text = "Price";
+            this.Pricebox.Text = "Price(DH)";
             this.Pricebox.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label13
@@ -376,78 +389,102 @@
             this.label12.Text = "Quantite";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBox5
+            // boxprice
             // 
-            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F);
-            this.textBox5.Location = new System.Drawing.Point(240, 90);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(124, 35);
-            this.textBox5.TabIndex = 1;
-            this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.boxprice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.boxprice.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F);
+            this.boxprice.Location = new System.Drawing.Point(240, 90);
+            this.boxprice.Name = "boxprice";
+            this.boxprice.ReadOnly = true;
+            this.boxprice.Size = new System.Drawing.Size(124, 35);
+            this.boxprice.TabIndex = 1;
+            this.boxprice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // label11
+            // Brows
             // 
-            this.label11.BackColor = System.Drawing.Color.White;
-            this.label11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.25F);
-            this.label11.ForeColor = System.Drawing.Color.Black;
-            this.label11.Location = new System.Drawing.Point(93, 54);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(147, 36);
-            this.label11.TabIndex = 2;
-            this.label11.Text = "Product";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Brows.BackColor = System.Drawing.Color.White;
+            this.Brows.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Brows.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.25F);
+            this.Brows.ForeColor = System.Drawing.Color.Black;
+            this.Brows.Location = new System.Drawing.Point(6, 54);
+            this.Brows.Name = "Brows";
+            this.Brows.Size = new System.Drawing.Size(75, 36);
+            this.Brows.TabIndex = 2;
+            this.Brows.Text = "Brows";
+            this.Brows.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBox3
+            // boxproductyy
             // 
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F);
-            this.textBox3.Location = new System.Drawing.Point(650, 90);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(156, 35);
-            this.textBox3.TabIndex = 1;
-            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.boxproductyy.BackColor = System.Drawing.Color.White;
+            this.boxproductyy.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.boxproductyy.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.25F);
+            this.boxproductyy.ForeColor = System.Drawing.Color.Black;
+            this.boxproductyy.Location = new System.Drawing.Point(81, 54);
+            this.boxproductyy.Name = "boxproductyy";
+            this.boxproductyy.Size = new System.Drawing.Size(159, 36);
+            this.boxproductyy.TabIndex = 2;
+            this.boxproductyy.Text = "Product";
+            this.boxproductyy.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBox6
+            // boxDescount
             // 
-            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F);
-            this.textBox6.Location = new System.Drawing.Point(803, 90);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(156, 35);
-            this.textBox6.TabIndex = 1;
-            this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.boxDescount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.boxDescount.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F);
+            this.boxDescount.Location = new System.Drawing.Point(650, 90);
+            this.boxDescount.Name = "boxDescount";
+            this.boxDescount.Size = new System.Drawing.Size(156, 35);
+            this.boxDescount.TabIndex = 1;
+            this.boxDescount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.boxDescount.TextChanged += new System.EventHandler(this.boxDescount_TextChanged);
+            this.boxDescount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.boxDescount_KeyPress);
             // 
-            // textBox4
+            // boxTotalAmount
             // 
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F);
-            this.textBox4.Location = new System.Drawing.Point(492, 90);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(162, 35);
-            this.textBox4.TabIndex = 1;
-            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.boxTotalAmount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.boxTotalAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F);
+            this.boxTotalAmount.Location = new System.Drawing.Point(803, 90);
+            this.boxTotalAmount.Name = "boxTotalAmount";
+            this.boxTotalAmount.ReadOnly = true;
+            this.boxTotalAmount.Size = new System.Drawing.Size(156, 35);
+            this.boxTotalAmount.TabIndex = 1;
+            this.boxTotalAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox2
+            // boxAmount
             // 
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F);
-            this.textBox2.Location = new System.Drawing.Point(364, 90);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(128, 35);
-            this.textBox2.TabIndex = 1;
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.boxAmount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.boxAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F);
+            this.boxAmount.Location = new System.Drawing.Point(492, 90);
+            this.boxAmount.Name = "boxAmount";
+            this.boxAmount.ReadOnly = true;
+            this.boxAmount.Size = new System.Drawing.Size(162, 35);
+            this.boxAmount.TabIndex = 1;
+            this.boxAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.boxAmount.TextChanged += new System.EventHandler(this.boxAmount_TextChanged);
             // 
-            // textBox1
+            // boxquantete
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F);
-            this.textBox1.Location = new System.Drawing.Point(93, 90);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(147, 35);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.boxquantete.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.boxquantete.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F);
+            this.boxquantete.Location = new System.Drawing.Point(364, 90);
+            this.boxquantete.Name = "boxquantete";
+            this.boxquantete.Size = new System.Drawing.Size(128, 35);
+            this.boxquantete.TabIndex = 1;
+            this.boxquantete.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.boxquantete.TextChanged += new System.EventHandler(this.boxquantete_TextChanged);
+            this.boxquantete.KeyDown += new System.Windows.Forms.KeyEventHandler(this.boxquantete_KeyDown);
+            this.boxquantete.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.boxquantete_KeyPress);
+            this.boxquantete.KeyUp += new System.Windows.Forms.KeyEventHandler(this.boxquantete_KeyUp);
+            // 
+            // boxproduct
+            // 
+            this.boxproduct.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.boxproduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F);
+            this.boxproduct.Location = new System.Drawing.Point(81, 90);
+            this.boxproduct.Name = "boxproduct";
+            this.boxproduct.ReadOnly = true;
+            this.boxproduct.Size = new System.Drawing.Size(159, 35);
+            this.boxproduct.TabIndex = 1;
+            this.boxproduct.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // dataGridV
             // 
@@ -463,6 +500,17 @@
             this.dataGridV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridV.Size = new System.Drawing.Size(953, 291);
             this.dataGridV.TabIndex = 100;
+            this.dataGridV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridV_CellContentClick);
+            this.dataGridV.SelectionChanged += new System.EventHandler(this.dataGridV_SelectionChanged);
+            // 
+            // textBox7
+            // 
+            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F);
+            this.textBox7.Location = new System.Drawing.Point(6, 90);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(75, 35);
+            this.textBox7.TabIndex = 1;
+            this.textBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // boxSomme
             // 
@@ -491,7 +539,7 @@
             // 
             // btnNewOrder
             // 
-            this.btnNewOrder.Location = new System.Drawing.Point(80, 727);
+            this.btnNewOrder.Location = new System.Drawing.Point(12, 727);
             this.btnNewOrder.Name = "btnNewOrder";
             this.btnNewOrder.Size = new System.Drawing.Size(135, 50);
             this.btnNewOrder.TabIndex = 5;
@@ -501,7 +549,7 @@
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(362, 727);
+            this.btnExit.Location = new System.Drawing.Point(294, 727);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(135, 50);
             this.btnExit.TabIndex = 6;
@@ -511,72 +559,63 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(221, 726);
+            this.btnSave.Location = new System.Drawing.Point(153, 726);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(135, 50);
             this.btnSave.TabIndex = 5;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
             // 
-            // pictureBox4
+            // ppictur3
             // 
-            this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.pictureBox4.Location = new System.Drawing.Point(985, 550);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(138, 123);
-            this.pictureBox4.TabIndex = 2;
-            this.pictureBox4.TabStop = false;
+            this.ppictur3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.ppictur3.Location = new System.Drawing.Point(985, 550);
+            this.ppictur3.Name = "ppictur3";
+            this.ppictur3.Size = new System.Drawing.Size(138, 123);
+            this.ppictur3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ppictur3.TabIndex = 2;
+            this.ppictur3.TabStop = false;
             // 
-            // pictureBox3
+            // ppictur2
             // 
-            this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.pictureBox3.Location = new System.Drawing.Point(985, 422);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(138, 122);
-            this.pictureBox3.TabIndex = 2;
-            this.pictureBox3.TabStop = false;
+            this.ppictur2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.ppictur2.Location = new System.Drawing.Point(985, 422);
+            this.ppictur2.Name = "ppictur2";
+            this.ppictur2.Size = new System.Drawing.Size(138, 122);
+            this.ppictur2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ppictur2.TabIndex = 2;
+            this.ppictur2.TabStop = false;
             // 
-            // pictureBox2
+            // ppictur1
             // 
-            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.pictureBox2.Location = new System.Drawing.Point(985, 291);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(138, 125);
-            this.pictureBox2.TabIndex = 2;
-            this.pictureBox2.TabStop = false;
+            this.ppictur1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.ppictur1.Location = new System.Drawing.Point(985, 291);
+            this.ppictur1.Name = "ppictur1";
+            this.ppictur1.Size = new System.Drawing.Size(138, 125);
+            this.ppictur1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ppictur1.TabIndex = 2;
+            this.ppictur1.TabStop = false;
             // 
-            // textBox7
+            // btnClear
             // 
-            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F);
-            this.textBox7.Location = new System.Drawing.Point(6, 90);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(87, 35);
-            this.textBox7.TabIndex = 1;
-            this.textBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnClear.Location = new System.Drawing.Point(431, 727);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(134, 50);
+            this.btnClear.TabIndex = 7;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
-            // Brows
+            // btnAddToList
             // 
-            this.Brows.BackColor = System.Drawing.Color.White;
-            this.Brows.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Brows.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.25F);
-            this.Brows.ForeColor = System.Drawing.Color.Black;
-            this.Brows.Location = new System.Drawing.Point(6, 54);
-            this.Brows.Name = "Brows";
-            this.Brows.Size = new System.Drawing.Size(87, 36);
-            this.Brows.TabIndex = 2;
-            this.Brows.Text = "Brows";
-            this.Brows.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // button1
-            // 
-            button1.BackColor = System.Drawing.Color.Black;
-            button1.Location = new System.Drawing.Point(15, 95);
-            button1.Margin = new System.Windows.Forms.Padding(0);
-            button1.Name = "button1";
-            button1.Size = new System.Drawing.Size(68, 27);
-            button1.TabIndex = 3;
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnAddToList.BackColor = System.Drawing.Color.Black;
+            this.btnAddToList.Location = new System.Drawing.Point(753, 17);
+            this.btnAddToList.Name = "btnAddToList";
+            this.btnAddToList.Size = new System.Drawing.Size(206, 34);
+            this.btnAddToList.TabIndex = 102;
+            this.btnAddToList.Text = "Add to list products";
+            this.btnAddToList.UseVisualStyleBackColor = false;
+            this.btnAddToList.Click += new System.EventHandler(this.btnAddToList_Click);
             // 
             // FRM_ORDERS
             // 
@@ -584,15 +623,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Aqua;
             this.ClientSize = new System.Drawing.Size(1142, 789);
+            this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnNewOrder);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.boxSomme);
-            this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.ppictur3);
+            this.Controls.Add(this.ppictur2);
+            this.Controls.Add(this.ppictur1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -611,9 +651,9 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridV)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ppictur3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ppictur2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ppictur1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -641,9 +681,9 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox ppictur1;
+        private System.Windows.Forms.PictureBox ppictur2;
+        private System.Windows.Forms.PictureBox ppictur3;
         private System.Windows.Forms.Button browsCus;
         private System.Windows.Forms.TextBox boxSomme;
         private System.Windows.Forms.Label label9;
@@ -652,19 +692,22 @@
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.DataGridView dataGridV;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label boxproductyy;
+        private System.Windows.Forms.TextBox boxproduct;
         private System.Windows.Forms.Label Pricebox;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox boxprice;
+        private System.Windows.Forms.TextBox boxAmount;
+        private System.Windows.Forms.TextBox boxquantete;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox boxTotalAmount;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox boxDescount;
         private System.Windows.Forms.Label Brows;
         private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.Button btnbrows;
+        private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Button btnAddToList;
     }
 }

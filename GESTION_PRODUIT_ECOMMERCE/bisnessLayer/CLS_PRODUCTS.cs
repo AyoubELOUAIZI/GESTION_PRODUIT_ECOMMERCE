@@ -15,6 +15,14 @@ namespace GESTION_PRODUIT_ECOMMERCE.bisnessLayer
     internal class CLS_PRODUCTS
     {
 
+        public DataTable GET_ALL_PRODUCTS()
+        {
+            DataAccessLayer DAL = new DataAccessLayer();
+            DataTable dt = new DataTable();
+            dt = DAL.SelectData("GET_ALL_PRODUCTS", null);
+            return dt;
+        }
+
         public DataTable GetAllGategores()
         {
             DataAccessLayer DAL = new DataAccessLayer();       

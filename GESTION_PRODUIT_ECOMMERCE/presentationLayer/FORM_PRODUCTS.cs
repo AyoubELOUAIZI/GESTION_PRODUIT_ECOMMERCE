@@ -15,10 +15,11 @@ namespace GESTION_PRODUIT_ECOMMERCE.presentationLayer
 {
     public partial class FORM_PRODUCTS : Form
     {
+        CLS_PRODUCTS PRD=new CLS_PRODUCTS();
         public FORM_PRODUCTS()
         {
             InitializeComponent();
-            dataGridView1.DataSource = GET_ALL_PRODUCTS();
+            dataGridView1.DataSource = PRD.GET_ALL_PRODUCTS();
 
         }
 
@@ -38,13 +39,7 @@ namespace GESTION_PRODUIT_ECOMMERCE.presentationLayer
             this.pictureBox3.Image = Image.FromStream(ms3);
 
         }
-        public DataTable GET_ALL_PRODUCTS()
-        {
-            DataAccessLayer DAL = new DataAccessLayer();
-            DataTable dt = new DataTable();
-            dt = DAL.SelectData("GET_ALL_PRODUCTS", null);
-            return dt;
-        }
+       
 
         private void pictureBox4_Click(object sender, EventArgs e)
         {
@@ -77,7 +72,7 @@ namespace GESTION_PRODUIT_ECOMMERCE.presentationLayer
                 CLS_PRODUCTS PRD = new CLS_PRODUCTS();
                 PRD.DeleteProduct(int.Parse(this.dataGridView1.CurrentRow.Cells[0].Value.ToString()));
                 MessageBox.Show("deleted seccessfully");
-                dataGridView1.DataSource = GET_ALL_PRODUCTS();
+                dataGridView1.DataSource = PRD.GET_ALL_PRODUCTS();
             }
             else
             {
@@ -157,8 +152,8 @@ namespace GESTION_PRODUIT_ECOMMERCE.presentationLayer
 
         private void btnRefrech_Click(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = GET_ALL_PRODUCTS();
             CLS_PRODUCTS PRD = new CLS_PRODUCTS();
+            dataGridView1.DataSource = PRD.GET_ALL_PRODUCTS();
 
             byte[] img1 = (byte[])PRD.GET_PRODUCT_IMAGE1(int.Parse(this.dataGridView1.CurrentRow.Cells[0].Value.ToString())).Rows[0][0];
             MemoryStream ms = new MemoryStream(img1);

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -16,6 +17,8 @@ namespace GESTION_PRODUIT_ECOMMERCE.presentationLayer
     public partial class FRM_ORDERS : Form
     {
         CLS_ORDERS order=new CLS_ORDERS();
+        double Amount;
+        int AvailabelQte;
         DataTable Dt=new DataTable();
         public FRM_ORDERS()
         {
@@ -82,7 +85,254 @@ namespace GESTION_PRODUIT_ECOMMERCE.presentationLayer
 
         private void button1_Click(object sender, EventArgs e)
         {
+            FRM_ALL_PRODUCTS ALL_PRODUCTS= new FRM_ALL_PRODUCTS();
+            ALL_PRODUCTS.ShowDialog();
+           
+            boxproduct.Text = ALL_PRODUCTS.dgvproducts.CurrentRow.Cells[1].Value.ToString();
+            boxprice.Text = ALL_PRODUCTS.dgvproducts.CurrentRow.Cells[4].Value.ToString();
+            AvailabelQte =Convert.ToInt32( ALL_PRODUCTS.dgvproducts.CurrentRow.Cells[4].Value.ToString());
+            boxquantete.Focus();
+          //  boxquantete.Text = ALL_PRODUCTS.dgvproducts.CurrentRow.Cells[3].Value.ToString();
+          
+           /* byte[] ppicture1 = (byte[])ALL_PRODUCTS.dgvproducts.CurrentRow.Cells[6].Value;
+            MemoryStream ms = new MemoryStream(ppicture1);
+            pictureBox1.Image = Image.FromStream(ms);
+           */
+        }
 
+        private void dataGridV_SelectionChanged(object sender, EventArgs e)
+        {
+          /*  CLS_PRODUCTS PRD = new CLS_PRODUCTS();
+
+            byte[] img1 = (byte[])PRD.GET_PRODUCT_IMAGE1(int.Parse(this.dataGridV.CurrentRow.Cells[0].Value.ToString())).Rows[0][0];
+            MemoryStream ms = new MemoryStream(img1);
+            this.ppictur1.Image = Image.FromStream(ms);
+            byte[] img2 = (byte[])PRD.GET_PRODUCT_IMAGE2(int.Parse(this.dataGridV.CurrentRow.Cells[0].Value.ToString())).Rows[0][0];
+            MemoryStream ms2 = new MemoryStream(img2);
+            this.ppictur2.Image = Image.FromStream(ms2);
+
+            byte[] img3 = (byte[])PRD.GET_PRODUCT_IMAGE3(int.Parse(this.dataGridV.CurrentRow.Cells[0].Value.ToString())).Rows[0][0];
+            MemoryStream ms3 = new MemoryStream(img3);
+            this.ppictur3.Image = Image.FromStream(ms3);*/
+        }
+
+        private void dataGridV_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void boxDescount_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+                char decimaleSeparater = Convert.ToChar(CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator);
+            if (boxDescount.Text != "")
+            {
+                if (!Char.IsDigit(e.KeyChar) && e.KeyChar != 8 && e.KeyChar != decimaleSeparater)
+                {
+                    e.Handled = true;
+                }
+            }else
+            {
+                if (!Char.IsDigit(e.KeyChar) && e.KeyChar != 8 )
+                {
+                    e.Handled = true;
+                }
+            }
+          
+
+           
+        }
+
+        private void boxquantete_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char decimaleSeparater = Convert.ToChar(CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator);
+            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != 8)
+            {
+                e.Handled = true;
+            }
+
+           
+        }
+
+        private void boxquantete_TextChanged(object sender, EventArgs e)
+        {
+            if (boxquantete.Text == "")
+            {
+                boxAmount.Text = "";
+                Amount = 0;
+                boxTotalAmount.Text = "";
+                boxDescount.Text = "";
+                
+
+            }
+        }
+
+        private void boxquantete_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter && boxquantete.Text != string.Empty)
+            {
+                if (AvailabelQte>=int.Parse(boxquantete.Text))
+                {
+                   boxDescount.Focus();
+                }
+                else
+                {
+                    MessageBox.Show("Sorry this Quantity "+ boxquantete.Text + " does not existe on stock","Quantity error",MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    boxquantete.Focus();
+                   // boxAmount.Text = "";
+                }
+            } 
+        }
+
+        private void boxquantete_KeyUp(object sender, KeyEventArgs e)
+        {
+            CalculateAmount();
+        }
+
+        void  CalculateAmount()
+        {
+            if (boxquantete.Text != string.Empty && AvailabelQte >= double.Parse(boxquantete.Text))
+            {
+              Amount = int.Parse(boxquantete.Text) * double.Parse(boxprice.Text);
+             boxAmount.Text=Amount.ToString();
+            }
+            else if(boxquantete.Text != string.Empty)
+            {
+                if (boxproduct.Text != string.Empty)
+                {
+                    MessageBox.Show("Sorry this Quantity " + boxquantete.Text + " does not existe on stock\nthe max Quantity possible is "+AvailabelQte, "Quantity error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    boxquantete.Focus();
+                    boxquantete.Text = "";
+                   // boxAmount.Text = "";
+                }
+                else
+                {
+                    MessageBox.Show("Sorry you did not chose a Product ", "chose Product", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    boxquantete.Text = "";
+                    boxAmount.Text = "";
+                    boxTotalAmount.Text = "";
+                    boxTotalAmount.Text = "";
+                    btnbrows.Focus();
+                    btnbrows.BackColor= Color.Goldenrod;
+                      
+                    
+                    
+                }
+            }
+
+        }
+
+        private void btnbrows_Click(object sender, EventArgs e)
+        {
+            FRM_ALL_PRODUCTS ALL_PRODUCTS = new FRM_ALL_PRODUCTS();
+            CLS_PRODUCTS PRD=new CLS_PRODUCTS();
+            ALL_PRODUCTS.ShowDialog();
+
+            boxproduct.Text = ALL_PRODUCTS.dgvproducts.CurrentRow.Cells[1].Value.ToString();
+            boxprice.Text = ALL_PRODUCTS.dgvproducts.CurrentRow.Cells[4].Value.ToString();
+            AvailabelQte = Convert.ToInt32(ALL_PRODUCTS.dgvproducts.CurrentRow.Cells[3].Value.ToString());
+
+            byte[] img1 = (byte[])PRD.GET_PRODUCT_IMAGE1(int.Parse(ALL_PRODUCTS.dgvproducts.CurrentRow.Cells[0].Value.ToString())).Rows[0][0];
+            MemoryStream ms = new MemoryStream(img1);
+            ppictur1.Image = Image.FromStream(ms);
+
+            byte[] img2 = (byte[])PRD.GET_PRODUCT_IMAGE2(int.Parse(ALL_PRODUCTS.dgvproducts.CurrentRow.Cells[0].Value.ToString())).Rows[0][0];
+            MemoryStream ms2 = new MemoryStream(img2);
+            ppictur2.Image = Image.FromStream(ms2);
+
+            byte[] img3 = (byte[])PRD.GET_PRODUCT_IMAGE3(int.Parse(ALL_PRODUCTS.dgvproducts.CurrentRow.Cells[0].Value.ToString())).Rows[0][0];
+            MemoryStream ms3 = new MemoryStream(img3);
+            ppictur3.Image = Image.FromStream(ms3);
+          
+
+            boxquantete.Focus();
+
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            ClearBoxes();
+        }
+
+        void ClearBoxes()
+        {
+
+            boxproduct.Text = "";
+            boxprice.Text = "";
+            boxquantete.Text = "";
+            boxAmount.Text = "";
+            boxDescount.Text = "";
+            boxTotalAmount.Text = "";
+        }
+
+        void CalculateTotalAmount()
+        {          
+            double totalAmount=Amount-(Amount*double.Parse(boxDescount.Text)/100);
+            boxTotalAmount.Text= totalAmount.ToString();
+        }
+
+        private void boxDescount_TextChanged(object sender, EventArgs e)
+        {
+           
+
+
+            if (boxDescount.Text == "")
+            {
+                boxTotalAmount.Text = "";
+                return;
+            }
+            if(boxAmount.Text.Length==0)
+            {
+                MessageBox.Show("Sorry you did not specify the Quantity", "Quantity error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                boxDescount.Text = "";
+                boxquantete.Focus();
+                return;
+
+            }
+
+            if(double.Parse(boxDescount.Text)<0 || double.Parse(boxDescount.Text) > 100)
+            {
+                MessageBox.Show("Sorry Descount shoud be between 0% end 100%", "Descount error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                boxDescount.Text = "";
+                return;
+            }
+
+            CalculateTotalAmount();
+
+        }
+
+        private void boxAmount_TextChanged(object sender, EventArgs e)
+        {
+           
+                boxDescount.Text = "";
+                boxTotalAmount.Text = "";
+           
+
+          
+        }
+
+        private void btnAddToList_Click(object sender, EventArgs e)
+        {
+            if (boxTotalAmount.Text == "")
+            {
+                return;
+            }
+
+            //why this problem//
+            DataRow r =  Dt.NewRow();
+            r[0] = boxproduct.Text;
+            r[1] = boxprice.Text;
+            r[2] = boxquantete.Text;
+            r[3] = boxAmount.Text;
+            r[4] = boxDescount.Text;
+            r[5] = boxTotalAmount.Text;
+            Dt.Rows.Add( r);
+            dataGridV.DataSource = Dt;
+            ClearBoxes();
+            //calculate somme
+            boxSomme.Text=(from DataGridViewRow row in dataGridV.Rows
+                           where row.Cells[5].FormattedValue.ToString() != string.Empty
+                           select Convert.ToDouble(row.Cells[5].FormattedValue)).Sum().ToString();
         }
     }
 }
