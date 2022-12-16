@@ -186,8 +186,45 @@ INSERT INTO [ORDERS_DETAILS]
            ,@AMOUNT
            ,@TOTALAMOUNT)
 -------------------------------------------------------------------------------------------
-
+create proc VerifyQte 
+@idproduct int ,@Qteinput int
+as
+select * from PRODUCTS 
+where IdProduct=@idproduct and QteInStock >= @Qteinput
 -------------------------------------------------------------------------------------------
+USE [ECOM]
+GO
+/****** Object:  StoredProcedure [dbo].[Add_order_details]    Script Date: 12/16/2022 2:57:43 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER proc [dbo].[Add_order_details]
+@IdProduct int,
+@IdOrder  int,
+@Qte int,
+@DESCOUNT FLOAT,
+@AMOUNT float,
+@TOTALAMOUNT FLOAT
+AS
+begin
+INSERT INTO [ORDERS_DETAILS]
+           ([IdProduct]
+           ,[IdOrder]
+           ,[Qte]
+           ,[DESCOUNT]
+           ,[AMOUNT]
+           ,[TOTALAMOUNT])
+     VALUES
+           (@IdProduct
+           ,@IdOrder
+           ,@Qte
+           ,@DESCOUNT
+           ,@AMOUNT
+           ,@TOTALAMOUNT)
+
+update PRODUCTS set QteInStock=QteInStock-@Qte where IdProduct=@IdProduct
+end
 -------------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------

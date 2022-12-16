@@ -66,6 +66,22 @@ namespace GESTION_PRODUIT_ECOMMERCE.bisnessLayer
 
         }
 
+        public DataTable VerifyQte(int idproduct, int Qteinput)
+        {
+            DataAccessLayer DAL = new DataAccessLayer();
+            SqlParameter[] param = new SqlParameter[2];
+
+            param[0] = new SqlParameter("@idproduct", SqlDbType.Int);
+            param[0].Value = idproduct;
+
+            param[1] = new SqlParameter("@Qteinput", SqlDbType.Int);
+            param[1].Value = Qteinput;
+
+            DataTable dt = new DataTable();
+            dt = DAL.SelectData("VerifyQte", param);
+            return dt;
+        }
+
 
     }
 

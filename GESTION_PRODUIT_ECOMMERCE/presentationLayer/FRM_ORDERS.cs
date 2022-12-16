@@ -42,30 +42,42 @@ namespace GESTION_PRODUIT_ECOMMERCE.presentationLayer
             Dt.Columns.Add("Amount");
             Dt.Columns.Add("Descount");
             Dt.Columns.Add("Total Amount");
+            Dt.Columns.Add("AvailabelQte");
             dataGridV.DataSource = Dt;
         }
 
         void ResizedataGridV()
         {
             this.dataGridV.RowHeadersWidth = 75;
-            this.dataGridV.Columns[1].Width = 182;
-            this.dataGridV.Columns[2].Width = 105;
+            this.dataGridV.Columns[1].Width = 133;
+            this.dataGridV.Columns[2].Width = 112;
             this.dataGridV.Columns[3].Width = 128;
             this.dataGridV.Columns[4].Width = 158;
             this.dataGridV.Columns[5].Width = 153;
-            this.dataGridV.Columns[6].Width = 156;
+            this.dataGridV.Columns[6].Width = 152;
+          //  this.dataGridV.Columns[7].Width = 4;
             dataGridV.Columns[0].Visible= false;
+            dataGridV.Columns[7].Visible= false;
         }
 
         private void FRM_ORDERS_Load(object sender, EventArgs e)
         {
             ResizedataGridV();
             boxSeller.Text = Program.SellerName;
+            btnSave.Enabled= false;
         }
 
         private void btnNewOrder_Click(object sender, EventArgs e)
         {
+            if(btnNewOrder.Text== "Cancel Order")
+            {
+                btnNewOrder.Text = "New Order";
+                btnSave.Enabled = false;
+                return;
+            }
             boxOrderNum.Text = order.GET_LAST_ORDER_ID().Rows[0][0].ToString();
+            btnSave.Enabled= true;
+            btnNewOrder.Text = "Cancel Order";
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -265,6 +277,7 @@ namespace GESTION_PRODUIT_ECOMMERCE.presentationLayer
 
         void CalculateTotalAmount()
         {
+            double Amount = double.Parse(boxAmount.Text);
             double totalAmount = Amount - (Amount * double.Parse(boxDescount.Text) / 100);
             boxTotalAmount.Text = totalAmount.ToString();
         }
@@ -315,7 +328,14 @@ namespace GESTION_PRODUIT_ECOMMERCE.presentationLayer
                     return;
                 }
 
-            }  
+            } 
+            
+            if(order.VerifyQte(productId,int.Parse(boxquantete.Text)).Rows.Count < 1)
+            {
+                MessageBox.Show("Sorry this Quantity " + boxquantete.Text + " does not existe on stock", "Quantity error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                boxquantete.Focus();
+                return;
+            }
 
 
 
@@ -329,13 +349,19 @@ namespace GESTION_PRODUIT_ECOMMERCE.presentationLayer
             r[4] = boxAmount.Text;
             r[5] = boxDescount.Text;
             r[6] = boxTotalAmount.Text;
+            r[7]=AvailabelQte.ToString();
             Dt.Rows.Add(r);
             dataGridV.DataSource = Dt;
             ClearBoxes();
+            CalculateSomme();
+        }
+
+        void CalculateSomme()
+        {
             //calculate somme
             boxSomme.Text = (from DataGridViewRow row in dataGridV.Rows
-                             where row.Cells[5].FormattedValue.ToString() != string.Empty
-                             select Convert.ToDouble(row.Cells[5].FormattedValue)).Sum().ToString();
+                             where row.Cells[6].FormattedValue.ToString() != string.Empty
+                             select Convert.ToDouble(row.Cells[6].FormattedValue)).Sum().ToString();
 
         }
 
@@ -360,6 +386,7 @@ namespace GESTION_PRODUIT_ECOMMERCE.presentationLayer
                 boxAmount.Text = dataGridV.CurrentRow.Cells[4].Value.ToString();
                 boxDescount.Text = dataGridV.CurrentRow.Cells[5].Value.ToString();
                 boxTotalAmount.Text = dataGridV.CurrentRow.Cells[6].Value.ToString();
+                AvailabelQte=int.Parse(dataGridV.CurrentRow.Cells[7].Value.ToString());
                 dataGridV.Rows.RemoveAt(dataGridV.CurrentRow.Index);
                 boxquantete.Focus();
 
@@ -382,10 +409,7 @@ namespace GESTION_PRODUIT_ECOMMERCE.presentationLayer
         private void dataGridV_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
         {
             //calculate somme
-            boxSomme.Text = (from DataGridViewRow row in dataGridV.Rows
-                             where row.Cells[5].FormattedValue.ToString() != string.Empty
-                             select Convert.ToDouble(row.Cells[5].FormattedValue)).Sum().ToString();
-
+            CalculateSomme();
         }
 
         private void editThisLineToolStripMenuItem_Click(object sender, EventArgs e)
@@ -395,20 +419,19 @@ namespace GESTION_PRODUIT_ECOMMERCE.presentationLayer
 
         private void btndeletSelecteditem_Click(object sender, EventArgs e)
         {
+           // MessageBox.Show("Available is"+AvailabelQte.ToString());
             dataGridV_CellDoubleClick(sender, e);
             ClearBoxes();
         }
 
         private void btnDeletAll_Click(object sender, EventArgs e)
         {
-           
-            for (int i = 0; i < dataGridV.Rows.Count; i++)
+
+            while(dataGridV.Rows.Count != 0)
             {
                 btndeletSelecteditem_Click(sender, e);
             }
-
-            dataGridV_CellDoubleClick(sender, e);
-            ClearBoxes();
+            MessageBox.Show("the list is empty now");
         }
 
         private void deletToolStripMenuItem_Click(object sender, EventArgs e)
@@ -428,6 +451,24 @@ namespace GESTION_PRODUIT_ECOMMERCE.presentationLayer
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            if (textBoxFirstName.Text.Length == 0)
+            {
+                MessageBox.Show("please Chose a Customer befor saving", "chose customer", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                browsCus.Focus();
+                browsCus.BackColor= Color.Red;
+                return;
+            }
+            if (dataGridV.Rows.Count == 0)
+            {
+                MessageBox.Show("please add new new product to the list befor saving", "empty list", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (boxproduct.Text.Length > 0)
+            {
+                MessageBox.Show("please complet your order first befor save or click \nButton Clear", "save Order", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             CLS_ORDERS ORDERS= new CLS_ORDERS();
             ORDERS.AddOrdere(int.Parse(boxOrderNum.Text),dateTimePicker1.Value,CustomerId ,boxSeller.Text);
            // ORDERS.Add_order_details(productId,int.Parse(boxOrderNum.Text),int.Parse(boxquantete.Text),float.Parse(boxDescount.Text),float.Parse(boxAmount.Text),float.Parse(boxTotalAmount.Text));
@@ -442,8 +483,25 @@ namespace GESTION_PRODUIT_ECOMMERCE.presentationLayer
                                          float.Parse(dataGridV.Rows[i].Cells[6].Value.ToString()));
             }  
             MessageBox.Show("Order added successfuly", "add order", MessageBoxButtons.OK, MessageBoxIcon.Information);
-           
+           btnSave.Enabled = false;
+           btnNewOrder.Text = "New Order";
+            ClearCustemerandOrderNumandDatagrid();
+            btnDeletAll_Click(sender, e);
+        }
 
+        void ClearCustemerandOrderNumandDatagrid()
+        {
+            textBoxFirstName.Text = "";
+            textBoxlastName.Text = "";
+            textBoxCity.Text = "";
+            textBoxPhone.Text = "";
+            textBoxEmail.Text = "";
+            boxOrderNum.Text = "";
+            pictureBox1.Image = Properties.Resources.Avatar;
+            ppictur1.Image = null;
+            ppictur2.Image = null;
+            ppictur3.Image= null;
+           
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)

@@ -381,9 +381,9 @@
             this.Pricebox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Pricebox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.25F);
             this.Pricebox.ForeColor = System.Drawing.Color.Black;
-            this.Pricebox.Location = new System.Drawing.Point(259, 54);
+            this.Pricebox.Location = new System.Drawing.Point(252, 54);
             this.Pricebox.Name = "Pricebox";
-            this.Pricebox.Size = new System.Drawing.Size(105, 36);
+            this.Pricebox.Size = new System.Drawing.Size(112, 36);
             this.Pricebox.TabIndex = 2;
             this.Pricebox.Text = "Price(DH)";
             this.Pricebox.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -444,10 +444,10 @@
             // 
             this.boxprice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.boxprice.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F);
-            this.boxprice.Location = new System.Drawing.Point(259, 90);
+            this.boxprice.Location = new System.Drawing.Point(252, 90);
             this.boxprice.Name = "boxprice";
             this.boxprice.ReadOnly = true;
-            this.boxprice.Size = new System.Drawing.Size(105, 35);
+            this.boxprice.Size = new System.Drawing.Size(112, 35);
             this.boxprice.TabIndex = 1;
             this.boxprice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -472,7 +472,7 @@
             this.boxproductyy.ForeColor = System.Drawing.Color.Black;
             this.boxproductyy.Location = new System.Drawing.Point(81, 54);
             this.boxproductyy.Name = "boxproductyy";
-            this.boxproductyy.Size = new System.Drawing.Size(178, 36);
+            this.boxproductyy.Size = new System.Drawing.Size(171, 36);
             this.boxproductyy.TabIndex = 2;
             this.boxproductyy.Text = "Product";
             this.boxproductyy.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -534,7 +534,7 @@
             this.boxproduct.Location = new System.Drawing.Point(81, 90);
             this.boxproduct.Name = "boxproduct";
             this.boxproduct.ReadOnly = true;
-            this.boxproduct.Size = new System.Drawing.Size(178, 35);
+            this.boxproduct.Size = new System.Drawing.Size(171, 35);
             this.boxproduct.TabIndex = 1;
             this.boxproduct.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
