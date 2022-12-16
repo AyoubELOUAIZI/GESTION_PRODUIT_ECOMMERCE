@@ -59,7 +59,7 @@ namespace GESTION_PRODUIT_ECOMMERCE.dataAccessLayer
         //Methode to Insert Update delete data from data base
         public void ExecuteCommand(string stord_procedure, SqlParameter[] param)
         {
-            this.close();
+           // this.close();
             this.open(); //to open connection
             SqlCommand cmd=new SqlCommand();
             cmd.CommandType = CommandType.StoredProcedure;

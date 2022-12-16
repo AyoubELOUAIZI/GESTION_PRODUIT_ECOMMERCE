@@ -42,6 +42,7 @@ namespace GESTION_PRODUIT_ECOMMERCE.presentationLayer
               FormMain.getFormMain.usersToolStripMenuItem.Enabled = true;
               FormMain.getFormMain.buckupToolStripMenuItem.Enabled = true;
               FormMain.getFormMain.restoreBackupToolStripMenuItem.Enabled = true;
+                Program.SellerName = dt.Rows[0]["SellerName"].ToString();
                this.Close();
             }
             else

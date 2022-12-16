@@ -197,6 +197,7 @@
             this.manageSellsToolStripMenuItem.Name = "manageSellsToolStripMenuItem";
             this.manageSellsToolStripMenuItem.Size = new System.Drawing.Size(324, 42);
             this.manageSellsToolStripMenuItem.Text = "manage sells";
+            this.manageSellsToolStripMenuItem.Click += new System.EventHandler(this.manageSellsToolStripMenuItem_Click);
             // 
             // usersToolStripMenuItem
             // 

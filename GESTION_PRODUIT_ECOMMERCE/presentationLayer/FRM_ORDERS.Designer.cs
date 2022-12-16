@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.boxOrderNum = new System.Windows.Forms.TextBox();
@@ -49,6 +50,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnDeletAll = new System.Windows.Forms.Button();
+            this.btndeletSelecteditem = new System.Windows.Forms.Button();
             this.ADD = new System.Windows.Forms.Button();
             this.btnbrows = new System.Windows.Forms.Button();
             this.Pricebox = new System.Windows.Forms.Label();
@@ -65,6 +68,12 @@
             this.boxquantete = new System.Windows.Forms.TextBox();
             this.boxproduct = new System.Windows.Forms.TextBox();
             this.dataGridV = new System.Windows.Forms.DataGridView();
+            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.deletToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.deleteAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.boxSomme = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -81,6 +90,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridV)).BeginInit();
+            this.contextMenuStrip2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ppictur3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ppictur2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ppictur1)).BeginInit();
@@ -100,6 +110,7 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Order Informations";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // dateTimePicker1
             // 
@@ -130,6 +141,7 @@
             // 
             this.boxSeller.Location = new System.Drawing.Point(175, 154);
             this.boxSeller.Name = "boxSeller";
+            this.boxSeller.ReadOnly = true;
             this.boxSeller.Size = new System.Drawing.Size(310, 29);
             this.boxSeller.TabIndex = 1;
             // 
@@ -288,6 +300,8 @@
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.Color.MediumSpringGreen;
+            this.groupBox3.Controls.Add(this.btnDeletAll);
+            this.groupBox3.Controls.Add(this.btndeletSelecteditem);
             this.groupBox3.Controls.Add(this.ADD);
             this.groupBox3.Controls.Add(this.btnbrows);
             this.groupBox3.Controls.Add(this.Pricebox);
@@ -312,6 +326,30 @@
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Products";
+            // 
+            // btnDeletAll
+            // 
+            this.btnDeletAll.BackColor = System.Drawing.Color.Black;
+            this.btnDeletAll.ForeColor = System.Drawing.Color.White;
+            this.btnDeletAll.Location = new System.Drawing.Point(302, 16);
+            this.btnDeletAll.Name = "btnDeletAll";
+            this.btnDeletAll.Size = new System.Drawing.Size(215, 35);
+            this.btnDeletAll.TabIndex = 103;
+            this.btnDeletAll.Text = "Delete All List";
+            this.btnDeletAll.UseVisualStyleBackColor = false;
+            this.btnDeletAll.Click += new System.EventHandler(this.btnDeletAll_Click);
+            // 
+            // btndeletSelecteditem
+            // 
+            this.btndeletSelecteditem.BackColor = System.Drawing.Color.Black;
+            this.btndeletSelecteditem.ForeColor = System.Drawing.Color.White;
+            this.btndeletSelecteditem.Location = new System.Drawing.Point(523, 16);
+            this.btndeletSelecteditem.Name = "btndeletSelecteditem";
+            this.btndeletSelecteditem.Size = new System.Drawing.Size(215, 35);
+            this.btndeletSelecteditem.TabIndex = 103;
+            this.btndeletSelecteditem.Text = "Delete selected iteme";
+            this.btndeletSelecteditem.UseVisualStyleBackColor = false;
+            this.btndeletSelecteditem.Click += new System.EventHandler(this.btndeletSelecteditem_Click);
             // 
             // ADD
             // 
@@ -343,9 +381,9 @@
             this.Pricebox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Pricebox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.25F);
             this.Pricebox.ForeColor = System.Drawing.Color.Black;
-            this.Pricebox.Location = new System.Drawing.Point(240, 54);
+            this.Pricebox.Location = new System.Drawing.Point(259, 54);
             this.Pricebox.Name = "Pricebox";
-            this.Pricebox.Size = new System.Drawing.Size(124, 36);
+            this.Pricebox.Size = new System.Drawing.Size(105, 36);
             this.Pricebox.TabIndex = 2;
             this.Pricebox.Text = "Price(DH)";
             this.Pricebox.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -358,7 +396,7 @@
             this.label13.ForeColor = System.Drawing.Color.Black;
             this.label13.Location = new System.Drawing.Point(650, 54);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(156, 36);
+            this.label13.Size = new System.Drawing.Size(153, 36);
             this.label13.TabIndex = 2;
             this.label13.Text = "Descount(%)";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -384,7 +422,7 @@
             this.label14.ForeColor = System.Drawing.Color.Black;
             this.label14.Location = new System.Drawing.Point(492, 54);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(162, 36);
+            this.label14.Size = new System.Drawing.Size(158, 36);
             this.label14.TabIndex = 2;
             this.label14.Text = "Amount";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -406,10 +444,10 @@
             // 
             this.boxprice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.boxprice.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F);
-            this.boxprice.Location = new System.Drawing.Point(240, 90);
+            this.boxprice.Location = new System.Drawing.Point(259, 90);
             this.boxprice.Name = "boxprice";
             this.boxprice.ReadOnly = true;
-            this.boxprice.Size = new System.Drawing.Size(124, 35);
+            this.boxprice.Size = new System.Drawing.Size(105, 35);
             this.boxprice.TabIndex = 1;
             this.boxprice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -434,7 +472,7 @@
             this.boxproductyy.ForeColor = System.Drawing.Color.Black;
             this.boxproductyy.Location = new System.Drawing.Point(81, 54);
             this.boxproductyy.Name = "boxproductyy";
-            this.boxproductyy.Size = new System.Drawing.Size(159, 36);
+            this.boxproductyy.Size = new System.Drawing.Size(178, 36);
             this.boxproductyy.TabIndex = 2;
             this.boxproductyy.Text = "Product";
             this.boxproductyy.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -445,7 +483,7 @@
             this.boxDescount.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F);
             this.boxDescount.Location = new System.Drawing.Point(650, 90);
             this.boxDescount.Name = "boxDescount";
-            this.boxDescount.Size = new System.Drawing.Size(156, 35);
+            this.boxDescount.Size = new System.Drawing.Size(153, 35);
             this.boxDescount.TabIndex = 1;
             this.boxDescount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.boxDescount.TextChanged += new System.EventHandler(this.boxDescount_TextChanged);
@@ -470,7 +508,7 @@
             this.boxAmount.Location = new System.Drawing.Point(492, 90);
             this.boxAmount.Name = "boxAmount";
             this.boxAmount.ReadOnly = true;
-            this.boxAmount.Size = new System.Drawing.Size(162, 35);
+            this.boxAmount.Size = new System.Drawing.Size(158, 35);
             this.boxAmount.TabIndex = 1;
             this.boxAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.boxAmount.TextChanged += new System.EventHandler(this.boxAmount_TextChanged);
@@ -496,7 +534,7 @@
             this.boxproduct.Location = new System.Drawing.Point(81, 90);
             this.boxproduct.Name = "boxproduct";
             this.boxproduct.ReadOnly = true;
-            this.boxproduct.Size = new System.Drawing.Size(159, 35);
+            this.boxproduct.Size = new System.Drawing.Size(178, 35);
             this.boxproduct.TabIndex = 1;
             this.boxproduct.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -506,6 +544,7 @@
             this.dataGridV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridV.ColumnHeadersVisible = false;
+            this.dataGridV.ContextMenuStrip = this.contextMenuStrip2;
             this.dataGridV.Location = new System.Drawing.Point(6, 131);
             this.dataGridV.MultiSelect = false;
             this.dataGridV.Name = "dataGridV";
@@ -517,6 +556,49 @@
             this.dataGridV.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridV_CellDoubleClick);
             this.dataGridV.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dataGridV_RowsRemoved);
             this.dataGridV.SelectionChanged += new System.EventHandler(this.dataGridV_SelectionChanged);
+            // 
+            // contextMenuStrip2
+            // 
+            this.contextMenuStrip2.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.contextMenuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.deletToolStripMenuItem,
+            this.toolStripSeparator1,
+            this.deleteAllToolStripMenuItem,
+            this.toolStripSeparator2,
+            this.editToolStripMenuItem});
+            this.contextMenuStrip2.Name = "contextMenuStrip2";
+            this.contextMenuStrip2.Size = new System.Drawing.Size(162, 106);
+            // 
+            // deletToolStripMenuItem
+            // 
+            this.deletToolStripMenuItem.Name = "deletToolStripMenuItem";
+            this.deletToolStripMenuItem.Size = new System.Drawing.Size(161, 30);
+            this.deletToolStripMenuItem.Text = "delete";
+            this.deletToolStripMenuItem.Click += new System.EventHandler(this.deletToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(158, 6);
+            // 
+            // deleteAllToolStripMenuItem
+            // 
+            this.deleteAllToolStripMenuItem.Name = "deleteAllToolStripMenuItem";
+            this.deleteAllToolStripMenuItem.Size = new System.Drawing.Size(161, 30);
+            this.deleteAllToolStripMenuItem.Text = "delete all";
+            this.deleteAllToolStripMenuItem.Click += new System.EventHandler(this.deleteAllToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(158, 6);
+            // 
+            // editToolStripMenuItem
+            // 
+            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(161, 30);
+            this.editToolStripMenuItem.Text = "edit";
+            this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
             // 
             // textBox7
             // 
@@ -578,8 +660,9 @@
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(135, 50);
             this.btnSave.TabIndex = 5;
-            this.btnSave.Text = "Save";
+            this.btnSave.Text = "Save Order";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // ppictur3
             // 
@@ -655,6 +738,7 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridV)).EndInit();
+            this.contextMenuStrip2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ppictur3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ppictur2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ppictur1)).EndInit();
@@ -713,5 +797,13 @@
         private System.Windows.Forms.Button btnbrows;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button ADD;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
+        private System.Windows.Forms.ToolStripMenuItem deletToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem deleteAllToolStripMenuItem;
+        private System.Windows.Forms.Button btndeletSelecteditem;
+        private System.Windows.Forms.Button btnDeletAll;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
     }
 }

@@ -79,5 +79,11 @@ namespace GESTION_PRODUIT_ECOMMERCE.presentationLayer
             FRM_CATEGORIES fcategorie=new FRM_CATEGORIES();
             fcategorie.ShowDialog();
         }
+
+        private void manageSellsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FRM_ORDERS forder=new FRM_ORDERS();
+            forder.ShowDialog();
+        }
     }
 }

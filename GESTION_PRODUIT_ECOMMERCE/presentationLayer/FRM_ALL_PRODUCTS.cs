@@ -33,7 +33,8 @@ namespace GESTION_PRODUIT_ECOMMERCE.presentationLayer
         {
             CLS_PRODUCTS PRD= new CLS_PRODUCTS();
             dgvproducts.DataSource= PRD.GET_ALL_PRODUCTS();
-          //  dgvproducts.Columns[].Visible = false;
+            //  dgvproducts.Columns[0].Visible = false;
+            this.dgvproducts.Columns[0].Width = 30;
 
             byte[] img1 = (byte[])PRD.GET_PRODUCT_IMAGE1(int.Parse(this.dgvproducts.CurrentRow.Cells[0].Value.ToString())).Rows[0][0];
             MemoryStream ms = new MemoryStream(img1);

@@ -19,8 +19,12 @@ namespace GESTION_PRODUIT_ECOMMERCE.presentationLayer
         CLS_ORDERS order = new CLS_ORDERS();
         double Amount;
         int AvailabelQte;
-      //  string productId;
+       // string CustomerId;
         DataTable Dt = new DataTable();
+
+        public int CustomerId { get; private set; }
+        public int productId { get; private set; }
+
         public FRM_ORDERS()
         {
             InitializeComponent();
@@ -31,7 +35,7 @@ namespace GESTION_PRODUIT_ECOMMERCE.presentationLayer
         void creatDataTable()
         {
 
-           
+            Dt.Columns.Add("ID");
             Dt.Columns.Add("Product");
             Dt.Columns.Add("Price");
             Dt.Columns.Add("Quantite");
@@ -44,17 +48,19 @@ namespace GESTION_PRODUIT_ECOMMERCE.presentationLayer
         void ResizedataGridV()
         {
             this.dataGridV.RowHeadersWidth = 75;
-            this.dataGridV.Columns[0].Width = 159;
-            this.dataGridV.Columns[1].Width = 126;
-            this.dataGridV.Columns[2].Width = 132;
-            this.dataGridV.Columns[3].Width = 162;
+            this.dataGridV.Columns[1].Width = 182;
+            this.dataGridV.Columns[2].Width = 105;
+            this.dataGridV.Columns[3].Width = 128;
             this.dataGridV.Columns[4].Width = 158;
-            this.dataGridV.Columns[5].Width = 152;
+            this.dataGridV.Columns[5].Width = 153;
+            this.dataGridV.Columns[6].Width = 156;
+            dataGridV.Columns[0].Visible= false;
         }
 
         private void FRM_ORDERS_Load(object sender, EventArgs e)
         {
             ResizedataGridV();
+            boxSeller.Text = Program.SellerName;
         }
 
         private void btnNewOrder_Click(object sender, EventArgs e)
@@ -64,6 +70,7 @@ namespace GESTION_PRODUIT_ECOMMERCE.presentationLayer
 
         private void btnExit_Click(object sender, EventArgs e)
         {
+            //MessageBox.Show(productId.ToString());
             Close();
         }
 
@@ -71,7 +78,7 @@ namespace GESTION_PRODUIT_ECOMMERCE.presentationLayer
         {
             FRM_All_CUSTOMERS FAC = new FRM_All_CUSTOMERS();
             FAC.ShowDialog();
-           
+            CustomerId =int.Parse( FAC.dtgvCustomers.CurrentRow.Cells[0].Value.ToString());
             textBoxFirstName.Text = FAC.dtgvCustomers.CurrentRow.Cells[1].Value.ToString();
             textBoxlastName.Text = FAC.dtgvCustomers.CurrentRow.Cells[2].Value.ToString();
             textBoxPhone.Text = FAC.dtgvCustomers.CurrentRow.Cells[3].Value.ToString();
@@ -81,18 +88,6 @@ namespace GESTION_PRODUIT_ECOMMERCE.presentationLayer
             MemoryStream ms = new MemoryStream(picture);
             pictureBox1.Image = Image.FromStream(ms);
 
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            FRM_ALL_PRODUCTS ALL_PRODUCTS = new FRM_ALL_PRODUCTS();
-            ALL_PRODUCTS.ShowDialog();
-          //   productId= ALL_PRODUCTS.dgvproducts.CurrentRow.Cells[0].Value.ToString();
-            boxproduct.Text = ALL_PRODUCTS.dgvproducts.CurrentRow.Cells[1].Value.ToString();
-            boxprice.Text = ALL_PRODUCTS.dgvproducts.CurrentRow.Cells[4].Value.ToString();
-            AvailabelQte = Convert.ToInt32(ALL_PRODUCTS.dgvproducts.CurrentRow.Cells[4].Value.ToString());
-            boxquantete.Focus();
-           
         }
 
         private void dataGridV_SelectionChanged(object sender, EventArgs e)
@@ -134,12 +129,9 @@ namespace GESTION_PRODUIT_ECOMMERCE.presentationLayer
                     e.Handled = true;
                 }
             }
-
-           
-
-
-
         }
+
+
 
         private void boxquantete_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -148,8 +140,6 @@ namespace GESTION_PRODUIT_ECOMMERCE.presentationLayer
             {
                 e.Handled = true;
             }
-
-
         }
 
         private void boxquantete_TextChanged(object sender, EventArgs e)
@@ -160,8 +150,6 @@ namespace GESTION_PRODUIT_ECOMMERCE.presentationLayer
                 Amount = 0;
                 boxTotalAmount.Text = "";
                 boxDescount.Text = "";
-
-
             }
         }
 
@@ -196,10 +184,10 @@ namespace GESTION_PRODUIT_ECOMMERCE.presentationLayer
                     MessageBox.Show("Sorry this product already exist in the list\nyou can update it if you want", "product repeated", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                     return;
                 }
-
             }
             CalculateAmount();
         }
+
 
         void CalculateAmount()
         {
@@ -227,11 +215,8 @@ namespace GESTION_PRODUIT_ECOMMERCE.presentationLayer
                     btnbrows.Focus();
                     btnbrows.BackColor = Color.Goldenrod;
 
-
-
                 }
             }
-
         }
 
         private void btnbrows_Click(object sender, EventArgs e)
@@ -239,7 +224,7 @@ namespace GESTION_PRODUIT_ECOMMERCE.presentationLayer
             FRM_ALL_PRODUCTS ALL_PRODUCTS = new FRM_ALL_PRODUCTS();
             CLS_PRODUCTS PRD = new CLS_PRODUCTS();
             ALL_PRODUCTS.ShowDialog();
-
+            productId=int.Parse( ALL_PRODUCTS.dgvproducts.CurrentRow.Cells[0].Value.ToString());
             boxproduct.Text = ALL_PRODUCTS.dgvproducts.CurrentRow.Cells[1].Value.ToString();
             boxprice.Text = ALL_PRODUCTS.dgvproducts.CurrentRow.Cells[4].Value.ToString();
             AvailabelQte = Convert.ToInt32(ALL_PRODUCTS.dgvproducts.CurrentRow.Cells[3].Value.ToString());
@@ -337,12 +322,13 @@ namespace GESTION_PRODUIT_ECOMMERCE.presentationLayer
             //why this problem//
 
             DataRow r = Dt.NewRow();
-            r[0] = boxproduct.Text;
-            r[1] = boxprice.Text;
-            r[2] = boxquantete.Text;
-            r[3] = boxAmount.Text;
-            r[4] = boxDescount.Text;
-            r[5] = boxTotalAmount.Text;
+            r[0] = productId;
+            r[1] = boxproduct.Text;
+            r[2] = boxprice.Text;
+            r[3] = boxquantete.Text;
+            r[4] = boxAmount.Text;
+            r[5] = boxDescount.Text;
+            r[6] = boxTotalAmount.Text;
             Dt.Rows.Add(r);
             dataGridV.DataSource = Dt;
             ClearBoxes();
@@ -363,24 +349,24 @@ namespace GESTION_PRODUIT_ECOMMERCE.presentationLayer
             fillDataRow();
         }
 
-        private void dataGridV_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridV_CellDoubleClick(object sender, EventArgs e)
         {
             try
             {
                 ClearBoxes();
-                boxproduct.Text = dataGridV.CurrentRow.Cells[0].Value.ToString();
-                boxprice.Text = dataGridV.CurrentRow.Cells[1].Value.ToString();
-                boxquantete.Text = dataGridV.CurrentRow.Cells[2].Value.ToString();
-                boxAmount.Text = dataGridV.CurrentRow.Cells[3].Value.ToString();
-                boxDescount.Text = dataGridV.CurrentRow.Cells[4].Value.ToString();
-                boxTotalAmount.Text = dataGridV.CurrentRow.Cells[5].Value.ToString();
+                boxproduct.Text = dataGridV.CurrentRow.Cells[1].Value.ToString();
+                boxprice.Text = dataGridV.CurrentRow.Cells[2].Value.ToString();
+                boxquantete.Text = dataGridV.CurrentRow.Cells[3].Value.ToString();
+                boxAmount.Text = dataGridV.CurrentRow.Cells[4].Value.ToString();
+                boxDescount.Text = dataGridV.CurrentRow.Cells[5].Value.ToString();
+                boxTotalAmount.Text = dataGridV.CurrentRow.Cells[6].Value.ToString();
                 dataGridV.Rows.RemoveAt(dataGridV.CurrentRow.Index);
                 boxquantete.Focus();
 
             }
             catch
             {
-                MessageBox.Show("there is an error ");
+                MessageBox.Show("there is an error mybe the list is empty");
             }
             }
 
@@ -399,6 +385,69 @@ namespace GESTION_PRODUIT_ECOMMERCE.presentationLayer
             boxSomme.Text = (from DataGridViewRow row in dataGridV.Rows
                              where row.Cells[5].FormattedValue.ToString() != string.Empty
                              select Convert.ToDouble(row.Cells[5].FormattedValue)).Sum().ToString();
+
+        }
+
+        private void editThisLineToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            dataGridV_CellDoubleClick(sender, e);
+        }
+
+        private void btndeletSelecteditem_Click(object sender, EventArgs e)
+        {
+            dataGridV_CellDoubleClick(sender, e);
+            ClearBoxes();
+        }
+
+        private void btnDeletAll_Click(object sender, EventArgs e)
+        {
+           
+            for (int i = 0; i < dataGridV.Rows.Count; i++)
+            {
+                btndeletSelecteditem_Click(sender, e);
+            }
+
+            dataGridV_CellDoubleClick(sender, e);
+            ClearBoxes();
+        }
+
+        private void deletToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            btndeletSelecteditem_Click(sender, e);
+        }
+
+        private void deleteAllToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            btnDeletAll_Click(sender, e);
+        }
+
+        private void editToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            dataGridV_CellDoubleClick(sender, e);
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            CLS_ORDERS ORDERS= new CLS_ORDERS();
+            ORDERS.AddOrdere(int.Parse(boxOrderNum.Text),dateTimePicker1.Value,CustomerId ,boxSeller.Text);
+           // ORDERS.Add_order_details(productId,int.Parse(boxOrderNum.Text),int.Parse(boxquantete.Text),float.Parse(boxDescount.Text),float.Parse(boxAmount.Text),float.Parse(boxTotalAmount.Text));
+           
+            for(int i=0; i < dataGridV.Rows.Count; i++)
+            {
+                ORDERS.Add_order_details(int.Parse(dataGridV.Rows[i].Cells[0].Value.ToString()),
+                                         int.Parse(boxOrderNum.Text),
+                                         int.Parse(dataGridV.Rows[i].Cells[3].Value.ToString()),
+                                         float.Parse(dataGridV.Rows[i].Cells[5].Value.ToString()),
+                                         float.Parse(dataGridV.Rows[i].Cells[4].Value.ToString()),
+                                         float.Parse(dataGridV.Rows[i].Cells[6].Value.ToString()));
+            }  
+            MessageBox.Show("Order added successfuly", "add order", MessageBoxButtons.OK, MessageBoxIcon.Information);
+           
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
 
         }
     }

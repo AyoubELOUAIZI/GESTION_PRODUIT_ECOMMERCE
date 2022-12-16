@@ -9,11 +9,13 @@ namespace GESTION_PRODUIT_ECOMMERCE
 {
     internal static class Program
     {
+        public static string SellerName = "UnkownSeller";
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
-        static void Main()
+       static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
