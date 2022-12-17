@@ -91,5 +91,11 @@ namespace GESTION_PRODUIT_ECOMMERCE.presentationLayer
             FRM_ADD_USER FADDUSER=new FRM_ADD_USER();
             FADDUSER.ShowDialog();
         }
+
+        private void manageUsersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FRM_USERS_LIST uSERS_LIST=new FRM_USERS_LIST();
+            uSERS_LIST.ShowDialog();    
+        }
     }
 }

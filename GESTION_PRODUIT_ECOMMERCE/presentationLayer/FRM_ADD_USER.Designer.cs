@@ -212,7 +212,7 @@
             this.Controls.Add(this.boxUserName);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.MaximumSize = new System.Drawing.Size(607, 421);
             this.MinimumSize = new System.Drawing.Size(607, 421);
             this.Name = "FRM_ADD_USER";
@@ -228,19 +228,19 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox boxUserName;
-        private System.Windows.Forms.TextBox boxSellername;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox boxPassword;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboTypeUser;
-        private System.Windows.Forms.PictureBox userImage;
-        private System.Windows.Forms.Button btnAddUser;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox boxConfirmPass;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnClear;
+        public System.Windows.Forms.TextBox boxUserName;
+        public System.Windows.Forms.TextBox boxSellername;
+        public System.Windows.Forms.TextBox boxPassword;
+        public System.Windows.Forms.ComboBox comboTypeUser;
+        public System.Windows.Forms.PictureBox userImage;
+        public System.Windows.Forms.TextBox boxConfirmPass;
+        public System.Windows.Forms.Button btnAddUser;
     }
 }

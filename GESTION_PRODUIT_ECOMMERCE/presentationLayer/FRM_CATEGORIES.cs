@@ -131,5 +131,10 @@ namespace GESTION_PRODUIT_ECOMMERCE.presentationLayer
 
 
         }
+
+        private void textBoxName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

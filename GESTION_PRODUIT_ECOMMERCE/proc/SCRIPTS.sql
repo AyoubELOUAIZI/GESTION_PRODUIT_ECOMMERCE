@@ -248,10 +248,35 @@ INSERT INTO [dbo].[ECOM_USERS]
            ,@SellerName)
 GO
 -------------------------------------------------------------------------------------------
-
+CREATE PROC GET_ALL_USERS AS
+select * from ECOM_USERS
 -------------------------------------------------------------------------------------------
+create proc SearchUser
+@input varchar(20)
+as
+select * from ECOM_USERS
+where userName+PassWorde+TypeUser+SellerName like '%'+@input+'%'
 -------------------------------------------------------------------------------------------
+create proc DeleteUser 
+@idUser int 
+as
+delete from ECOM_USERS where iduser=@idUser
 -------------------------------------------------------------------------------------------
+create proc UPDATE_USER
+@username varchar(20),
+@password varchar(10),
+@typeuser varchar(20),
+@image image,
+@SellerName varchar(25),
+@iduser int
+as
+UPDATE [dbo].[ECOM_USERS]
+   SET [userName] =@username
+      ,[PassWorde] =@password
+      ,[TypeUser] = @typeuser
+      ,[img] =@image
+      ,[SellerName] = @SellerName
+ WHERE iduser=@iduser
 -------------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------

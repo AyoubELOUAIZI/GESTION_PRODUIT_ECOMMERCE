@@ -223,6 +223,7 @@
             this.manageUsersToolStripMenuItem.Name = "manageUsersToolStripMenuItem";
             this.manageUsersToolStripMenuItem.Size = new System.Drawing.Size(270, 42);
             this.manageUsersToolStripMenuItem.Text = "manage users";
+            this.manageUsersToolStripMenuItem.Click += new System.EventHandler(this.manageUsersToolStripMenuItem_Click);
             // 
             // contextMenuStrip1
             // 

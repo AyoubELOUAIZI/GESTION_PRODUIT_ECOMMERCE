@@ -259,5 +259,10 @@ namespace GESTION_PRODUIT_ECOMMERCE.presentationLayer
         {
 
         }
+
+        private void boxSearch_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

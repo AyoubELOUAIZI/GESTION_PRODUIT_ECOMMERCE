@@ -37,25 +37,33 @@ namespace GESTION_PRODUIT_ECOMMERCE.presentationLayer
                   frm.usersToolStripMenuItem.Enabled = true;
                   frm.buckupToolStripMenuItem.Enabled = true;
                   frm.restoreBackupToolStripMenuItem.Enabled = true; */
-                if (dt.Rows[0][3].ToString() == "administrateur")
+                if (dt.Rows[0][3].ToString() == "administrator")
                 {
                     FormMain.getFormMain.productToolStripMenuItem.Enabled = true;
                     FormMain.getFormMain.customersToolStripMenuItem.Enabled = true;
                     FormMain.getFormMain.usersToolStripMenuItem.Enabled = true;
                     FormMain.getFormMain.buckupToolStripMenuItem.Enabled = true;
                     FormMain.getFormMain.restoreBackupToolStripMenuItem.Enabled = true;
+
+                    FormMain.getFormMain.usersToolStripMenuItem.Visible = true;
+                    FormMain.getFormMain.buckupToolStripMenuItem.Visible = true;
+                    FormMain.getFormMain.restoreBackupToolStripMenuItem.Visible = true;
                     Program.SellerName = dt.Rows[0]["SellerName"].ToString();
                     this.Close();
                 }
                 else if(dt.Rows[0][3].ToString() == "normal user") {
                     FormMain.getFormMain.productToolStripMenuItem.Enabled = true;
                     FormMain.getFormMain.customersToolStripMenuItem.Enabled = true;
-                    FormMain.getFormMain.usersToolStripMenuItem.Enabled = false; 
-                    FormMain.getFormMain.buckupToolStripMenuItem.Enabled = false;
-                    FormMain.getFormMain.restoreBackupToolStripMenuItem.Enabled = false;
+                    FormMain.getFormMain.usersToolStripMenuItem.Visible = false; 
+                    FormMain.getFormMain.buckupToolStripMenuItem.Visible = false;
+                    FormMain.getFormMain.restoreBackupToolStripMenuItem.Visible = false;
                     Program.SellerName = dt.Rows[0]["SellerName"].ToString();
                     this.Close();
-                }    
+                }
+                else
+                {
+                    MessageBox.Show(dt.Rows[0][3].ToString());
+                } 
 
             }
             else

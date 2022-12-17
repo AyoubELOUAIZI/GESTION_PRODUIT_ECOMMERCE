@@ -14,6 +14,7 @@ namespace GESTION_PRODUIT_ECOMMERCE.presentationLayer
 {
     public partial class FRM_ADD_USER : Form
     {
+        public int idUsertoUpdate;
         public FRM_ADD_USER()
         {
             InitializeComponent();
@@ -61,8 +62,18 @@ namespace GESTION_PRODUIT_ECOMMERCE.presentationLayer
                 return;
             }
 
-                CLS_USER user=new CLS_USER();
+            if(btnAddUser.Text== "Update User")
+            {
+                CLS_USER user1 = new CLS_USER();
+                MemoryStream ms1 = new MemoryStream();
+                userImage.Image.Save(ms1, userImage.Image.RawFormat);
+                byte[] imgbyte1 = ms1.ToArray();
+                user1.UPDATE_USER(boxUserName.Text, boxPassword.Text, comboTypeUser.Text, imgbyte1, boxSellername.Text,idUsertoUpdate);
+                MessageBox.Show("User " + boxUserName + " has been Updated seccessfully", "Update user", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
 
+            CLS_USER user=new CLS_USER();
             MemoryStream ms = new MemoryStream();
             userImage.Image.Save(ms, userImage.Image.RawFormat);
             byte[] imgbyte = ms.ToArray();
