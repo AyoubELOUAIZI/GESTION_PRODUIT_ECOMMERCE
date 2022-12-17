@@ -51,6 +51,7 @@
     <Compile Include="bisnessLayer\CLS_LOGIN.cs" />
     <Compile Include="bisnessLayer\CLS_ORDERS.cs" />
     <Compile Include="bisnessLayer\CLS_PRODUCTS.cs" />
+    <Compile Include="bisnessLayer\CLS_USER.cs" />
     <Compile Include="dataAccessLayer\DataAccessLayer.cs" />
     <Compile Include="presentationLayer\FormLogin.cs">
       <SubType>Form</SubType>
@@ -75,6 +76,12 @@
     </Compile>
     <Compile Include="presentationLayer\FRM_ADD_PRODUCT.Designer.cs">
       <DependentUpon>FRM_ADD_PRODUCT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="presentationLayer\FRM_ADD_USER.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentationLayer\FRM_ADD_USER.Designer.cs">
+      <DependentUpon>FRM_ADD_USER.cs</DependentUpon>
     </Compile>
     <Compile Include="presentationLayer\FRM_All_CUSTOMERS.cs">
       <SubType>Form</SubType>
@@ -119,6 +126,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentationLayer\FRM_ADD_PRODUCT.resx">
       <DependentUpon>FRM_ADD_PRODUCT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentationLayer\FRM_ADD_USER.resx">
+      <DependentUpon>FRM_ADD_USER.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentationLayer\FRM_All_CUSTOMERS.resx">
       <DependentUpon>FRM_All_CUSTOMERS.cs</DependentUpon>

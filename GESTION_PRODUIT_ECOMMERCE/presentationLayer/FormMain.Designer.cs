@@ -170,6 +170,7 @@
             this.addCustomerToolStripMenuItem.Name = "addCustomerToolStripMenuItem";
             this.addCustomerToolStripMenuItem.Size = new System.Drawing.Size(324, 42);
             this.addCustomerToolStripMenuItem.Text = "add customer";
+            this.addCustomerToolStripMenuItem.Click += new System.EventHandler(this.addCustomerToolStripMenuItem_Click);
             // 
             // manageCustomerToolStripMenuItem
             // 

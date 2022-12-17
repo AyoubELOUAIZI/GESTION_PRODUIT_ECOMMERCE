@@ -226,7 +226,29 @@ INSERT INTO [ORDERS_DETAILS]
 update PRODUCTS set QteInStock=QteInStock-@Qte where IdProduct=@IdProduct
 end
 -------------------------------------------------------------------------------------------
+create proc ADD_USER
+@username varchar(50),
+@password varchar(20),
+@typeuser varchar(20),
+@image image,
+@SellerName varchar(25)
+as
+INSERT INTO [dbo].[ECOM_USERS]
+           (
+            [userName]
+           ,[PassWorde]
+           ,[TypeUser]
+           ,[img]
+           ,[SellerName])
+     VALUES
+           (@username
+           ,@password
+           ,@typeuser
+           ,@image 
+           ,@SellerName)
+GO
 -------------------------------------------------------------------------------------------
+
 -------------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------

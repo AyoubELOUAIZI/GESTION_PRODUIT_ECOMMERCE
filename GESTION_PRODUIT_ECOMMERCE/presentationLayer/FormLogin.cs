@@ -30,20 +30,33 @@ namespace GESTION_PRODUIT_ECOMMERCE.presentationLayer
         {
             DataTable dt = log.Login(userNametxt.Text,passtxt.Text);
             if(dt.Rows.Count>0 ) {
-               // MessageBox.Show("log in secssed");
-              /* FormMain frm=new FormMain();
-                frm.productToolStripMenuItem.Enabled = true;
-                frm.customersToolStripMenuItem.Enabled = true;
-                frm.usersToolStripMenuItem.Enabled = true;
-                frm.buckupToolStripMenuItem.Enabled = true;
-                frm.restoreBackupToolStripMenuItem.Enabled = true; */
-              FormMain.getFormMain.productToolStripMenuItem.Enabled = true;
-              FormMain.getFormMain.customersToolStripMenuItem.Enabled = true;
-              FormMain.getFormMain.usersToolStripMenuItem.Enabled = true;
-              FormMain.getFormMain.buckupToolStripMenuItem.Enabled = true;
-              FormMain.getFormMain.restoreBackupToolStripMenuItem.Enabled = true;
-                Program.SellerName = dt.Rows[0]["SellerName"].ToString();
-               this.Close();
+                // MessageBox.Show("log in secssed");
+                /* FormMain frm=new FormMain();
+                  frm.productToolStripMenuItem.Enabled = true;
+                  frm.customersToolStripMenuItem.Enabled = true;
+                  frm.usersToolStripMenuItem.Enabled = true;
+                  frm.buckupToolStripMenuItem.Enabled = true;
+                  frm.restoreBackupToolStripMenuItem.Enabled = true; */
+                if (dt.Rows[0][3].ToString() == "administrateur")
+                {
+                    FormMain.getFormMain.productToolStripMenuItem.Enabled = true;
+                    FormMain.getFormMain.customersToolStripMenuItem.Enabled = true;
+                    FormMain.getFormMain.usersToolStripMenuItem.Enabled = true;
+                    FormMain.getFormMain.buckupToolStripMenuItem.Enabled = true;
+                    FormMain.getFormMain.restoreBackupToolStripMenuItem.Enabled = true;
+                    Program.SellerName = dt.Rows[0]["SellerName"].ToString();
+                    this.Close();
+                }
+                else if(dt.Rows[0][3].ToString() == "normal user") {
+                    FormMain.getFormMain.productToolStripMenuItem.Enabled = true;
+                    FormMain.getFormMain.customersToolStripMenuItem.Enabled = true;
+                    FormMain.getFormMain.usersToolStripMenuItem.Enabled = false; 
+                    FormMain.getFormMain.buckupToolStripMenuItem.Enabled = false;
+                    FormMain.getFormMain.restoreBackupToolStripMenuItem.Enabled = false;
+                    Program.SellerName = dt.Rows[0]["SellerName"].ToString();
+                    this.Close();
+                }    
+
             }
             else
             {

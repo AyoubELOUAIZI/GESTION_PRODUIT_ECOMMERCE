@@ -85,5 +85,11 @@ namespace GESTION_PRODUIT_ECOMMERCE.presentationLayer
             FRM_ORDERS forder=new FRM_ORDERS();
             forder.ShowDialog();
         }
+
+        private void addCustomerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FRM_ADD_USER FADDUSER=new FRM_ADD_USER();
+            FADDUSER.ShowDialog();
+        }
     }
 }
