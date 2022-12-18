@@ -26,7 +26,7 @@ namespace GESTION_PRODUIT_ECOMMERCE.presentationLayer
         private void FRM_ORDER_DITAILLS_Load(object sender, EventArgs e)
         {
 
-            ADD_PRODUCTS();
+           // ADD_PRODUCTS();
            
         }
 
