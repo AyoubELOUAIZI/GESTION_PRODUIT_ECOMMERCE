@@ -278,7 +278,20 @@ UPDATE [dbo].[ECOM_USERS]
       ,[SellerName] = @SellerName
  WHERE iduser=@iduser
 -------------------------------------------------------------------------------------------
+CREATE PROC GET_ALL_ORDERS 
+AS 
+select IdOrder as 'Order',DateOrder as 'Date of Order',FirstName+' '+LastName as 'Customer',Seller
+from ORDERS,CUSTOMERS
+WHERE ORDERS.IdCustomer=CUSTOMERS.IdCustomer
 -------------------------------------------------------------------------------------------
+CREATE PROC SearchOrder 
+@text varchar(20)
+AS 
+select IdOrder as 'Order',DateOrder as 'Date of Order',FirstName+' '+LastName as 'Customer',Seller
+from ORDERS,CUSTOMERS
+WHERE ORDERS.IdCustomer=CUSTOMERS.IdCustomer and 'Order'+'Date of Order'+'Customer'+Seller like '%'+@text+'%'
+
+
 -------------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------

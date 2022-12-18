@@ -82,7 +82,25 @@ namespace GESTION_PRODUIT_ECOMMERCE.bisnessLayer
             return dt;
         }
 
+        internal object GET_ALL_ORDERS()
+        {
+            DataAccessLayer DAL = new DataAccessLayer();////////
+            DataTable dt = new DataTable();
+            dt = DAL.SelectData("GET_ALL_ORDERS", null);
+            return dt;
+        }
 
+        internal DataTable SearchOrder(string text)
+        {
+            DataAccessLayer DAL = new DataAccessLayer();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@text", SqlDbType.VarChar, 20);
+            param[0].Value = text;
+            DataTable dt = new DataTable();
+            dt = DAL.SelectData("SearchOrder", param);
+            return dt;
+
+        }
     }
 
 

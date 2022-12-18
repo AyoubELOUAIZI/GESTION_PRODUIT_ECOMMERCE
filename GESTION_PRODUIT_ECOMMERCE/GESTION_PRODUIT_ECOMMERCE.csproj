@@ -113,6 +113,18 @@
     <Compile Include="presentationLayer\FRM_ORDERS.Designer.cs">
       <DependentUpon>FRM_ORDERS.cs</DependentUpon>
     </Compile>
+    <Compile Include="presentationLayer\FRM_ORDERS_LIST.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentationLayer\FRM_ORDERS_LIST.Designer.cs">
+      <DependentUpon>FRM_ORDERS_LIST.cs</DependentUpon>
+    </Compile>
+    <Compile Include="presentationLayer\FRM_ORDER_DITAILLS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentationLayer\FRM_ORDER_DITAILLS.Designer.cs">
+      <DependentUpon>FRM_ORDER_DITAILLS.cs</DependentUpon>
+    </Compile>
     <Compile Include="presentationLayer\FRM_USERS_LIST.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,6 +162,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentationLayer\FRM_ORDERS.resx">
       <DependentUpon>FRM_ORDERS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentationLayer\FRM_ORDERS_LIST.resx">
+      <DependentUpon>FRM_ORDERS_LIST.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentationLayer\FRM_ORDER_DITAILLS.resx">
+      <DependentUpon>FRM_ORDER_DITAILLS.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentationLayer\FRM_USERS_LIST.resx">
       <DependentUpon>FRM_USERS_LIST.cs</DependentUpon>
