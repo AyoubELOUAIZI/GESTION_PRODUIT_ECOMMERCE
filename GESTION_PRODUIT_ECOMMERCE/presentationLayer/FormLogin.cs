@@ -42,12 +42,8 @@ namespace GESTION_PRODUIT_ECOMMERCE.presentationLayer
                     FormMain.getFormMain.productToolStripMenuItem.Enabled = true;
                     FormMain.getFormMain.customersToolStripMenuItem.Enabled = true;
                     FormMain.getFormMain.usersToolStripMenuItem.Enabled = true;
-                    FormMain.getFormMain.buckupToolStripMenuItem.Enabled = true;
-                    FormMain.getFormMain.restoreBackupToolStripMenuItem.Enabled = true;
-
+                   
                     FormMain.getFormMain.usersToolStripMenuItem.Visible = true;
-                    FormMain.getFormMain.buckupToolStripMenuItem.Visible = true;
-                    FormMain.getFormMain.restoreBackupToolStripMenuItem.Visible = true;
                     Program.SellerName = dt.Rows[0]["SellerName"].ToString();
                     this.Close();
                 }
@@ -55,8 +51,6 @@ namespace GESTION_PRODUIT_ECOMMERCE.presentationLayer
                     FormMain.getFormMain.productToolStripMenuItem.Enabled = true;
                     FormMain.getFormMain.customersToolStripMenuItem.Enabled = true;
                     FormMain.getFormMain.usersToolStripMenuItem.Visible = false; 
-                    FormMain.getFormMain.buckupToolStripMenuItem.Visible = false;
-                    FormMain.getFormMain.restoreBackupToolStripMenuItem.Visible = false;
                     Program.SellerName = dt.Rows[0]["SellerName"].ToString();
                     this.Close();
                 }

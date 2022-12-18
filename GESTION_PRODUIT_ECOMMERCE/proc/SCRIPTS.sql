@@ -293,7 +293,28 @@ WHERE ORDERS.IdCustomer=CUSTOMERS.IdCustomer and 'Order'+'Date of Order'+'Custom
 
 
 -------------------------------------------------------------------------------------------
+CREATE PROC GET_ORDER_DITAILLS
+@IdOrder int
+as
+select ORDERS.IdOrder,DateOrder,Seller,FirstName+' '+LastName as 'Customer',city,phone,email,
+NamProduct,description,Price,Qte,DESCOUNT,AMOUNT,NamCAT,img1,img2,img3,
+ORDERS.IdOrder,ORDERS_DETAILS.IdOrder , ORDERS.IdCustomer,CUSTOMERS.IdCustomer
+  , CATEGORES.IdCAT,PRODUCTS.IdCAT , PRODUCTS.IdProduct,ORDERS_DETAILS.IdProduct
+from  ORDERS,ORDERS_DETAILS,PRODUCTS,CUSTOMERS,CATEGORES
+WHERE ORDERS.IdOrder=ORDERS_DETAILS.IdOrder AND ORDERS.IdCustomer=CUSTOMERS.IdCustomer
+  and CATEGORES.IdCAT=PRODUCTS.IdCAT and PRODUCTS.IdProduct=ORDERS_DETAILS.IdProduct and ORDERS.IdOrder=1
+
+
 -------------------------------------------------------------------------------------------
+CREATE PROC GET_ORDER_DITAILLS
+@IdOrder int
+as
+select ORDERS.IdOrder,DateOrder,Seller,FirstName+' '+LastName as 'Customer',city,phone,email,
+NamProduct,description,Price,Qte,DESCOUNT,AMOUNT,NamCAT,img1,img2,img3
+from  ORDERS,ORDERS_DETAILS,PRODUCTS,CUSTOMERS,CATEGORES
+WHERE ORDERS.IdOrder=ORDERS_DETAILS.IdOrder AND ORDERS.IdCustomer=CUSTOMERS.IdCustomer
+  and CATEGORES.IdCAT=PRODUCTS.IdCAT and PRODUCTS.IdProduct=ORDERS_DETAILS.IdProduct and ORDERS.IdOrder=11
+
 -------------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------

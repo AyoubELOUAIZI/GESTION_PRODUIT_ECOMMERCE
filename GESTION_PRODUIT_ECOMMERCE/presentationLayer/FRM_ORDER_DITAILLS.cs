@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GESTION_PRODUIT_ECOMMERCE.bisnessLayer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,6 +21,11 @@ namespace GESTION_PRODUIT_ECOMMERCE.presentationLayer
         private void label10_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void FRM_ORDER_DITAILLS_Load(object sender, EventArgs e)
+        {
+           
         }
     }
 }

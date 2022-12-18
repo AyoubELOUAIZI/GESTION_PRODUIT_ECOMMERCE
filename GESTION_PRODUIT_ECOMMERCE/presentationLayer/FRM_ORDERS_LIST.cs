@@ -41,8 +41,8 @@ namespace GESTION_PRODUIT_ECOMMERCE.presentationLayer
 
         void fill_DGV_ORDERS()
         {
-            CLS_ORDERS USER = new CLS_ORDERS();
-            DGVORDERS.DataSource = USER.GET_ALL_ORDERS();
+            CLS_ORDERS order = new CLS_ORDERS();
+            DGVORDERS.DataSource = order.GET_ALL_ORDERS();
             //  this.dataGridView1.Columns[3].Width = 130;
 
         }
@@ -69,8 +69,22 @@ namespace GESTION_PRODUIT_ECOMMERCE.presentationLayer
 
         private void btnDetails_Click(object sender, EventArgs e)
         {
-            FRM_ORDER_DITAILLS ORDERDITAILLS=new FRM_ORDER_DITAILLS();
+            /*  getaLLoRDERS();
+              FRM_ORDER_DITAILLS ORDERDITAILLS=new FRM_ORDER_DITAILLS();
+              ORDERDITAILLS.ShowDialog(); */
+            //------------------
+            // 
+            //   FRM_ORDER_DITAILLS.dataGridViewtest.DataSource = order.GET_ALL_ORDERS();
+            //  this.dataGridView1.Columns[3].Width = 130;
+            FRM_ORDER_DITAILLS ORDERDITAILLS = new FRM_ORDER_DITAILLS();
+            CLS_ORDERS order = new CLS_ORDERS();
+            ORDERDITAILLS.dataGridViewtest.DataSource = order.GET_ORDER_DITAILLS(int.Parse(this.DGVORDERS.CurrentRow.Cells[0].Value.ToString()));
             ORDERDITAILLS.ShowDialog();
+        }
+
+        void getaLLoRDERS()
+        {
+
         }
     }
 }

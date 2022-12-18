@@ -33,8 +33,6 @@
             this.dashbourdToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.signInToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.signOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.buckupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.restoreBackupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addProductToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manageProductToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -43,13 +41,18 @@
             this.customersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addCustomerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manageCustomerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.addNewSellToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.manageSellsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addNewUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manageUsersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.ordersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.myOrdersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sellesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addNewSelleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,10 +64,12 @@
             this.dashbourdToolStripMenuItem,
             this.productToolStripMenuItem,
             this.customersToolStripMenuItem,
+            this.ordersToolStripMenuItem,
+            this.sellesToolStripMenuItem,
             this.usersToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 46);
+            this.menuStrip1.Size = new System.Drawing.Size(910, 46);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -72,9 +77,7 @@
             // 
             this.dashbourdToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.signInToolStripMenuItem,
-            this.signOutToolStripMenuItem,
-            this.buckupToolStripMenuItem,
-            this.restoreBackupToolStripMenuItem});
+            this.signOutToolStripMenuItem});
             this.dashbourdToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 20.75F, System.Drawing.FontStyle.Bold);
             this.dashbourdToolStripMenuItem.ForeColor = System.Drawing.Color.Navy;
             this.dashbourdToolStripMenuItem.Name = "dashbourdToolStripMenuItem";
@@ -85,7 +88,7 @@
             // 
             this.signInToolStripMenuItem.ForeColor = System.Drawing.Color.Navy;
             this.signInToolStripMenuItem.Name = "signInToolStripMenuItem";
-            this.signInToolStripMenuItem.Size = new System.Drawing.Size(295, 42);
+            this.signInToolStripMenuItem.Size = new System.Drawing.Size(205, 42);
             this.signInToolStripMenuItem.Text = "Sign in";
             this.signInToolStripMenuItem.Click += new System.EventHandler(this.signInToolStripMenuItem_Click);
             // 
@@ -93,27 +96,14 @@
             // 
             this.signOutToolStripMenuItem.ForeColor = System.Drawing.Color.Navy;
             this.signOutToolStripMenuItem.Name = "signOutToolStripMenuItem";
-            this.signOutToolStripMenuItem.Size = new System.Drawing.Size(295, 42);
+            this.signOutToolStripMenuItem.Size = new System.Drawing.Size(205, 42);
             this.signOutToolStripMenuItem.Text = "Sign out";
-            // 
-            // buckupToolStripMenuItem
-            // 
-            this.buckupToolStripMenuItem.ForeColor = System.Drawing.Color.Navy;
-            this.buckupToolStripMenuItem.Name = "buckupToolStripMenuItem";
-            this.buckupToolStripMenuItem.Size = new System.Drawing.Size(295, 42);
-            this.buckupToolStripMenuItem.Text = "Buckup";
-            // 
-            // restoreBackupToolStripMenuItem
-            // 
-            this.restoreBackupToolStripMenuItem.ForeColor = System.Drawing.Color.Navy;
-            this.restoreBackupToolStripMenuItem.Name = "restoreBackupToolStripMenuItem";
-            this.restoreBackupToolStripMenuItem.Size = new System.Drawing.Size(295, 42);
-            this.restoreBackupToolStripMenuItem.Text = "Restore backup";
             // 
             // productToolStripMenuItem
             // 
             this.productToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addProductToolStripMenuItem,
+            this.toolStripSeparator5,
             this.manageProductToolStripMenuItem,
             this.toolStripSeparator1,
             this.manageCiesategorToolStripMenuItem});
@@ -155,10 +145,8 @@
             // 
             this.customersToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addCustomerToolStripMenuItem,
-            this.manageCustomerToolStripMenuItem,
-            this.toolStripSeparator2,
-            this.addNewSellToolStripMenuItem,
-            this.manageSellsToolStripMenuItem});
+            this.toolStripSeparator4,
+            this.manageCustomerToolStripMenuItem});
             this.customersToolStripMenuItem.ForeColor = System.Drawing.Color.Navy;
             this.customersToolStripMenuItem.Name = "customersToolStripMenuItem";
             this.customersToolStripMenuItem.Size = new System.Drawing.Size(165, 42);
@@ -180,30 +168,11 @@
             this.manageCustomerToolStripMenuItem.Text = "manage customer";
             this.manageCustomerToolStripMenuItem.Click += new System.EventHandler(this.manageCustomerToolStripMenuItem_Click);
             // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(321, 6);
-            // 
-            // addNewSellToolStripMenuItem
-            // 
-            this.addNewSellToolStripMenuItem.ForeColor = System.Drawing.Color.Navy;
-            this.addNewSellToolStripMenuItem.Name = "addNewSellToolStripMenuItem";
-            this.addNewSellToolStripMenuItem.Size = new System.Drawing.Size(324, 42);
-            this.addNewSellToolStripMenuItem.Text = "add new selling";
-            // 
-            // manageSellsToolStripMenuItem
-            // 
-            this.manageSellsToolStripMenuItem.ForeColor = System.Drawing.Color.Navy;
-            this.manageSellsToolStripMenuItem.Name = "manageSellsToolStripMenuItem";
-            this.manageSellsToolStripMenuItem.Size = new System.Drawing.Size(324, 42);
-            this.manageSellsToolStripMenuItem.Text = "manage sells";
-            this.manageSellsToolStripMenuItem.Click += new System.EventHandler(this.manageSellsToolStripMenuItem_Click);
-            // 
             // usersToolStripMenuItem
             // 
             this.usersToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addNewUserToolStripMenuItem,
+            this.toolStripSeparator3,
             this.manageUsersToolStripMenuItem});
             this.usersToolStripMenuItem.ForeColor = System.Drawing.Color.Navy;
             this.usersToolStripMenuItem.Name = "usersToolStripMenuItem";
@@ -230,12 +199,63 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
+            // ordersToolStripMenuItem
+            // 
+            this.ordersToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.myOrdersToolStripMenuItem});
+            this.ordersToolStripMenuItem.Name = "ordersToolStripMenuItem";
+            this.ordersToolStripMenuItem.Size = new System.Drawing.Size(115, 42);
+            this.ordersToolStripMenuItem.Text = "Orders";
+            // 
+            // myOrdersToolStripMenuItem
+            // 
+            this.myOrdersToolStripMenuItem.Name = "myOrdersToolStripMenuItem";
+            this.myOrdersToolStripMenuItem.Size = new System.Drawing.Size(228, 42);
+            this.myOrdersToolStripMenuItem.Text = "My Orders";
+            this.myOrdersToolStripMenuItem.Click += new System.EventHandler(this.myOrdersToolStripMenuItem_Click);
+            // 
+            // sellesToolStripMenuItem
+            // 
+            this.sellesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addNewSelleToolStripMenuItem,
+            this.toolStripSeparator2});
+            this.sellesToolStripMenuItem.Name = "sellesToolStripMenuItem";
+            this.sellesToolStripMenuItem.Size = new System.Drawing.Size(102, 42);
+            this.sellesToolStripMenuItem.Text = "Selles";
+            // 
+            // addNewSelleToolStripMenuItem
+            // 
+            this.addNewSelleToolStripMenuItem.Name = "addNewSelleToolStripMenuItem";
+            this.addNewSelleToolStripMenuItem.Size = new System.Drawing.Size(287, 42);
+            this.addNewSelleToolStripMenuItem.Text = "Add new Selles";
+            this.addNewSelleToolStripMenuItem.Click += new System.EventHandler(this.addNewSelleToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(275, 6);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(267, 6);
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(321, 6);
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(335, 6);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Cyan;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(910, 450);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
@@ -258,20 +278,23 @@
         private System.Windows.Forms.ToolStripMenuItem manageCiesategorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addCustomerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem manageCustomerToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private System.Windows.Forms.ToolStripMenuItem addNewSellToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem manageSellsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addNewUserToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem manageUsersToolStripMenuItem;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         public System.Windows.Forms.MenuStrip menuStrip1;
         public System.Windows.Forms.ToolStripMenuItem dashbourdToolStripMenuItem;
-        public System.Windows.Forms.ToolStripMenuItem buckupToolStripMenuItem;
-        public System.Windows.Forms.ToolStripMenuItem restoreBackupToolStripMenuItem;
         public System.Windows.Forms.ToolStripMenuItem productToolStripMenuItem;
         public System.Windows.Forms.ToolStripMenuItem customersToolStripMenuItem;
         public System.Windows.Forms.ToolStripMenuItem usersToolStripMenuItem;
         public System.Windows.Forms.ToolStripMenuItem signInToolStripMenuItem;
         public System.Windows.Forms.ToolStripMenuItem signOutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripMenuItem ordersToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem myOrdersToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sellesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addNewSelleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
     }
 }

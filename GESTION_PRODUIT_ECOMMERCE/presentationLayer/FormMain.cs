@@ -41,9 +41,7 @@ namespace GESTION_PRODUIT_ECOMMERCE.presentationLayer
             this.productToolStripMenuItem.Enabled= false;
             this.customersToolStripMenuItem.Enabled = false;
             this.usersToolStripMenuItem.Enabled = false;
-            this.buckupToolStripMenuItem.Enabled = false;
-            this.restoreBackupToolStripMenuItem.Enabled = false;
-        }
+           }
 
         private void FormMain_Load(object sender, EventArgs e)
         {
@@ -80,11 +78,7 @@ namespace GESTION_PRODUIT_ECOMMERCE.presentationLayer
             fcategorie.ShowDialog();
         }
 
-        private void manageSellsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FRM_ORDERS forder=new FRM_ORDERS();
-            forder.ShowDialog();
-        }
+       
 
         private void addCustomerToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -96,6 +90,19 @@ namespace GESTION_PRODUIT_ECOMMERCE.presentationLayer
         {
             FRM_USERS_LIST uSERS_LIST=new FRM_USERS_LIST();
             uSERS_LIST.ShowDialog();    
+        }
+
+        private void myOrdersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FRM_ORDERS_LIST fRM_ORDERS_LIST=new FRM_ORDERS_LIST();
+            fRM_ORDERS_LIST.ShowDialog();
+        }
+
+        private void addNewSelleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            FRM_ORDERS forder = new FRM_ORDERS();
+            forder.ShowDialog();
         }
     }
 }

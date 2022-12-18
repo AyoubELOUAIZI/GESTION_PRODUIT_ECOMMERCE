@@ -130,26 +130,6 @@ namespace GESTION_PRODUIT_ECOMMERCE.presentationLayer
 
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-            /////////////////////
-             CLS_PRODUCTS PRD= new CLS_PRODUCTS();
-
-            byte[] img1 = (byte[])PRD.GET_PRODUCT_IMAGE1(int.Parse(this.dataGridView1.CurrentRow.Cells[0].Value.ToString())).Rows[0][0];
-            MemoryStream ms = new MemoryStream(img1);
-            this.pictureBox1.Image = Image.FromStream(ms);
-            byte[] img2 = (byte[])PRD.GET_PRODUCT_IMAGE2(int.Parse(this.dataGridView1.CurrentRow.Cells[0].Value.ToString())).Rows[0][0];
-            MemoryStream ms2 = new MemoryStream(img2);
-            this.pictureBox2.Image = Image.FromStream(ms2);
-
-            byte[] img3 = (byte[])PRD.GET_PRODUCT_IMAGE3(int.Parse(this.dataGridView1.CurrentRow.Cells[0].Value.ToString())).Rows[0][0];
-            MemoryStream ms3 = new MemoryStream(img3);
-            this.pictureBox3.Image = Image.FromStream(ms3);
-           
-
-        }
-
         private void btnRefrech_Click(object sender, EventArgs e)
         {
             CLS_PRODUCTS PRD = new CLS_PRODUCTS();
@@ -171,6 +151,22 @@ namespace GESTION_PRODUIT_ECOMMERCE.presentationLayer
         private void FORM_PRODUCTS_Load_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            CLS_PRODUCTS PRD = new CLS_PRODUCTS();
+
+            byte[] img1 = (byte[])PRD.GET_PRODUCT_IMAGE1(int.Parse(this.dataGridView1.CurrentRow.Cells[0].Value.ToString())).Rows[0][0];
+            MemoryStream ms = new MemoryStream(img1);
+            this.pictureBox1.Image = Image.FromStream(ms);
+            byte[] img2 = (byte[])PRD.GET_PRODUCT_IMAGE2(int.Parse(this.dataGridView1.CurrentRow.Cells[0].Value.ToString())).Rows[0][0];
+            MemoryStream ms2 = new MemoryStream(img2);
+            this.pictureBox2.Image = Image.FromStream(ms2);
+
+            byte[] img3 = (byte[])PRD.GET_PRODUCT_IMAGE3(int.Parse(this.dataGridView1.CurrentRow.Cells[0].Value.ToString())).Rows[0][0];
+            MemoryStream ms3 = new MemoryStream(img3);
+            this.pictureBox3.Image = Image.FromStream(ms3);
         }
     }
 }

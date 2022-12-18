@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace GESTION_PRODUIT_ECOMMERCE.bisnessLayer
 {
@@ -100,6 +101,17 @@ namespace GESTION_PRODUIT_ECOMMERCE.bisnessLayer
             dt = DAL.SelectData("SearchOrder", param);
             return dt;
 
+        }
+
+        internal DataTable GET_ORDER_DITAILLS(int idOrder)
+        {
+            DataAccessLayer DAL = new DataAccessLayer();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@IdOrder", SqlDbType.Int);
+            param[0].Value = idOrder;
+            DataTable dt = new DataTable();
+            dt = DAL.SelectData("GET_ORDER_DITAILLS", param);
+            return dt;
         }
     }
 

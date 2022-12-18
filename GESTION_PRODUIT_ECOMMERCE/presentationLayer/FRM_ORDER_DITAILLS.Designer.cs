@@ -43,12 +43,16 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label16 = new System.Windows.Forms.Label();
+            this.dataGridViewtest = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewtest)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(500, 72);
+            this.label1.Location = new System.Drawing.Point(613, 72);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(163, 24);
             this.label1.TabIndex = 0;
@@ -57,7 +61,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(721, 72);
+            this.label2.Location = new System.Drawing.Point(834, 72);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(20, 24);
             this.label2.TabIndex = 1;
@@ -76,7 +80,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(499, 120);
+            this.label4.Location = new System.Drawing.Point(612, 120);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(144, 24);
             this.label4.TabIndex = 3;
@@ -85,7 +89,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(709, 120);
+            this.label5.Location = new System.Drawing.Point(822, 120);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(61, 24);
             this.label5.TabIndex = 4;
@@ -130,7 +134,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(500, 96);
+            this.label10.Location = new System.Drawing.Point(613, 96);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(209, 24);
             this.label10.TabIndex = 9;
@@ -140,7 +144,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(721, 96);
+            this.label11.Location = new System.Drawing.Point(834, 96);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(160, 24);
             this.label11.TabIndex = 10;
@@ -182,11 +186,39 @@
             this.label15.TabIndex = 14;
             this.label15.Text = "customerX@gmail.com";
             // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(15, 461);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(986, 245);
+            this.panel1.TabIndex = 15;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F);
+            this.label16.Location = new System.Drawing.Point(25, 180);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(236, 31);
+            this.label16.TabIndex = 16;
+            this.label16.Text = "Order products list";
+            // 
+            // dataGridViewtest
+            // 
+            this.dataGridViewtest.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewtest.Location = new System.Drawing.Point(12, 223);
+            this.dataGridViewtest.Name = "dataGridViewtest";
+            this.dataGridViewtest.Size = new System.Drawing.Size(954, 232);
+            this.dataGridViewtest.TabIndex = 17;
+            // 
             // FRM_ORDER_DITAILLS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(921, 667);
+            this.ClientSize = new System.Drawing.Size(1013, 718);
+            this.Controls.Add(this.dataGridViewtest);
+            this.Controls.Add(this.label16);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
@@ -205,8 +237,10 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "FRM_ORDER_DITAILLS";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FRM_ORDER_DITAILLS";
+            this.Load += new System.EventHandler(this.FRM_ORDER_DITAILLS_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewtest)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -229,5 +263,8 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
+        public System.Windows.Forms.Panel panel1;
+        public System.Windows.Forms.DataGridView dataGridViewtest;
     }
 }
