@@ -76,10 +76,52 @@ namespace GESTION_PRODUIT_ECOMMERCE.presentationLayer
             // 
             //   FRM_ORDER_DITAILLS.dataGridViewtest.DataSource = order.GET_ALL_ORDERS();
             //  this.dataGridView1.Columns[3].Width = 130;
+
+
             FRM_ORDER_DITAILLS ORDERDITAILLS = new FRM_ORDER_DITAILLS();
+            //FILL THE HEADER OF THE ORDER
+           
+            //FILL THE PANER FIRST WITHOUT LOOP
             CLS_ORDERS order = new CLS_ORDERS();
-            ORDERDITAILLS.dataGridViewtest.DataSource = order.GET_ORDER_DITAILLS(int.Parse(this.DGVORDERS.CurrentRow.Cells[0].Value.ToString()));
+            DataTable DT=new DataTable();
+            DT = order.GET_ORDER_DITAILLS(int.Parse(this.DGVORDERS.CurrentRow.Cells[0].Value.ToString()));
+           // MessageBox.Show(DT.Rows[0][3].ToString());
+            ORDERDITAILLS.dataGridViewtest.DataSource = DT;
+            ORDERDITAILLS.boxCustomerName.Text = DT.Rows[0][3].ToString();
+            ORDERDITAILLS.boxcity.Text = DT.Rows[0][4].ToString();
+            ORDERDITAILLS.boxphone.Text = DT.Rows[0][5].ToString();
+            ORDERDITAILLS.boxEmail.Text = DT.Rows[0][6].ToString();
+            ORDERDITAILLS.boxOrderNumber.Text = DT.Rows[0][0].ToString();
+            ORDERDITAILLS.boxDAte.Text = DT.Rows[0][1].ToString();
+            ORDERDITAILLS.boxSeller.Text = DT.Rows[0][2].ToString();
+
+            // AddProductsToPanel();
+            // Enable scrolling for the panel
+            ORDERDITAILLS.panel1.AutoScroll = true;
+            // Add some controls to the panel
+            for (int i = 1; i < 10; i++)
+            {
+                Button button = new Button();
+                button.Text = "Button " + i;
+                button.Top = i * 205;
+                ORDERDITAILLS.panel1.Controls.Add(button);
+            }
+
             ORDERDITAILLS.ShowDialog();
+        }
+
+        void AddProductsToPanel()
+        {
+            FRM_ORDER_DITAILLS ORDERDITAILLS = new FRM_ORDER_DITAILLS();
+
+            // Add some controls to the panel
+            for (int i = 0; i < 50; i++)
+            {
+                Button button = new Button();
+                button.Text = "Button " + i;
+                button.Top = i * 25;
+                ORDERDITAILLS.panel1.Controls.Add(button);
+            }
         }
 
         void getaLLoRDERS()

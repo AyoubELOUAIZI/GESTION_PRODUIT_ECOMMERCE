@@ -29,20 +29,20 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.boxOrderNumber = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.boxSeller = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.boxCustomerName = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.boxcity = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
+            this.boxDAte = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
+            this.boxphone = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
+            this.boxEmail = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label16 = new System.Windows.Forms.Label();
             this.dataGridViewtest = new System.Windows.Forms.DataGridView();
@@ -58,14 +58,14 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Number of Order :";
             // 
-            // label2
+            // boxOrderNumber
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(834, 72);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(20, 24);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "1";
+            this.boxOrderNumber.AutoSize = true;
+            this.boxOrderNumber.Location = new System.Drawing.Point(834, 72);
+            this.boxOrderNumber.Name = "boxOrderNumber";
+            this.boxOrderNumber.Size = new System.Drawing.Size(20, 24);
+            this.boxOrderNumber.TabIndex = 1;
+            this.boxOrderNumber.Text = "1";
             // 
             // label3
             // 
@@ -86,14 +86,14 @@
             this.label4.TabIndex = 3;
             this.label4.Text = "Name of Seller :";
             // 
-            // label5
+            // boxSeller
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(822, 120);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(61, 24);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Name";
+            this.boxSeller.AutoSize = true;
+            this.boxSeller.Location = new System.Drawing.Point(822, 120);
+            this.boxSeller.Name = "boxSeller";
+            this.boxSeller.Size = new System.Drawing.Size(61, 24);
+            this.boxSeller.TabIndex = 4;
+            this.boxSeller.Text = "Name";
             // 
             // label6
             // 
@@ -104,14 +104,14 @@
             this.label6.TabIndex = 5;
             this.label6.Text = "Name of Customer :";
             // 
-            // label7
+            // boxCustomerName
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(221, 72);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(61, 24);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "Name";
+            this.boxCustomerName.AutoSize = true;
+            this.boxCustomerName.Location = new System.Drawing.Point(221, 72);
+            this.boxCustomerName.Name = "boxCustomerName";
+            this.boxCustomerName.Size = new System.Drawing.Size(61, 24);
+            this.boxCustomerName.TabIndex = 6;
+            this.boxCustomerName.Text = "Name";
             // 
             // label8
             // 
@@ -122,14 +122,14 @@
             this.label8.TabIndex = 7;
             this.label8.Text = "Customer City :";
             // 
-            // label9
+            // boxcity
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(221, 96);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(40, 24);
-            this.label9.TabIndex = 8;
-            this.label9.Text = "City";
+            this.boxcity.AutoSize = true;
+            this.boxcity.Location = new System.Drawing.Point(221, 96);
+            this.boxcity.Name = "boxcity";
+            this.boxcity.Size = new System.Drawing.Size(40, 24);
+            this.boxcity.TabIndex = 8;
+            this.boxcity.Text = "City";
             // 
             // label10
             // 
@@ -141,14 +141,14 @@
             this.label10.Text = "Date and time of Order :";
             this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
-            // label11
+            // boxDAte
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(834, 96);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(160, 24);
-            this.label11.TabIndex = 10;
-            this.label11.Text = "dd/mm/yyyy 00:00";
+            this.boxDAte.AutoSize = true;
+            this.boxDAte.Location = new System.Drawing.Point(834, 96);
+            this.boxDAte.Name = "boxDAte";
+            this.boxDAte.Size = new System.Drawing.Size(160, 24);
+            this.boxDAte.TabIndex = 10;
+            this.boxDAte.Text = "dd/mm/yyyy 00:00";
             // 
             // label12
             // 
@@ -159,14 +159,14 @@
             this.label12.TabIndex = 11;
             this.label12.Text = "Customer phone :";
             // 
-            // label13
+            // boxphone
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(221, 120);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(110, 24);
-            this.label13.TabIndex = 12;
-            this.label13.Text = "0675847373";
+            this.boxphone.AutoSize = true;
+            this.boxphone.Location = new System.Drawing.Point(221, 120);
+            this.boxphone.Name = "boxphone";
+            this.boxphone.Size = new System.Drawing.Size(110, 24);
+            this.boxphone.TabIndex = 12;
+            this.boxphone.Text = "0675847373";
             // 
             // label14
             // 
@@ -177,20 +177,20 @@
             this.label14.TabIndex = 13;
             this.label14.Text = "Email of Customer :";
             // 
-            // label15
+            // boxEmail
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(221, 144);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(208, 24);
-            this.label15.TabIndex = 14;
-            this.label15.Text = "customerX@gmail.com";
+            this.boxEmail.AutoSize = true;
+            this.boxEmail.Location = new System.Drawing.Point(221, 144);
+            this.boxEmail.Name = "boxEmail";
+            this.boxEmail.Size = new System.Drawing.Size(208, 24);
+            this.boxEmail.TabIndex = 14;
+            this.boxEmail.Text = "customerX@gmail.com";
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(15, 461);
+            this.panel1.Location = new System.Drawing.Point(15, 290);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(986, 245);
+            this.panel1.Size = new System.Drawing.Size(1074, 416);
             this.panel1.TabIndex = 15;
             // 
             // label16
@@ -206,33 +206,33 @@
             // dataGridViewtest
             // 
             this.dataGridViewtest.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewtest.Location = new System.Drawing.Point(12, 223);
+            this.dataGridViewtest.Location = new System.Drawing.Point(12, 160);
             this.dataGridViewtest.Name = "dataGridViewtest";
-            this.dataGridViewtest.Size = new System.Drawing.Size(954, 232);
+            this.dataGridViewtest.Size = new System.Drawing.Size(1077, 124);
             this.dataGridViewtest.TabIndex = 17;
             // 
             // FRM_ORDER_DITAILLS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1013, 718);
+            this.ClientSize = new System.Drawing.Size(1101, 718);
             this.Controls.Add(this.dataGridViewtest);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label15);
+            this.Controls.Add(this.boxEmail);
             this.Controls.Add(this.label14);
-            this.Controls.Add(this.label13);
+            this.Controls.Add(this.boxphone);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.label11);
+            this.Controls.Add(this.boxDAte);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.label9);
+            this.Controls.Add(this.boxcity);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
+            this.Controls.Add(this.boxCustomerName);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.boxSeller);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.boxOrderNumber);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.Margin = new System.Windows.Forms.Padding(6);
@@ -249,22 +249,22 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         public System.Windows.Forms.Panel panel1;
         public System.Windows.Forms.DataGridView dataGridViewtest;
+        public System.Windows.Forms.Label boxOrderNumber;
+        public System.Windows.Forms.Label boxSeller;
+        public System.Windows.Forms.Label boxCustomerName;
+        public System.Windows.Forms.Label boxcity;
+        public System.Windows.Forms.Label boxDAte;
+        public System.Windows.Forms.Label boxphone;
+        public System.Windows.Forms.Label boxEmail;
     }
 }
