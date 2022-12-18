@@ -101,6 +101,13 @@ namespace GESTION_PRODUIT_ECOMMERCE.presentationLayer
             // Add some controls to the panel
             for (int i = 1; i < 10; i++)
             {
+                // Create a new label and set its properties
+                Label label = new Label();
+                label.Text = "Label " +i;
+                label.Top = i * 280;
+                label.Left = 25;
+
+
                 Button button = new Button();
                 button.Text = "Button " + i;
                 button.Top = i * 205;

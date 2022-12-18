@@ -19,7 +19,7 @@ namespace GESTION_PRODUIT_ECOMMERCE
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FRM_ORDERS_LIST());
+            Application.Run(new FRM_ORDER_DITAILLS());
         }
     }
 }
