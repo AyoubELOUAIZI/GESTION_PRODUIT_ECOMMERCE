@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -56,6 +57,14 @@ namespace GESTION_PRODUIT_ECOMMERCE.presentationLayer
                     FormMain.getFormMain.profName.Visible = true;
                     FormMain.getFormMain.sentence1.Visible = true;
 
+                    FormMain.getFormMain.boxtypeUser.Text = "admin";
+                    FormMain.getFormMain.boxUserName.Text = dt.Rows[0][5].ToString();
+
+                    byte[] img1 = (byte[])dt.Rows[0][4];
+                    MemoryStream ms = new MemoryStream(img1);
+                    FormMain.getFormMain.userImage.Image = Image.FromStream(ms);
+                   
+
                     this.Close();
                 }
                 else if(dt.Rows[0][3].ToString() == "normal user") {
@@ -74,6 +83,13 @@ namespace GESTION_PRODUIT_ECOMMERCE.presentationLayer
                     FormMain.getFormMain.profName.Visible = true;
                     FormMain.getFormMain.sentence1.Visible = true;
 
+                    FormMain.getFormMain.boxtypeUser.Text = "Normal User";
+                    FormMain.getFormMain.boxUserName.Text = dt.Rows[0][5].ToString();
+
+                    byte[] img1 = (byte[])dt.Rows[0][4];
+                    MemoryStream ms = new MemoryStream(img1);
+                    FormMain.getFormMain.userImage.Image = Image.FromStream(ms);
+                    
 
                     this.Close();
                 }

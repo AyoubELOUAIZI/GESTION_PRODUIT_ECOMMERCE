@@ -283,6 +283,7 @@
             this.userImage.Location = new System.Drawing.Point(1223, 41);
             this.userImage.Name = "userImage";
             this.userImage.Size = new System.Drawing.Size(314, 295);
+            this.userImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.userImage.TabIndex = 0;
             this.userImage.TabStop = false;
             // 
