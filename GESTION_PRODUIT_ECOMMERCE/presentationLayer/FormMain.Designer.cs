@@ -262,12 +262,14 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Controls.Add(this.profName);
             this.panel1.Controls.Add(this.sentence1);
             this.panel1.Controls.Add(this.labelWelcom);
             this.panel1.Controls.Add(this.boxtypeUser);
             this.panel1.Controls.Add(this.boxUserName);
             this.panel1.Controls.Add(this.userImage);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 46);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1604, 642);
