@@ -13,7 +13,7 @@ namespace GESTION_PRODUIT_ECOMMERCE.presentationLayer
 {
     public partial class FRM_ORDER_DITAILLS : Form
     {
-        public FRM_ORDER_DITAILLS()
+        public  FRM_ORDER_DITAILLS()
         {
             InitializeComponent();
         }
@@ -25,9 +25,11 @@ namespace GESTION_PRODUIT_ECOMMERCE.presentationLayer
 
         private void FRM_ORDER_DITAILLS_Load(object sender, EventArgs e)
         {
+              this.pictureAllProducts.Image = Properties.Resources.ALLPRODUCTS;
+            pictureAllProducts.SizeMode = PictureBoxSizeMode.StretchImage;
 
-           // ADD_PRODUCTS();
-           
+            // ADD_PRODUCTS();
+
         }
 
         private void label5_Click(object sender, EventArgs e)

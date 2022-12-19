@@ -1,12 +1,16 @@
-﻿using System;
+﻿using GESTION_PRODUIT_ECOMMERCE.bisnessLayer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
+using Image = System.Drawing.Image;
 
 namespace GESTION_PRODUIT_ECOMMERCE.presentationLayer
 {
@@ -41,11 +45,75 @@ namespace GESTION_PRODUIT_ECOMMERCE.presentationLayer
             this.productToolStripMenuItem.Enabled= false;
             this.customersToolStripMenuItem.Enabled = false;
             this.usersToolStripMenuItem.Enabled = false;
+            this.ordersToolStripMenuItem.Enabled=false;
+            this.sellesToolStripMenuItem.Enabled = false;
+            this.boxUserName.Visible=false;
+            this.boxtypeUser.Visible = false;
+            this.labelWelcom.Visible=false;
+            this.userImage.Visible=false;
+            this.profName.Visible=false;    
+            this.sentence1.Visible=false;
            }
 
         private void FormMain_Load(object sender, EventArgs e)
         {
+            /////////////////////////////////////
+            ///
+            // Set the Anchor for the image to top and left
+          //  userImage.Anchor = Anchor.Top;
+            /// 
+            /// 
+            ///
+             // Enable scrolling for the panel
+            panel1.AutoScroll = true;
+            CLS_PRODUCTS PRODUCTS=new CLS_PRODUCTS();
+            DataTable mydt=new DataTable();
+            mydt = PRODUCTS.GET_ALL_PRODUCTS_AMAGES();
+         //   int y = 37;
+            for (int i = 0; i < mydt.Rows.Count; i++)
+            {
+               
 
+                //prepare img
+                byte[] img1 = (byte[])mydt.Rows[i ][0];
+                MemoryStream ms = new MemoryStream(img1);
+                // this.picturUser.Image = Image.FromStream(ms);
+                //image1
+                PictureBox pictureBox1 = new PictureBox();
+                pictureBox1.Location = new Point(42,10+450*i);
+                pictureBox1.Size = new Size(290, 327);
+                //pictureBox1.Image = Image.FromFile("C:\\myimage.jpg");
+                pictureBox1.Image = Image.FromStream(ms); //Properties.Resources.Avatar;
+                pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+                this.panel1.Controls.Add(pictureBox1); //prepare img
+
+
+                byte[] img2 = (byte[])mydt.Rows[i][1];
+                MemoryStream ms2 = new MemoryStream(img2);
+                // this.picturUser.Image = Image.FromStream(ms);
+                //image1
+                PictureBox pictureBox2 = new PictureBox();
+                pictureBox2.Location = new Point(375, 54 + 450 * i);
+                pictureBox2.Size = new Size(329, 438);
+                //pictureBox1.Image = Image.FromFile("C:\\myimage.jpg");
+                pictureBox2.Image = Image.FromStream(ms2); //Properties.Resources.Avatar;
+                pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+                this.panel1.Controls.Add(pictureBox2); //prepare img
+
+
+                byte[] img3 = (byte[])mydt.Rows[i][2];
+                MemoryStream ms3 = new MemoryStream(img3);
+                // this.picturUser.Image = Image.FromStream(ms);
+                //image1
+                PictureBox pictureBox3 = new PictureBox();
+                pictureBox3.Location = new Point(753, 21 + 450 * i);
+                pictureBox3.Size = new Size(369, 414);
+                //pictureBox1.Image = Image.FromFile("C:\\myimage.jpg");
+                pictureBox3.Image = Image.FromStream(ms3); //Properties.Resources.Avatar;
+                pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
+                this.panel1.Controls.Add(pictureBox3);
+
+            }
         }
 
         private void signInToolStripMenuItem_Click(object sender, EventArgs e)
@@ -103,6 +171,11 @@ namespace GESTION_PRODUIT_ECOMMERCE.presentationLayer
 
             FRM_ORDERS forder = new FRM_ORDERS();
             forder.ShowDialog();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

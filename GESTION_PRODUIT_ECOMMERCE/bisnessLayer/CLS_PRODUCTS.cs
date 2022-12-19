@@ -23,6 +23,14 @@ namespace GESTION_PRODUIT_ECOMMERCE.bisnessLayer
             return dt;
         }
 
+        public DataTable GET_ALL_PRODUCTS_AMAGES()
+        {
+            DataAccessLayer DAL = new DataAccessLayer();
+            DataTable dt = new DataTable();
+            dt = DAL.SelectData("GET_ALL_PRODUCTS_AMAGES", null);
+            return dt;
+        }
+
         public DataTable GetAllGategores()
         {
             DataAccessLayer DAL = new DataAccessLayer();       

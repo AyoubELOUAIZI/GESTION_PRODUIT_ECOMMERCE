@@ -470,7 +470,7 @@ namespace GESTION_PRODUIT_ECOMMERCE.presentationLayer
                 return;
             }
             CLS_ORDERS ORDERS= new CLS_ORDERS();
-            ORDERS.AddOrdere(int.Parse(boxOrderNum.Text),dateTimePicker1.Value,CustomerId ,boxSeller.Text);
+            ORDERS.AddOrdere(int.Parse(boxOrderNum.Text),dateTimePicker1.Value,CustomerId ,boxSeller.Text,float.Parse(boxSomme.Text));
            // ORDERS.Add_order_details(productId,int.Parse(boxOrderNum.Text),int.Parse(boxquantete.Text),float.Parse(boxDescount.Text),float.Parse(boxAmount.Text),float.Parse(boxTotalAmount.Text));
            
             for(int i=0; i < dataGridV.Rows.Count; i++)

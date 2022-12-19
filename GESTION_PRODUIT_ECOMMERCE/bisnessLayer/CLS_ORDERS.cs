@@ -21,10 +21,10 @@ namespace GESTION_PRODUIT_ECOMMERCE.bisnessLayer
         }
 
   
-        public void AddOrdere(int IdOrder, DateTime DateOrder, int IdCustomer, string Seller)
+        public void AddOrdere(int IdOrder, DateTime DateOrder, int IdCustomer, string Seller,float somme)
         {
             DataAccessLayer DAL = new DataAccessLayer();///////////
-            SqlParameter[] param = new SqlParameter[4];
+            SqlParameter[] param = new SqlParameter[5];
             param[0] = new SqlParameter("@IdOrder", SqlDbType.Int);
             param[0].Value = IdOrder;
 
@@ -36,6 +36,9 @@ namespace GESTION_PRODUIT_ECOMMERCE.bisnessLayer
 
             param[3] = new SqlParameter("@Seller", SqlDbType.VarChar,20);
             param[3].Value = Seller;
+
+              param[4] = new SqlParameter("@somme", SqlDbType.Float);
+            param[4].Value = somme;
 
             DAL.ExecuteCommand("AddOrdere", param);
 

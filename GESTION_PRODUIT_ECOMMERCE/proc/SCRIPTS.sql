@@ -316,8 +316,47 @@ WHERE ORDERS.IdOrder=ORDERS_DETAILS.IdOrder AND ORDERS.IdCustomer=CUSTOMERS.IdCu
   and CATEGORES.IdCAT=PRODUCTS.IdCAT and PRODUCTS.IdProduct=ORDERS_DETAILS.IdProduct and ORDERS.IdOrder=11
 
 -------------------------------------------------------------------------------------------
+USE [ECOM]
+GO
+/****** Object:  StoredProcedure [dbo].[AddOrdere]    Script Date: 12/18/2022 11:06:42 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER proc [dbo].[AddOrdere] 
+@IdOrder int,
+@DateOrder datetime,
+@IdCustomer int,
+@Seller varchar(50)
+,@somme float
+as
+INSERT INTO [ORDERS]
+           ([IdOrder]
+           ,[DateOrder]
+           ,[IdCustomer]
+           ,[Seller]
+		   ,OrderSomme)
+     VALUES
+           (@IdOrder
+           ,@DateOrder
+           ,@IdCustomer
+           ,@Seller
+		   ,@somme)
+
 -------------------------------------------------------------------------------------------
+alter PROC GET_ORDER_DITAILLS
+@IdOrder int
+as
+select ORDERS.IdOrder,DateOrder,Seller,FirstName+' '+LastName as 'Customer',city,phone,email,
+NamProduct,description,Price,Qte,DESCOUNT,AMOUNT,NamCAT,img1,img2,img3,TOTALAMOUNT,OrderSomme
+from  ORDERS,ORDERS_DETAILS,PRODUCTS,CUSTOMERS,CATEGORES
+WHERE ORDERS.IdOrder=ORDERS_DETAILS.IdOrder AND ORDERS.IdCustomer=CUSTOMERS.IdCustomer
+  and CATEGORES.IdCAT=PRODUCTS.IdCAT and PRODUCTS.IdProduct=ORDERS_DETAILS.IdProduct and ORDERS.IdOrder=11
+
+
 -------------------------------------------------------------------------------------------
+CREATE PROC GET_ALL_PRODUCTS_AMAGES AS
+SELECT  img1,img2,img3 from PRODUCTS 
 -------------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------

@@ -70,24 +70,12 @@ namespace GESTION_PRODUIT_ECOMMERCE.presentationLayer
 
         private void btnDetails_Click(object sender, EventArgs e)
         {
-            /*  getaLLoRDERS();
-              FRM_ORDER_DITAILLS ORDERDITAILLS=new FRM_ORDER_DITAILLS();
-              ORDERDITAILLS.ShowDialog(); */
-            //------------------
-            // 
-            //   FRM_ORDER_DITAILLS.dataGridViewtest.DataSource = order.GET_ALL_ORDERS();
-            //  this.dataGridView1.Columns[3].Width = 130;
-
-
-            FRM_ORDER_DITAILLS ORDERDITAILLS = new FRM_ORDER_DITAILLS();
-            //FILL THE HEADER OF THE ORDER
            
             //FILL THE PANER FIRST WITHOUT LOOP
             CLS_ORDERS order = new CLS_ORDERS();
             DataTable DT=new DataTable();
             DT = order.GET_ORDER_DITAILLS(int.Parse(this.DGVORDERS.CurrentRow.Cells[0].Value.ToString()));
-           // MessageBox.Show(DT.Rows[0][3].ToString());
-            ORDERDITAILLS.dataGridViewtest.DataSource = DT;
+            FRM_ORDER_DITAILLS ORDERDITAILLS = new FRM_ORDER_DITAILLS();
             ORDERDITAILLS.boxCustomerName.Text = DT.Rows[0][3].ToString();
             ORDERDITAILLS.boxcity.Text = DT.Rows[0][4].ToString();
             ORDERDITAILLS.boxphone.Text = DT.Rows[0][5].ToString();
@@ -95,12 +83,7 @@ namespace GESTION_PRODUIT_ECOMMERCE.presentationLayer
             ORDERDITAILLS.boxOrderNumber.Text = DT.Rows[0][0].ToString();
             ORDERDITAILLS.boxDAte.Text = DT.Rows[0][1].ToString();
             ORDERDITAILLS.boxSeller.Text = DT.Rows[0][2].ToString();
-          //  MessageBox.Show(DT.Rows.Count.ToString());
-
-            // AddProductsToPanel();
-            // Enable scrolling for the panel
-            // ORDERDITAILLS.panel1.AutoScroll = true;
-            // Add some controls to the panel
+            ORDERDITAILLS.SommeOrder.Text = DT.Rows[0][18].ToString()+" DH";
             //////////////////////////////////////////////////////////////////////
             // Enable scrolling for the panel
             ORDERDITAILLS.panel1.AutoScroll = true;
@@ -193,7 +176,7 @@ namespace GESTION_PRODUIT_ECOMMERCE.presentationLayer
 
                 // Create a new label and set its properties
                 Label descounte = new Label();
-                descounte.Text = DT.Rows[i - 1][11].ToString();
+                descounte.Text = DT.Rows[i - 1][11].ToString()+" %";
                 descounte.Size = new Size(101, 24);
                 descounte.Location = new Point(122, 102 + y * i);
                 descounte.Font = new Font("Microsoft Sans Serif", 14);
@@ -233,6 +216,24 @@ namespace GESTION_PRODUIT_ECOMMERCE.presentationLayer
                 categorie1.Location = new Point(116, 150 + y * i);
                 categorie1.Font = new Font("Microsoft Sans Serif", 14);
                 ORDERDITAILLS.panel1.Controls.Add(categorie1);
+
+
+                //8 line //
+                // Create a new label and set its properties
+                Label finalAmount = new Label();
+                finalAmount.Text = "final Amount :";
+                finalAmount.Size = new Size(130, 24);
+                finalAmount.Location = new Point(x, 174 + y * i);
+                finalAmount.Font = new Font("Microsoft Sans Serif", 14);
+                ORDERDITAILLS.panel1.Controls.Add(finalAmount);
+
+                // Create a new label and set its properties
+                Label finalAmountres = new Label();
+                finalAmountres.Text = DT.Rows[i - 1][17].ToString()+" DH"; ///
+                finalAmountres.Size = new Size(208, 24);
+                finalAmountres.Location = new Point(136, 174 + y * i);
+                finalAmountres.Font = new Font("Microsoft Sans Serif", 14);
+                ORDERDITAILLS.panel1.Controls.Add(finalAmountres);
 
                 //prepare img
                 byte[] img1 = (byte[])DT.Rows[i - 1][14];
@@ -280,39 +281,10 @@ namespace GESTION_PRODUIT_ECOMMERCE.presentationLayer
                 line.Location = new Point(272, 200 + y * i);
                 line.Font = new Font("Microsoft Sans Serif", 14);
                 ORDERDITAILLS.panel1.Controls.Add(line);
-
-
-
-
-
-
-
-
-
-
             }
             /////////////////////////////////////
 
             ORDERDITAILLS.ShowDialog();
-        }
-
-        void AddProductsToPanel()
-        {
-            FRM_ORDER_DITAILLS ORDERDITAILLS = new FRM_ORDER_DITAILLS();
-
-            // Add some controls to the panel
-            for (int i = 0; i < 50; i++)
-            {
-                Button button = new Button();
-                button.Text = "Button " + i;
-                button.Top = i * 25;
-                ORDERDITAILLS.panel1.Controls.Add(button);
-            }
-        }
-
-        void getaLLoRDERS()
-        {
-
         }
     }
 }

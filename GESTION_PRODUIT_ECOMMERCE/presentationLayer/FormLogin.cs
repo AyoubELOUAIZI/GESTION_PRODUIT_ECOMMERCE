@@ -42,9 +42,20 @@ namespace GESTION_PRODUIT_ECOMMERCE.presentationLayer
                     FormMain.getFormMain.productToolStripMenuItem.Enabled = true;
                     FormMain.getFormMain.customersToolStripMenuItem.Enabled = true;
                     FormMain.getFormMain.usersToolStripMenuItem.Enabled = true;
-                   
+
+                    FormMain.getFormMain.ordersToolStripMenuItem.Enabled = true;
+                    FormMain.getFormMain.sellesToolStripMenuItem.Enabled = true;
+
                     FormMain.getFormMain.usersToolStripMenuItem.Visible = true;
                     Program.SellerName = dt.Rows[0]["SellerName"].ToString();
+
+                    FormMain.getFormMain.boxUserName.Visible = true;
+                    FormMain.getFormMain.boxtypeUser.Visible = true;
+                    FormMain.getFormMain.labelWelcom.Visible = true;
+                    FormMain.getFormMain.userImage.Visible = true;
+                    FormMain.getFormMain.profName.Visible = true;
+                    FormMain.getFormMain.sentence1.Visible = true;
+
                     this.Close();
                 }
                 else if(dt.Rows[0][3].ToString() == "normal user") {
@@ -52,6 +63,18 @@ namespace GESTION_PRODUIT_ECOMMERCE.presentationLayer
                     FormMain.getFormMain.customersToolStripMenuItem.Enabled = true;
                     FormMain.getFormMain.usersToolStripMenuItem.Visible = false; 
                     Program.SellerName = dt.Rows[0]["SellerName"].ToString();
+
+                    FormMain.getFormMain.ordersToolStripMenuItem.Enabled = true;
+                    FormMain.getFormMain.sellesToolStripMenuItem.Enabled = true;
+
+                    FormMain.getFormMain.boxUserName.Visible = true;
+                    FormMain.getFormMain.boxtypeUser.Visible = true;
+                    FormMain.getFormMain.labelWelcom.Visible = true;
+                    FormMain.getFormMain.userImage.Visible = true;
+                    FormMain.getFormMain.profName.Visible = true;
+                    FormMain.getFormMain.sentence1.Visible = true;
+
+
                     this.Close();
                 }
                 else
