@@ -115,20 +115,7 @@ namespace GESTION_PRODUIT_ECOMMERCE.presentationLayer
             Close();
         }
 
-        private void btnPrintProduct_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnPrintList_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnSaveExel_Click(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void btnRefrech_Click(object sender, EventArgs e)
         {
@@ -153,7 +140,7 @@ namespace GESTION_PRODUIT_ECOMMERCE.presentationLayer
 
         }
 
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView1_CurrentCellChanged(object sender, EventArgs e)
         {
             CLS_PRODUCTS PRD = new CLS_PRODUCTS();
 
