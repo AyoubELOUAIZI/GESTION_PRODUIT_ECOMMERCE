@@ -39,8 +39,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.priviostbtn = new System.Windows.Forms.Button();
             this.nextbtn = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.position = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.textBoxFirstName = new System.Windows.Forms.TextBox();
             this.textBoxlastName = new System.Windows.Forms.TextBox();
@@ -85,8 +83,6 @@
             this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(this.priviostbtn);
             this.groupBox1.Controls.Add(this.nextbtn);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.position);
             this.groupBox1.Controls.Add(btnNext);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.textBoxFirstName);
@@ -197,26 +193,6 @@
             this.nextbtn.TabIndex = 8;
             this.nextbtn.UseVisualStyleBackColor = true;
             this.nextbtn.Click += new System.EventHandler(this.nextbtn_Click);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F);
-            this.label6.Location = new System.Drawing.Point(413, 338);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(123, 29);
-            this.label6.TabIndex = 21;
-            this.label6.Text = "Customer";
-            // 
-            // position
-            // 
-            this.position.AutoSize = true;
-            this.position.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F);
-            this.position.Location = new System.Drawing.Point(542, 338);
-            this.position.Name = "position";
-            this.position.Size = new System.Drawing.Size(48, 29);
-            this.position.TabIndex = 22;
-            this.position.Text = "0/0";
             // 
             // button2
             // 
@@ -420,8 +396,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button priviostbtn;
         private System.Windows.Forms.Button nextbtn;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label position;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox textBoxCity;

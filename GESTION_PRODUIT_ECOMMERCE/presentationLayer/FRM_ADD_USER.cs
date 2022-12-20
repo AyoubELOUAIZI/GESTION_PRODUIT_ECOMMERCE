@@ -84,5 +84,15 @@ namespace GESTION_PRODUIT_ECOMMERCE.presentationLayer
 
 
         }
+
+        private void userImage_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Filter = "images folder | *.jpg; *.png; *.SVG; *.gif; *.bmp ";
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                userImage.Image = Image.FromFile(ofd.FileName);
+            }
+        }
     }
 }

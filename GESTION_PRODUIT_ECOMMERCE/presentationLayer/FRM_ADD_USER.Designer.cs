@@ -177,6 +177,7 @@
             this.userImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.userImage.TabIndex = 8;
             this.userImage.TabStop = false;
+            this.userImage.Click += new System.EventHandler(this.userImage_Click);
             // 
             // btnClear
             // 

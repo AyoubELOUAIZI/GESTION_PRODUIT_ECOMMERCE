@@ -54,14 +54,16 @@
             this.manageUsersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
-            this.userImage = new System.Windows.Forms.PictureBox();
-            this.boxUserName = new System.Windows.Forms.Label();
-            this.boxtypeUser = new System.Windows.Forms.Label();
-            this.labelWelcom = new System.Windows.Forms.Label();
-            this.sentence1 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.profName = new System.Windows.Forms.Label();
+            this.sentence1 = new System.Windows.Forms.Label();
+            this.labelWelcom = new System.Windows.Forms.Label();
+            this.boxtypeUser = new System.Windows.Forms.Label();
+            this.boxUserName = new System.Windows.Forms.Label();
+            this.userImage = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.userImage)).BeginInit();
             this.SuspendLayout();
             // 
@@ -263,86 +265,110 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Controls.Add(this.profName);
-            this.panel1.Controls.Add(this.sentence1);
-            this.panel1.Controls.Add(this.labelWelcom);
-            this.panel1.Controls.Add(this.boxtypeUser);
-            this.panel1.Controls.Add(this.boxUserName);
-            this.panel1.Controls.Add(this.userImage);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 46);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1604, 642);
+            this.panel1.Size = new System.Drawing.Size(1249, 787);
             this.panel1.TabIndex = 3;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // userImage
+            // panel2
             // 
-            this.userImage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.userImage.BackColor = System.Drawing.Color.IndianRed;
-            this.userImage.Location = new System.Drawing.Point(1223, 41);
-            this.userImage.Name = "userImage";
-            this.userImage.Size = new System.Drawing.Size(314, 295);
-            this.userImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.userImage.TabIndex = 0;
-            this.userImage.TabStop = false;
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.profName);
+            this.panel2.Controls.Add(this.sentence1);
+            this.panel2.Controls.Add(this.labelWelcom);
+            this.panel2.Controls.Add(this.boxtypeUser);
+            this.panel2.Controls.Add(this.boxUserName);
+            this.panel2.Controls.Add(this.userImage);
+            this.panel2.Location = new System.Drawing.Point(1218, 46);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(386, 786);
+            this.panel2.TabIndex = 5;
             // 
-            // boxUserName
+            // profName
             // 
-            this.boxUserName.AutoSize = true;
-            this.boxUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.25F);
-            this.boxUserName.Location = new System.Drawing.Point(1219, 352);
-            this.boxUserName.Name = "boxUserName";
-            this.boxUserName.Size = new System.Drawing.Size(163, 36);
-            this.boxUserName.TabIndex = 1;
-            this.boxUserName.Text = "User Name";
-            // 
-            // boxtypeUser
-            // 
-            this.boxtypeUser.AutoSize = true;
-            this.boxtypeUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.boxtypeUser.Location = new System.Drawing.Point(1238, 388);
-            this.boxtypeUser.Name = "boxtypeUser";
-            this.boxtypeUser.Size = new System.Drawing.Size(97, 24);
-            this.boxtypeUser.TabIndex = 2;
-            this.boxtypeUser.Text = "Type User";
-            // 
-            // labelWelcom
-            // 
-            this.labelWelcom.AutoSize = true;
-            this.labelWelcom.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.25F);
-            this.labelWelcom.Location = new System.Drawing.Point(1219, 433);
-            this.labelWelcom.Name = "labelWelcom";
-            this.labelWelcom.Size = new System.Drawing.Size(290, 36);
-            this.labelWelcom.TabIndex = 3;
-            this.labelWelcom.Text = "\'\'Welcome to ECOM\"";
+            this.profName.AutoSize = true;
+            this.profName.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.profName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.profName.Location = new System.Drawing.Point(101, 593);
+            this.profName.Name = "profName";
+            this.profName.Size = new System.Drawing.Size(198, 29);
+            this.profName.TabIndex = 11;
+            this.profName.Text = " Latifa Oubedda";
             // 
             // sentence1
             // 
             this.sentence1.AutoSize = true;
             this.sentence1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.sentence1.Location = new System.Drawing.Point(1221, 478);
+            this.sentence1.Location = new System.Drawing.Point(72, 569);
             this.sentence1.Name = "sentence1";
             this.sentence1.Size = new System.Drawing.Size(269, 24);
-            this.sentence1.TabIndex = 4;
+            this.sentence1.TabIndex = 10;
             this.sentence1.Text = "Sous la tutelle du prof madame";
             // 
-            // profName
+            // labelWelcom
             // 
-            this.profName.AutoSize = true;
-            this.profName.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F);
-            this.profName.Location = new System.Drawing.Point(1221, 502);
-            this.profName.Name = "profName";
-            this.profName.Size = new System.Drawing.Size(192, 29);
-            this.profName.TabIndex = 5;
-            this.profName.Text = " Latifa Oubedda";
+            this.labelWelcom.AutoSize = true;
+            this.labelWelcom.Font = new System.Drawing.Font("High Tower Text", 23.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelWelcom.ForeColor = System.Drawing.Color.Red;
+            this.labelWelcom.Location = new System.Drawing.Point(40, 504);
+            this.labelWelcom.Name = "labelWelcom";
+            this.labelWelcom.Size = new System.Drawing.Size(301, 37);
+            this.labelWelcom.TabIndex = 9;
+            this.labelWelcom.Text = "\'\'Welcome to ECOM\"";
+            // 
+            // boxtypeUser
+            // 
+            this.boxtypeUser.AutoSize = true;
+            this.boxtypeUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F);
+            this.boxtypeUser.ForeColor = System.Drawing.Color.Violet;
+            this.boxtypeUser.Location = new System.Drawing.Point(28, 448);
+            this.boxtypeUser.Name = "boxtypeUser";
+            this.boxtypeUser.Size = new System.Drawing.Size(140, 31);
+            this.boxtypeUser.TabIndex = 8;
+            this.boxtypeUser.Text = "Type User";
+            // 
+            // boxUserName
+            // 
+            this.boxUserName.AutoSize = true;
+            this.boxUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.boxUserName.Location = new System.Drawing.Point(13, 389);
+            this.boxUserName.Name = "boxUserName";
+            this.boxUserName.Size = new System.Drawing.Size(230, 46);
+            this.boxUserName.TabIndex = 7;
+            this.boxUserName.Text = "User Name";
+            this.boxUserName.Click += new System.EventHandler(this.boxUserName_Click);
+            // 
+            // userImage
+            // 
+            this.userImage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.userImage.BackColor = System.Drawing.Color.IndianRed;
+            this.userImage.Location = new System.Drawing.Point(34, 36);
+            this.userImage.Name = "userImage";
+            this.userImage.Size = new System.Drawing.Size(311, 334);
+            this.userImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.userImage.TabIndex = 6;
+            this.userImage.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.label1.Location = new System.Drawing.Point(16, 752);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(284, 25);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Created by Ayoub ELOUAIZI";
             // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Cyan;
-            this.ClientSize = new System.Drawing.Size(1604, 688);
+            this.ClientSize = new System.Drawing.Size(1604, 830);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
@@ -354,8 +380,8 @@
             this.Load += new System.EventHandler(this.FormMain_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.userImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -388,11 +414,13 @@
         private System.Windows.Forms.Panel panel1;
         public System.Windows.Forms.ToolStripMenuItem ordersToolStripMenuItem;
         public System.Windows.Forms.ToolStripMenuItem sellesToolStripMenuItem;
-        public System.Windows.Forms.PictureBox userImage;
+        private System.Windows.Forms.Panel panel2;
+        public System.Windows.Forms.Label profName;
+        public System.Windows.Forms.Label sentence1;
         public System.Windows.Forms.Label labelWelcom;
         public System.Windows.Forms.Label boxtypeUser;
         public System.Windows.Forms.Label boxUserName;
-        public System.Windows.Forms.Label profName;
-        public System.Windows.Forms.Label sentence1;
+        public System.Windows.Forms.PictureBox userImage;
+        private System.Windows.Forms.Label label1;
     }
 }

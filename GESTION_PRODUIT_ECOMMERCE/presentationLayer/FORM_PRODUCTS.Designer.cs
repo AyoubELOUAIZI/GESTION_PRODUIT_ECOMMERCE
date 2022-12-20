@@ -33,11 +33,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnEditProduct = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.btnSaveExel = new System.Windows.Forms.Button();
-            this.btnPrintList = new System.Windows.Forms.Button();
-            this.btnPrintProduct = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.btnshowImg = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -62,11 +58,7 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.btnEditProduct);
             this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.btnSaveExel);
-            this.groupBox1.Controls.Add(this.btnPrintList);
-            this.groupBox1.Controls.Add(this.btnPrintProduct);
             this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.btnshowImg);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Location = new System.Drawing.Point(12, 53);
             this.groupBox1.Name = "groupBox1";
@@ -77,7 +69,7 @@
             // 
             // btnRefrech
             // 
-            this.btnRefrech.Location = new System.Drawing.Point(15, 537);
+            this.btnRefrech.Location = new System.Drawing.Point(15, 247);
             this.btnRefrech.Name = "btnRefrech";
             this.btnRefrech.Size = new System.Drawing.Size(164, 62);
             this.btnRefrech.TabIndex = 6;
@@ -97,7 +89,7 @@
             // btnEditProduct
             // 
             this.btnEditProduct.BackColor = System.Drawing.Color.GhostWhite;
-            this.btnEditProduct.Location = new System.Drawing.Point(15, 176);
+            this.btnEditProduct.Location = new System.Drawing.Point(15, 105);
             this.btnEditProduct.Name = "btnEditProduct";
             this.btnEditProduct.Size = new System.Drawing.Size(164, 65);
             this.btnEditProduct.TabIndex = 0;
@@ -108,7 +100,7 @@
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.Red;
-            this.button2.Location = new System.Drawing.Point(15, 605);
+            this.button2.Location = new System.Drawing.Point(15, 315);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(164, 65);
             this.button2.TabIndex = 0;
@@ -116,59 +108,16 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // btnSaveExel
-            // 
-            this.btnSaveExel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnSaveExel.Location = new System.Drawing.Point(15, 466);
-            this.btnSaveExel.Name = "btnSaveExel";
-            this.btnSaveExel.Size = new System.Drawing.Size(164, 65);
-            this.btnSaveExel.TabIndex = 0;
-            this.btnSaveExel.Text = "save as exel list";
-            this.btnSaveExel.UseVisualStyleBackColor = false;
-            this.btnSaveExel.Click += new System.EventHandler(this.btnSaveExel_Click);
-            // 
-            // btnPrintList
-            // 
-            this.btnPrintList.BackColor = System.Drawing.Color.Yellow;
-            this.btnPrintList.Location = new System.Drawing.Point(15, 395);
-            this.btnPrintList.Name = "btnPrintList";
-            this.btnPrintList.Size = new System.Drawing.Size(164, 65);
-            this.btnPrintList.TabIndex = 0;
-            this.btnPrintList.Text = "print  products list";
-            this.btnPrintList.UseVisualStyleBackColor = false;
-            this.btnPrintList.Click += new System.EventHandler(this.btnPrintList_Click);
-            // 
-            // btnPrintProduct
-            // 
-            this.btnPrintProduct.BackColor = System.Drawing.Color.White;
-            this.btnPrintProduct.Location = new System.Drawing.Point(15, 324);
-            this.btnPrintProduct.Name = "btnPrintProduct";
-            this.btnPrintProduct.Size = new System.Drawing.Size(164, 65);
-            this.btnPrintProduct.TabIndex = 0;
-            this.btnPrintProduct.Text = "print  product";
-            this.btnPrintProduct.UseVisualStyleBackColor = false;
-            this.btnPrintProduct.Click += new System.EventHandler(this.btnPrintProduct_Click);
-            // 
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.Red;
-            this.button3.Location = new System.Drawing.Point(15, 253);
+            this.button3.Location = new System.Drawing.Point(15, 176);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(164, 65);
             this.button3.TabIndex = 0;
             this.button3.Text = "delete  product";
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // btnshowImg
-            // 
-            this.btnshowImg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnshowImg.Location = new System.Drawing.Point(15, 105);
-            this.btnshowImg.Name = "btnshowImg";
-            this.btnshowImg.Size = new System.Drawing.Size(164, 65);
-            this.btnshowImg.TabIndex = 0;
-            this.btnshowImg.Text = "show images";
-            this.btnshowImg.UseVisualStyleBackColor = false;
             // 
             // button1
             // 
@@ -301,11 +250,7 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnEditProduct;
-        private System.Windows.Forms.Button btnSaveExel;
-        private System.Windows.Forms.Button btnPrintList;
-        private System.Windows.Forms.Button btnPrintProduct;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button btnshowImg;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dataGridView1;

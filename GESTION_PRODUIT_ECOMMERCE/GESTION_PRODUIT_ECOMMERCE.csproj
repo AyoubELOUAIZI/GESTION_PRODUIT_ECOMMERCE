@@ -258,7 +258,6 @@
     <Content Include="public\products-imges\7.jpg" />
     <Content Include="public\products-imges\8.jpg" />
     <Content Include="public\products-imges\9.jpg" />
-    <Content Include="public\products-imges\dog.jpg" />
     <None Include="Resources\ALLPRODUCTS.jpg" />
     <None Include="Resources\Avatar.jpg" />
   </ItemGroup>
