@@ -71,12 +71,6 @@
     <Compile Include="presentationLayer\FORM_PRODUCTS.Designer.cs">
       <DependentUpon>FORM_PRODUCTS.cs</DependentUpon>
     </Compile>
-    <Compile Include="presentationLayer\form_test.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="presentationLayer\form_test.Designer.cs">
-      <DependentUpon>form_test.cs</DependentUpon>
-    </Compile>
     <Compile Include="presentationLayer\FRM_ADD_PRODUCT.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,9 +146,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="presentationLayer\FORM_PRODUCTS.resx">
       <DependentUpon>FORM_PRODUCTS.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="presentationLayer\form_test.resx">
-      <DependentUpon>form_test.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="presentationLayer\FRM_ADD_PRODUCT.resx">
       <DependentUpon>FRM_ADD_PRODUCT.cs</DependentUpon>

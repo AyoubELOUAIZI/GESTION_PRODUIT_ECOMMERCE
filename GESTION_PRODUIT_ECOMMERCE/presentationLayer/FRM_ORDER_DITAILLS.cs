@@ -25,8 +25,8 @@ namespace GESTION_PRODUIT_ECOMMERCE.presentationLayer
 
         private void FRM_ORDER_DITAILLS_Load(object sender, EventArgs e)
         {
-              this.pictureAllProducts.Image = Properties.Resources.ALLPRODUCTS;
-            pictureAllProducts.SizeMode = PictureBoxSizeMode.StretchImage;
+              //this.pictureAllProducts.Image = Properties.Resources.ALLPRODUCTS;
+           // pictureAllProducts.SizeMode = PictureBoxSizeMode.StretchImage;
 
             // ADD_PRODUCTS();
 
