@@ -192,5 +192,20 @@ namespace GESTION_PRODUIT_ECOMMERCE.presentationLayer
             FRM_ADD_USER FADDUSER = new FRM_ADD_USER();
             FADDUSER.ShowDialog();
         }
+
+        private void signOutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.productToolStripMenuItem.Enabled = false;
+            this.customersToolStripMenuItem.Enabled = false;
+            this.usersToolStripMenuItem.Enabled = false;
+            this.ordersToolStripMenuItem.Enabled = false;
+            this.sellesToolStripMenuItem.Enabled = false;
+            this.boxUserName.Visible = false;
+            this.boxtypeUser.Visible = false;
+            this.labelWelcom.Visible = false;
+            this.userImage.Visible = false;
+            this.profName.Visible = false;
+            this.sentence1.Visible = false;
+        }
     }
 }

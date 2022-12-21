@@ -49,6 +49,7 @@
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.usersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.addUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manageUsersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
@@ -60,7 +61,6 @@
             this.boxtypeUser = new System.Windows.Forms.Label();
             this.boxUserName = new System.Windows.Forms.Label();
             this.userImage = new System.Windows.Forms.PictureBox();
-            this.addUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.userImage)).BeginInit();
@@ -98,7 +98,7 @@
             // 
             this.signInToolStripMenuItem.ForeColor = System.Drawing.Color.Navy;
             this.signInToolStripMenuItem.Name = "signInToolStripMenuItem";
-            this.signInToolStripMenuItem.Size = new System.Drawing.Size(205, 42);
+            this.signInToolStripMenuItem.Size = new System.Drawing.Size(270, 60);
             this.signInToolStripMenuItem.Text = "Sign in";
             this.signInToolStripMenuItem.Click += new System.EventHandler(this.signInToolStripMenuItem_Click);
             // 
@@ -106,8 +106,9 @@
             // 
             this.signOutToolStripMenuItem.ForeColor = System.Drawing.Color.Navy;
             this.signOutToolStripMenuItem.Name = "signOutToolStripMenuItem";
-            this.signOutToolStripMenuItem.Size = new System.Drawing.Size(205, 42);
+            this.signOutToolStripMenuItem.Size = new System.Drawing.Size(270, 60);
             this.signOutToolStripMenuItem.Text = "Sign out";
+            this.signOutToolStripMenuItem.Click += new System.EventHandler(this.signOutToolStripMenuItem_Click);
             // 
             // productToolStripMenuItem
             // 
@@ -133,7 +134,7 @@
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(468, 6);
+            this.toolStripSeparator5.Size = new System.Drawing.Size(475, 6);
             // 
             // manageProductToolStripMenuItem
             // 
@@ -146,7 +147,7 @@
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(468, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(475, 6);
             // 
             // manageCiesategorToolStripMenuItem
             // 
@@ -169,7 +170,7 @@
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(450, 6);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(457, 6);
             // 
             // manageCustomerToolStripMenuItem
             // 
@@ -217,7 +218,7 @@
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(395, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(383, 6);
             // 
             // usersToolStripMenuItem
             // 
@@ -233,7 +234,15 @@
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(369, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(375, 6);
+            // 
+            // addUserToolStripMenuItem
+            // 
+            this.addUserToolStripMenuItem.ForeColor = System.Drawing.Color.Navy;
+            this.addUserToolStripMenuItem.Name = "addUserToolStripMenuItem";
+            this.addUserToolStripMenuItem.Size = new System.Drawing.Size(378, 60);
+            this.addUserToolStripMenuItem.Text = "Add User";
+            this.addUserToolStripMenuItem.Click += new System.EventHandler(this.addUserToolStripMenuItem_Click);
             // 
             // manageUsersToolStripMenuItem
             // 
@@ -254,7 +263,7 @@
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Location = new System.Drawing.Point(0, 66);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1249, 767);
+            this.panel1.Size = new System.Drawing.Size(1249, 769);
             this.panel1.TabIndex = 3;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -270,7 +279,7 @@
             this.panel2.Controls.Add(this.userImage);
             this.panel2.Location = new System.Drawing.Point(1218, 66);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(386, 766);
+            this.panel2.Size = new System.Drawing.Size(386, 768);
             this.panel2.TabIndex = 5;
             // 
             // label1
@@ -278,7 +287,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label1.Location = new System.Drawing.Point(16, 752);
+            this.label1.Location = new System.Drawing.Point(15, 718);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(284, 25);
             this.label1.TabIndex = 12;
@@ -348,14 +357,6 @@
             this.userImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.userImage.TabIndex = 6;
             this.userImage.TabStop = false;
-            // 
-            // addUserToolStripMenuItem
-            // 
-            this.addUserToolStripMenuItem.ForeColor = System.Drawing.Color.Navy;
-            this.addUserToolStripMenuItem.Name = "addUserToolStripMenuItem";
-            this.addUserToolStripMenuItem.Size = new System.Drawing.Size(378, 60);
-            this.addUserToolStripMenuItem.Text = "Add User";
-            this.addUserToolStripMenuItem.Click += new System.EventHandler(this.addUserToolStripMenuItem_Click);
             // 
             // FormMain
             // 
