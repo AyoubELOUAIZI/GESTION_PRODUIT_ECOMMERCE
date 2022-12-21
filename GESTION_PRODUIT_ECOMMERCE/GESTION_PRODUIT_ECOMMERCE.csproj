@@ -224,6 +224,8 @@
     <Content Include="assets\select-img.jpg" />
     <Content Include="assets\select.png" />
     <Content Include="proc\CREATEDATA.sql" />
+    <Content Include="proc\recreateAllProc-important.sql" />
+    <Content Include="proc\ECOM-important.sql" />
     <Content Include="proc\SCRIPTS.sql" />
     <Content Include="public\products-imges\1.jpg" />
     <Content Include="public\products-imges\10.jpg" />
