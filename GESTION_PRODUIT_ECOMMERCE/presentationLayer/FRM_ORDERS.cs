@@ -508,5 +508,50 @@ namespace GESTION_PRODUIT_ECOMMERCE.presentationLayer
         {
 
         }
+
+        private void ppictur1_MouseHover(object sender, EventArgs e)
+        {
+            if (ppictur1.Image != null)
+            {
+                // MessageBox.Show("null");
+                pictureBox2.Image = ppictur1.Image;
+
+            }
+        }
+
+        private void ppictur2_MouseHover(object sender, EventArgs e)
+        {
+            if (ppictur2.Image != null)
+            {
+                // MessageBox.Show("null");
+                pictureBox2.Image = ppictur2.Image;
+
+            }
+        }
+
+        private void ppictur3_MouseHover(object sender, EventArgs e)
+        {
+            if (ppictur3.Image != null)
+            {
+                // MessageBox.Show("null");
+                pictureBox2.Image = ppictur3.Image;
+
+            }
+        }
+
+        private void ppictur1_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBox2.Image = null;
+        }
+
+        private void ppictur2_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBox2.Image = null;
+        }
+
+        private void ppictur3_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBox2.Image = null;
+        }
     }
 }

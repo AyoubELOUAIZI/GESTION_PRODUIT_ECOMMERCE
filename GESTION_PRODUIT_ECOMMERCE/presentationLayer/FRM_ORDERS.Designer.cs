@@ -85,6 +85,7 @@
             this.ppictur2 = new System.Windows.Forms.PictureBox();
             this.ppictur1 = new System.Windows.Forms.PictureBox();
             this.btnClear = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -94,6 +95,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ppictur3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ppictur2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ppictur1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -673,6 +675,8 @@
             this.ppictur3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ppictur3.TabIndex = 2;
             this.ppictur3.TabStop = false;
+            this.ppictur3.MouseLeave += new System.EventHandler(this.ppictur3_MouseLeave);
+            this.ppictur3.MouseHover += new System.EventHandler(this.ppictur3_MouseHover);
             // 
             // ppictur2
             // 
@@ -683,6 +687,8 @@
             this.ppictur2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ppictur2.TabIndex = 2;
             this.ppictur2.TabStop = false;
+            this.ppictur2.MouseLeave += new System.EventHandler(this.ppictur2_MouseLeave);
+            this.ppictur2.MouseHover += new System.EventHandler(this.ppictur2_MouseHover);
             // 
             // ppictur1
             // 
@@ -693,6 +699,8 @@
             this.ppictur1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ppictur1.TabIndex = 2;
             this.ppictur1.TabStop = false;
+            this.ppictur1.MouseLeave += new System.EventHandler(this.ppictur1_MouseLeave);
+            this.ppictur1.MouseHover += new System.EventHandler(this.ppictur1_MouseHover);
             // 
             // btnClear
             // 
@@ -704,12 +712,23 @@
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Aqua;
+            this.pictureBox2.Location = new System.Drawing.Point(1129, 51);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(463, 725);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 8;
+            this.pictureBox2.TabStop = false;
+            // 
             // FRM_ORDERS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Aqua;
-            this.ClientSize = new System.Drawing.Size(1142, 789);
+            this.ClientSize = new System.Drawing.Size(1604, 789);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnNewOrder);
@@ -742,6 +761,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ppictur3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ppictur2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ppictur1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -805,5 +825,6 @@
         private System.Windows.Forms.Button btnDeletAll;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
