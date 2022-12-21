@@ -16,12 +16,13 @@ namespace GESTION_PRODUIT_ECOMMERCE.presentationLayer
 {
     public partial class FORM_PRODUCTS : Form
     {
-        CLS_PRODUCTS PRD=new CLS_PRODUCTS();
+       
         public FORM_PRODUCTS()
         {
             InitializeComponent();
+            CLS_PRODUCTS PRD = new CLS_PRODUCTS();
             dataGridView1.DataSource = PRD.GET_ALL_PRODUCTS();
-
+         
         }
 
         private void FORM_PRODUCTS_Load(object sender, EventArgs e)
@@ -39,8 +40,14 @@ namespace GESTION_PRODUIT_ECOMMERCE.presentationLayer
             MemoryStream ms3 = new MemoryStream(img3);
             this.pictureBox3.Image = Image.FromStream(ms3);
 
+              this.dataGridView1.RowHeadersWidth = 4;
+             this.dataGridView1.Columns[0].Width = 50;
+             this.dataGridView1.Columns[3].Width = 90;
+             this.dataGridView1.Columns[4].Width = 90;
+
+
         }
-       
+
 
         private void pictureBox4_Click(object sender, EventArgs e)
         {

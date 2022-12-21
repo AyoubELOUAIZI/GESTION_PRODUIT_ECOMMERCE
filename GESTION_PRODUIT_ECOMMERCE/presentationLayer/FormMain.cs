@@ -130,8 +130,11 @@ namespace GESTION_PRODUIT_ECOMMERCE.presentationLayer
 
         private void manageProductToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FORM_PRODUCTS fpd= new FORM_PRODUCTS();
-            fpd.ShowDialog();
+           
+                FORM_PRODUCTS fpd = new FORM_PRODUCTS();
+                fpd.ShowDialog();
+          
+          
         }
 
         private void manageCustomerToolStripMenuItem_Click(object sender, EventArgs e)
@@ -150,8 +153,7 @@ namespace GESTION_PRODUIT_ECOMMERCE.presentationLayer
 
         private void addCustomerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FRM_ADD_USER FADDUSER=new FRM_ADD_USER();
-            FADDUSER.ShowDialog();
+          
         }
 
         private void manageUsersToolStripMenuItem_Click(object sender, EventArgs e)
@@ -178,14 +180,17 @@ namespace GESTION_PRODUIT_ECOMMERCE.presentationLayer
 
         }
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+        
 
         private void boxUserName_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void addUserToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FRM_ADD_USER FADDUSER = new FRM_ADD_USER();
+            FADDUSER.ShowDialog();
         }
     }
 }
