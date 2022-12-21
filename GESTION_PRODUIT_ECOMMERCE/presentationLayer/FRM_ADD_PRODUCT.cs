@@ -77,13 +77,13 @@ namespace GESTION_PRODUIT_ECOMMERCE.presentationLayer
            // if (this.status == "add")
             if (this.status == "add")
             {
-                MessageBox.Show("add");
+               // MessageBox.Show("add");
                 prd.ADD_PRODUCT(textname.Text, textdescription.Text, int.Parse(textQantete.Text), float.Parse(textPrice.Text), imgbyte1, imgbyte2, imgbyte3, Convert.ToInt32(cmbCategories.SelectedValue));
                 MessageBox.Show("inserted seccessfuly", "inserted", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else if(this.status == "update")
             {
-                 MessageBox.Show("update");
+                // MessageBox.Show("update");
                 prd.Update_PRODUCT(textname.Text, textdescription.Text, int.Parse(textQantete.Text), float.Parse(textPrice.Text), imgbyte1, imgbyte2, imgbyte3, Convert.ToInt32(cmbCategories.SelectedValue), this.idproduct);
                 MessageBox.Show("Updated seccessfuly", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Close();

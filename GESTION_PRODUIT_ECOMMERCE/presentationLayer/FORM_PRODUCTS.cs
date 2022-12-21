@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -83,7 +84,9 @@ namespace GESTION_PRODUIT_ECOMMERCE.presentationLayer
         private void btnEditProduct_Click(object sender, EventArgs e)
         {
             FRM_ADD_PRODUCT FUP = new FRM_ADD_PRODUCT();
+          //  FUP.ShowDialog();
             FUP.idproduct= int.Parse(this.dataGridView1.CurrentRow.Cells[0].Value.ToString());
+           // MessageBox.Show("id is " + FUP.idproduct);
             FUP.status = "update";
             FUP.textname.Text= this.dataGridView1.CurrentRow.Cells[1].Value.ToString();
             FUP.textdescription.Text= this.dataGridView1.CurrentRow.Cells[2].Value.ToString();
@@ -106,7 +109,7 @@ namespace GESTION_PRODUIT_ECOMMERCE.presentationLayer
             byte[] img3 = (byte[])PRD.GET_PRODUCT_IMAGE3(int.Parse(this.dataGridView1.CurrentRow.Cells[0].Value.ToString())).Rows[0][0];
             MemoryStream ms3= new MemoryStream(img3);
             FUP.pictureBox3.Image=Image.FromStream(ms3);
-            FUP.ShowDialog();
+           FUP.ShowDialog();
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -142,18 +145,27 @@ namespace GESTION_PRODUIT_ECOMMERCE.presentationLayer
 
         private void dataGridView1_CurrentCellChanged(object sender, EventArgs e)
         {
-            CLS_PRODUCTS PRD = new CLS_PRODUCTS();
+            try{
+                CLS_PRODUCTS PRD = new CLS_PRODUCTS();
 
-            byte[] img1 = (byte[])PRD.GET_PRODUCT_IMAGE1(int.Parse(this.dataGridView1.CurrentRow.Cells[0].Value.ToString())).Rows[0][0];
-            MemoryStream ms = new MemoryStream(img1);
-            this.pictureBox1.Image = Image.FromStream(ms);
-            byte[] img2 = (byte[])PRD.GET_PRODUCT_IMAGE2(int.Parse(this.dataGridView1.CurrentRow.Cells[0].Value.ToString())).Rows[0][0];
-            MemoryStream ms2 = new MemoryStream(img2);
-            this.pictureBox2.Image = Image.FromStream(ms2);
+                byte[] img1 = (byte[])PRD.GET_PRODUCT_IMAGE1(int.Parse(this.dataGridView1.CurrentRow.Cells[0].Value.ToString())).Rows[0][0];
+                MemoryStream ms = new MemoryStream(img1);
+                this.pictureBox1.Image = Image.FromStream(ms);
+                byte[] img2 = (byte[])PRD.GET_PRODUCT_IMAGE2(int.Parse(this.dataGridView1.CurrentRow.Cells[0].Value.ToString())).Rows[0][0];
+                MemoryStream ms2 = new MemoryStream(img2);
+                this.pictureBox2.Image = Image.FromStream(ms2);
 
-            byte[] img3 = (byte[])PRD.GET_PRODUCT_IMAGE3(int.Parse(this.dataGridView1.CurrentRow.Cells[0].Value.ToString())).Rows[0][0];
-            MemoryStream ms3 = new MemoryStream(img3);
-            this.pictureBox3.Image = Image.FromStream(ms3);
+                byte[] img3 = (byte[])PRD.GET_PRODUCT_IMAGE3(int.Parse(this.dataGridView1.CurrentRow.Cells[0].Value.ToString())).Rows[0][0];
+                MemoryStream ms3 = new MemoryStream(img3);
+                this.pictureBox3.Image = Image.FromStream(ms3);
+            }
+            catch {
+              
+              //  MessageBox.Show("kkkkkkk");
+            }
+
+
+           
         }
     }
 }
